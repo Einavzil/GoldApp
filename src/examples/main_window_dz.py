@@ -106,15 +106,15 @@ class Ui_MainWindow(object):
         self.login_button.setFont(font)
         self.login_button.setStyleSheet(
             "\n"
-            "  background-color:  rgb(255, 203, 99); /* Green */\n"
+            "background-color:  rgb(255, 203, 99); /* Green */\n"
             "border: none;\n"
             "border-radius: 10px;\n"
-            "  color: white;\n"
-            "  padding: 15px 32px;\n"
-            "  text-align: center;\n"
-            "  text-decoration: none;\n"
-            "  display: inline-block;\n"
-            "  font-size: 16px;\n"
+            "color: white;\n"
+            "padding: 15px 32px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 16px;\n"
             "margin-top: 10px"
         )
         self.login_button.setObjectName("login_button")
@@ -140,15 +140,15 @@ class Ui_MainWindow(object):
         self.new_button.setFont(font)
         self.new_button.setStyleSheet(
             "\n"
-            "  background-color:  rgb(255, 203, 99); /* Green */\n"
-            "  border: none;\n"
+            "background-color:  rgb(255, 203, 99); /* Green */\n"
+            "border: none;\n"
             "border-radius: 10px;\n"
-            "  color: white;\n"
-            "  padding: 15px 32px;\n"
-            "  text-align: center;\n"
-            "  text-decoration: none;\n"
-            "  display: inline-block;\n"
-            "  font-size: 16px;"
+            "color: white;\n"
+            "padding: 15px 32px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 16px;"
         )
         self.new_button.setObjectName("new_button")
         self.verticalLayout_4.addWidget(self.new_button)
