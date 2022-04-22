@@ -17,10 +17,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(389, 422)
         MainWindow.setMaximumSize(QtCore.QSize(1800, 1200))
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet("background-color: rgb(220, 221, 255);\n"
-"border-top-color: rgb(255, 255, 255);\n"
-"margin-left: 30px;\n"
-"margin-right: 30px;")
+        MainWindow.setStyleSheet(
+            "background-color: rgb(220, 221, 255);\n"
+            "border-top-color: rgb(255, 255, 255);\n"
+            "margin-left: 30px;\n"
+            "margin-right: 30px;"
+        )
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
@@ -38,10 +40,12 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("color: rgb(255, 203, 99);\n"
-"padding-top: 10px;\n"
-"padding-bottom: 50px;\n"
-"")
+        self.app_logo.setStyleSheet(
+            "color: rgb(255, 203, 99);\n"
+            "padding-top: 10px;\n"
+            "padding-bottom: 50px;\n"
+            ""
+        )
         self.app_logo.setObjectName("app_logo")
         self.verticalLayout_3.addWidget(self.app_logo)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -75,10 +79,12 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(18)
         self.inputBox_2.setFont(font)
-        self.inputBox_2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"QWidget#inputBox{\n"
-"    padding-top: 3cm;\n"
-"}")
+        self.inputBox_2.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n"
+            "QWidget#inputBox{\n"
+            "    padding-top: 3cm;\n"
+            "}"
+        )
         self.inputBox_2.setText("")
         self.inputBox_2.setObjectName("inputBox_2")
         self.verticalLayout.addWidget(self.inputBox_2)
@@ -98,17 +104,19 @@ class Ui_MainWindow(object):
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.login_button.setFont(font)
-        self.login_button.setStyleSheet("\n"
-"  background-color:  rgb(255, 203, 99); /* Green */\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"  color: white;\n"
-"  padding: 15px 32px;\n"
-"  text-align: center;\n"
-"  text-decoration: none;\n"
-"  display: inline-block;\n"
-"  font-size: 16px;\n"
-"margin-top: 10px")
+        self.login_button.setStyleSheet(
+            "\n"
+            "  background-color:  rgb(255, 203, 99); /* Green */\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "  color: white;\n"
+            "  padding: 15px 32px;\n"
+            "  text-align: center;\n"
+            "  text-decoration: none;\n"
+            "  display: inline-block;\n"
+            "  font-size: 16px;\n"
+            "margin-top: 10px"
+        )
         self.login_button.setObjectName("login_button")
         self.verticalLayout_3.addWidget(self.login_button)
         self.gridLayout.addLayout(self.verticalLayout_3, 0, 0, 1, 1)
@@ -130,16 +138,18 @@ class Ui_MainWindow(object):
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.new_button.setFont(font)
-        self.new_button.setStyleSheet("\n"
-"  background-color:  rgb(255, 203, 99); /* Green */\n"
-"  border: none;\n"
-"border-radius: 10px;\n"
-"  color: white;\n"
-"  padding: 15px 32px;\n"
-"  text-align: center;\n"
-"  text-decoration: none;\n"
-"  display: inline-block;\n"
-"  font-size: 16px;")
+        self.new_button.setStyleSheet(
+            "\n"
+            "  background-color:  rgb(255, 203, 99); /* Green */\n"
+            "  border: none;\n"
+            "border-radius: 10px;\n"
+            "  color: white;\n"
+            "  padding: 15px 32px;\n"
+            "  text-align: center;\n"
+            "  text-decoration: none;\n"
+            "  display: inline-block;\n"
+            "  font-size: 16px;"
+        )
         self.new_button.setObjectName("new_button")
         self.verticalLayout_4.addWidget(self.new_button)
         self.gridLayout.addLayout(self.verticalLayout_4, 1, 0, 1, 1)
@@ -165,6 +175,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
