@@ -1,2 +1,2 @@
 # GoldApp
-A repository for a project meeting - GoldApp
+A repository for a group project - GoldApp
