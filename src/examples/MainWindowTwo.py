@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(474, 395)
-        MainWindow.setMinimumSize(QtCore.QSize(1800, 900))
+        MainWindow.setMinimumSize(QtCore.QSize(1200, 600))
         MainWindow.setMaximumSize(QtCore.QSize(1800, 1200))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(
@@ -33,6 +33,8 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName("groupBox")
         self.gridLayout = QtWidgets.QGridLayout(self.groupBox)
         self.gridLayout.setObjectName("gridLayout")
+
+        # Login button
         self.login_button = QtWidgets.QPushButton(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(-1)
@@ -52,7 +54,6 @@ class Ui_MainWindow(object):
             "font-size: 16px;\n"
             "margin-top: 10px;\n"
             "margin-bottom: 10px;\n"
-            "margin-left: 600px;\n"
             "}\n"
             "QPushButton:hover{\n"
             "background-color:  rgb(255, 220, 99);\n"
@@ -76,13 +77,13 @@ class Ui_MainWindow(object):
         )
 
         # Sign up button
-        self.new_button = QtWidgets.QPushButton(self.groupBox)
+        self.sign_up_button = QtWidgets.QPushButton(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setUnderline(False)
         font.setStrikeOut(False)
-        self.new_button.setFont(font)
-        self.new_button.setStyleSheet(
+        self.sign_up_button.setFont(font)
+        self.sign_up_button.setStyleSheet(
             "QPushButton{\n"
             "background-color:  rgb(255, 203, 99);\n"
             "border: none;\n"
@@ -98,8 +99,8 @@ class Ui_MainWindow(object):
             "background-color:  rgb(255, 220, 99);\n"
             "}"
         )
-        self.new_button.setObjectName("new_button")
-        self.verticalLayout_4.addWidget(self.new_button)
+        self.sign_up_button.setObjectName("new_button")
+        self.verticalLayout_4.addWidget(self.sign_up_button)
 
         self.gridLayout.addLayout(self.verticalLayout_4, 3, 0, 1, 1)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -176,7 +177,7 @@ class Ui_MainWindow(object):
         self.app_logo.setFont(font)
         self.app_logo.setStyleSheet(
             "QLabel{\n"
-            "font-size: 72px;\n"
+            "font-size: 75px;\n"
             "color: rgb(255, 203, 99);\n"
             "background-color: white;\n"
             "border-color: black;\n"
@@ -186,8 +187,8 @@ class Ui_MainWindow(object):
             "padding-bottom: 10px;\n"
             "margin-top: 10px;\n"
             "margin-bottom: 10px;\n"
-            "margin-left: 0px;\n"
-            "margin-right: 0px;\n"
+            "margin-left: 20px;\n"
+            "margin-right: 20px;\n"
             "}"
         )
         self.app_logo.setAlignment(QtCore.Qt.AlignCenter)
@@ -210,7 +211,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.login_button.setText(_translate("MainWindow", "Login"))
         self.new_label.setText(_translate("MainWindow", "Is it your first time here?"))
-        self.new_button.setText(_translate("MainWindow", "Make a new account"))
+        self.sign_up_button.setText(_translate("MainWindow", "Make a new account"))
         self.email_label.setText(_translate("MainWindow", "Email:"))
         self.pw_label.setText(_translate("MainWindow", "Password:"))
         self.app_logo.setText(_translate("MainWindow", "GoldApp"))
