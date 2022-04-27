@@ -15,12 +15,19 @@ sys.path.insert(0, "../src")
 
 # Importing the Ui_MainScreen class from the MainScreen.py file
 from MainScreen.MainScreen import Ui_MainScreen
+from NewAccount.NewAccount import Ui_Form
 
 
 class Ui_MainWindow(object):
     def open_login(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainScreen()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def open_create_account(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_Form()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -91,7 +98,9 @@ class Ui_MainWindow(object):
         )
 
         # Sign up button
-        self.sign_up_button = QtWidgets.QPushButton(self.groupBox)
+        self.sign_up_button = QtWidgets.QPushButton(
+            self.groupBox, clicked=lambda: self.open_create_account()
+        )
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setUnderline(False)
