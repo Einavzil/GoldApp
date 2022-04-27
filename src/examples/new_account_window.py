@@ -15,6 +15,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(658, 851)
+        Form.setMinimumSize(QtCore.QSize(1200, 600))
+        Form.setMaximumSize(QtCore.QSize(1800, 1200))
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
@@ -27,33 +29,37 @@ class Ui_Form(object):
         self.app_logo = QtWidgets.QLabel(self.frame)
         font = QtGui.QFont()
         font.setFamily("Sitka Small")
-        font.setPointSize(72)
+        font.setPointSize(60)
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("QLabel{\n"
-"color: rgb(255, 203, 99);\n"
-"background-color: white;\n"
-"border-color: black;\n"
-"border-radius: 10px;\n"
-"border-style: none;\n"
-"margin-top: 10px;\n"
-"margin-bottom: 10px;\n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"margin-left: 0px;\n"
-"margin-right: 0px;\n"
-"}")
+        self.app_logo.setStyleSheet(
+            "QLabel{\n"
+            "color: rgb(255, 203, 99);\n"
+            "background-color: white;\n"
+            "border-color: black;\n"
+            "border-radius: 10px;\n"
+            "border-style: none;\n"
+            "margin-top: 5px;\n"
+            "margin-bottom: 5px;\n"
+            "padding-left: 10px;\n"
+            "padding-right: 10px;\n"
+            "margin-left: 0px;\n"
+            "margin-right: 0px;\n"
+            "}"
+        )
         self.app_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.app_logo.setObjectName("app_logo")
         self.horizontalLayout_5.addWidget(self.app_logo)
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.verticalLayout_2.addItem(spacerItem)
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.widget = QtWidgets.QWidget(self.frame)
-        self.widget.setStyleSheet("margin-bottom: 8px")
+        self.widget.setStyleSheet("margin-bottom: 2px")
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setContentsMargins(0, 9, -1, -1)
@@ -66,7 +72,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.email_label.setFont(font)
         self.email_label.setStyleSheet("margin-right: 130px;")
-        self.email_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.email_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.email_label.setObjectName("email_label")
         self.horizontalLayout.addWidget(self.email_label)
         self.email_input = QtWidgets.QLineEdit(self.widget)
@@ -80,7 +88,7 @@ class Ui_Form(object):
         self.horizontalLayout.addWidget(self.email_input)
         self.gridLayout_3.addWidget(self.widget, 0, 0, 1, 1)
         self.widget1 = QtWidgets.QWidget(self.frame)
-        self.widget1.setStyleSheet("margin-bottom: 8px")
+        self.widget1.setStyleSheet("margin-bottom: 0px")
         self.widget1.setObjectName("widget1")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget1)
         self.horizontalLayout_2.setContentsMargins(0, -1, -1, -1)
@@ -93,7 +101,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.last_label.setFont(font)
         self.last_label.setStyleSheet("margin-right: 76px;")
-        self.last_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.last_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.last_label.setObjectName("last_label")
         self.horizontalLayout_2.addWidget(self.last_label)
         self.last_input = QtWidgets.QLineEdit(self.widget1)
@@ -105,7 +115,7 @@ class Ui_Form(object):
         self.horizontalLayout_2.addWidget(self.last_input)
         self.gridLayout_3.addWidget(self.widget1, 1, 0, 1, 1)
         self.widget2 = QtWidgets.QWidget(self.frame)
-        self.widget2.setStyleSheet("margin-bottom: 8px")
+        self.widget2.setStyleSheet("margin-bottom: 0px")
         self.widget2.setObjectName("widget2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget2)
         self.horizontalLayout_3.setContentsMargins(0, -1, -1, -1)
@@ -118,7 +128,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.first_label.setFont(font)
         self.first_label.setStyleSheet("margin-right: 74px;")
-        self.first_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.first_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.first_label.setObjectName("first_label")
         self.horizontalLayout_3.addWidget(self.first_label)
         self.first_input = QtWidgets.QLineEdit(self.widget2)
@@ -138,8 +150,7 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.interests_lable.setFont(font)
-        self.interests_lable.setStyleSheet("margin-bottom: 10px;\n"
-"margin-top: 10px;")
+        self.interests_lable.setStyleSheet("margin-bottom: 0px;\n" "margin-top: 10px;")
         self.interests_lable.setObjectName("interests_lable")
         self.verticalLayout.addWidget(self.interests_lable)
         self.gridLayout = QtWidgets.QGridLayout()
@@ -211,7 +222,7 @@ class Ui_Form(object):
         self.verticalLayout.addLayout(self.gridLayout)
         self.gridLayout_3.addLayout(self.verticalLayout, 4, 0, 1, 1)
         self.widget3 = QtWidgets.QWidget(self.frame)
-        self.widget3.setStyleSheet("margin-bottom: 12px;")
+        self.widget3.setStyleSheet("margin-bottom: 0px;")
         self.widget3.setObjectName("widget3")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.widget3)
         self.horizontalLayout_4.setContentsMargins(0, -1, -1, -1)
@@ -224,7 +235,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.phone_label.setFont(font)
         self.phone_label.setStyleSheet("margin-right: 26px;")
-        self.phone_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.phone_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.phone_label.setObjectName("phone_label")
         self.horizontalLayout_4.addWidget(self.phone_label)
         self.phone_input = QtWidgets.QLineEdit(self.widget3)
@@ -239,7 +252,9 @@ class Ui_Form(object):
         self.verticalLayout_2.addLayout(self.gridLayout_3)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        spacerItem1 = QtWidgets.QSpacerItem(20, 97, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            20, 97, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.verticalLayout_3.addItem(spacerItem1)
         self.create_button = QtWidgets.QPushButton(self.frame)
         font = QtGui.QFont()
@@ -247,20 +262,22 @@ class Ui_Form(object):
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.create_button.setFont(font)
-        self.create_button.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 15px 32px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 16px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}")
+        self.create_button.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 15px 32px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 16px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}"
+        )
         self.create_button.setObjectName("create_button")
         self.verticalLayout_3.addWidget(self.create_button)
         self.verticalLayout_2.addLayout(self.verticalLayout_3)
@@ -292,6 +309,7 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()

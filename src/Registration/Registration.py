@@ -9,9 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
+
+sys.path.insert(0, "../src")
+
+# Importing the Ui_MainScreen class from the MainScreen.py file
+from MainScreen.MainScreen import Ui_MainScreen
 
 
 class Ui_MainWindow(object):
+    def open_login(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainScreen()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(474, 395)
@@ -35,7 +47,9 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
 
         # Login button
-        self.login_button = QtWidgets.QPushButton(self.groupBox)
+        self.login_button = QtWidgets.QPushButton(
+            self.groupBox, clicked=lambda: self.open_login()
+        )
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setUnderline(False)
@@ -217,9 +231,8 @@ class Ui_MainWindow(object):
         self.app_logo.setText(_translate("MainWindow", "GoldApp"))
 
 
+print(__name__)
 if __name__ == "__main__":
-    import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

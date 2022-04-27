@@ -1,0 +1,6 @@
+setup.py
+GoldApp.egg-info/PKG-INFO
+GoldApp.egg-info/SOURCES.txt
+GoldApp.egg-info/dependency_links.txt
+GoldApp.egg-info/top_level.txt
+test/test_main.py
