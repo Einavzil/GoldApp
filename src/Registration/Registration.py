@@ -16,14 +16,18 @@ sys.path.insert(0, "../src")
 # Importing the Ui_MainScreen class from the MainScreen.py file
 from MainScreen.MainScreen import Ui_MainScreen
 from NewAccount.NewAccount import Ui_Form
+import login
 
 
 class Ui_MainWindow(object):
     def open_login(self):
-        self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_MainScreen()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        if login.check_email(self.email_box.text()) and login.check_password(
+            self.password_box.text()
+        ):
+            self.window = QtWidgets.QMainWindow()
+            self.ui = Ui_MainScreen()
+            self.ui.setupUi(self.window)
+            self.window.show()
 
     def open_create_account(self):
         self.window = QtWidgets.QMainWindow()
@@ -155,11 +159,11 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.inputBox_2 = QtWidgets.QLineEdit(self.groupBox)
+        self.email_box = QtWidgets.QLineEdit(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.inputBox_2.setFont(font)
-        self.inputBox_2.setStyleSheet(
+        self.email_box.setFont(font)
+        self.email_box.setStyleSheet(
             "QLineEdit{\n"
             "background-color: rgb(255, 255, 255);\n"
             "border: solid #000;\n"
@@ -168,14 +172,14 @@ class Ui_MainWindow(object):
             "border-radius: 5px;\n"
             "}"
         )
-        self.inputBox_2.setText("")
-        self.inputBox_2.setObjectName("inputBox_2")
-        self.verticalLayout.addWidget(self.inputBox_2)
-        self.inputBox = QtWidgets.QLineEdit(self.groupBox)
+        self.email_box.setText("")
+        self.email_box.setObjectName("inputBox_2")
+        self.verticalLayout.addWidget(self.email_box)
+        self.password_box = QtWidgets.QLineEdit(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.inputBox.setFont(font)
-        self.inputBox.setStyleSheet(
+        self.password_box.setFont(font)
+        self.password_box.setStyleSheet(
             "QLineEdit{\n"
             "background-color: rgb(255, 255, 255);\n"
             "border: solid #000;\n"
@@ -184,9 +188,10 @@ class Ui_MainWindow(object):
             "border-radius: 5px;\n"
             "}"
         )
-        self.inputBox.setText("")
-        self.inputBox.setObjectName("inputBox")
-        self.verticalLayout.addWidget(self.inputBox)
+        self.password_box.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.password_box.setText("")
+        self.password_box.setObjectName("inputBox")
+        self.verticalLayout.addWidget(self.password_box)
         self.horizontalLayout.addLayout(self.verticalLayout)
         self.gridLayout.addLayout(self.horizontalLayout, 1, 0, 1, 1)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
