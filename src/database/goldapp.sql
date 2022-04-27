@@ -1,235 +1,310 @@
--- MySQL Workbench Forward Engineering
-
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema goldapp
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema goldapp
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `goldapp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
-USE `goldapp` ;
-
--- -----------------------------------------------------
--- Table `goldapp`.`interest`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`interest` ;
-
-CREATE TABLE IF NOT EXISTS `goldapp`.`interest` (
-  `interest_id` INT NOT NULL AUTO_INCREMENT,
-  `interest` VARCHAR(90) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  PRIMARY KEY (`interest_id`),
-  UNIQUE INDEX `interest_UNIQUE` (`interest` ASC) VISIBLE,
-  UNIQUE INDEX `interest_id_UNIQUE` (`interest_id` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
 
 
--- -----------------------------------------------------
--- Table `goldapp`.`event`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`event` ;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`event` (
-  `event_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(90) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `address_line` VARCHAR(75) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `city` VARCHAR(70) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `zipcode` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `country` VARCHAR(55) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `information` MEDIUMTEXT CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `interest_interest_id` INT NOT NULL,
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+--
+-- Host: localhost    Database: goldapp
+-- ------------------------------------------------------
+-- Server version	8.0.28
+
+DROP DATABASE goldapp;
+CREATE DATABASE goldapp;
+USE goldapp;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `event` (
+  `event_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `address_line` varchar(75) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `city` varchar(70) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `zipcode` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `country` varchar(55) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `information` mediumtext CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `interest_interest_id` int NOT NULL,
   PRIMARY KEY (`event_id`),
-  INDEX `fk_event_interest1_idx` (`interest_interest_id` ASC) VISIBLE,
-  CONSTRAINT `fk_event_interest1`
-    FOREIGN KEY (`interest_interest_id`)
-    REFERENCES `goldapp`.`interest` (`interest_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+  KEY `fk_event_interest1_idx` (`interest_interest_id`),
+  CONSTRAINT `fk_event_interest1` FOREIGN KEY (`interest_interest_id`) REFERENCES `interest` (`interest_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `event`
+--
 
--- -----------------------------------------------------
--- Table `goldapp`.`group`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`group` ;
+LOCK TABLES `event` WRITE;
+/*!40000 ALTER TABLE `event` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+UNLOCK TABLES;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`group` (
-  `group_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(90) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `description` MEDIUMTEXT CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
+--
+-- Table structure for table `group`
+--
+
+DROP TABLE IF EXISTS `group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `group` (
+  `group_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `description` mediumtext CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`group_id`),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `group`
+--
 
--- -----------------------------------------------------
--- Table `goldapp`.`info`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`info` ;
+LOCK TABLES `group` WRITE;
+/*!40000 ALTER TABLE `group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `group` ENABLE KEYS */;
+UNLOCK TABLES;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`info` (
-  `info_id` INT NOT NULL AUTO_INCREMENT,
-  `heading` VARCHAR(70) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL COMMENT 'Name or a heading',
-  `phone` INT NOT NULL,
-  `type` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `category` ENUM('general', 'mentalHelp') CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL COMMENT 'Only 2 types (mental health or just helpful such as volunteers information etc.)',
-  `description` MEDIUMTEXT CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
+--
+-- Table structure for table `info`
+--
+
+DROP TABLE IF EXISTS `info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `info` (
+  `info_id` int NOT NULL AUTO_INCREMENT,
+  `heading` varchar(70) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL COMMENT 'Name or a heading',
+  `phone` int NOT NULL,
+  `type` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `category` enum('general','mentalHelp') CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL COMMENT 'Only 2 types (mental health or just helpful such as volunteers information etc.)',
+  `description` mediumtext CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`info_id`),
-  UNIQUE INDEX `info_id_UNIQUE` (`info_id` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+  UNIQUE KEY `info_id_UNIQUE` (`info_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `info`
+--
 
--- -----------------------------------------------------
--- Table `goldapp`.`location`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`location` ;
+LOCK TABLES `info` WRITE;
+/*!40000 ALTER TABLE `info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `info` ENABLE KEYS */;
+UNLOCK TABLES;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`location` (
-  `location_id` INT NOT NULL AUTO_INCREMENT,
-  `place` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  PRIMARY KEY (`location_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+--
+-- Table structure for table `interest`
+--
 
+DROP TABLE IF EXISTS `interest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `interest` (
+  `interest_id` int NOT NULL AUTO_INCREMENT,
+  `interest` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  PRIMARY KEY (`interest_id`),
+  UNIQUE KEY `interest_UNIQUE` (`interest`),
+  UNIQUE KEY `interest_id_UNIQUE` (`interest_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- -----------------------------------------------------
--- Table `goldapp`.`location_has_event`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`location_has_event` ;
+--
+-- Dumping data for table `interest`
+--
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`location_has_event` (
-  `location_location_id` INT NOT NULL,
-  `event_event_id` INT NOT NULL,
-  PRIMARY KEY (`location_location_id`, `event_event_id`),
-  INDEX `fk_location_has_event_event1_idx` (`event_event_id` ASC) VISIBLE,
-  INDEX `fk_location_has_event_location1_idx` (`location_location_id` ASC) VISIBLE,
-  CONSTRAINT `fk_location_has_event_event1`
-    FOREIGN KEY (`event_event_id`)
-    REFERENCES `goldapp`.`event` (`event_id`),
-  CONSTRAINT `fk_location_has_event_location1`
-    FOREIGN KEY (`location_location_id`)
-    REFERENCES `goldapp`.`location` (`location_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+LOCK TABLES `interest` WRITE;
+/*!40000 ALTER TABLE `interest` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interest` ENABLE KEYS */;
+UNLOCK TABLES;
 
+--
+-- Table structure for table `location`
+--
 
--- -----------------------------------------------------
--- Table `goldapp`.`location_has_info`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`location_has_info` ;
+DROP TABLE IF EXISTS `location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `location` (
+  `location_id` int NOT NULL AUTO_INCREMENT,
+  `place` varchar(100) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`location_has_info` (
-  `location_location_id` INT NOT NULL,
-  `info_info_id` INT NOT NULL,
-  PRIMARY KEY (`location_location_id`, `info_info_id`),
-  INDEX `fk_location_has_info_info1_idx` (`info_info_id` ASC) VISIBLE,
-  INDEX `fk_location_has_info_location1_idx` (`location_location_id` ASC) VISIBLE,
-  CONSTRAINT `fk_location_has_info_info1`
-    FOREIGN KEY (`info_info_id`)
-    REFERENCES `goldapp`.`info` (`info_id`),
-  CONSTRAINT `fk_location_has_info_location1`
-    FOREIGN KEY (`location_location_id`)
-    REFERENCES `goldapp`.`location` (`location_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+--
+-- Dumping data for table `location`
+--
 
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+UNLOCK TABLES;
 
--- -----------------------------------------------------
--- Table `goldapp`.`user`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`user` ;
+--
+-- Table structure for table `location_has_event`
+--
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`user` (
-  `email` VARCHAR(90) NOT NULL,
-  `fname` VARCHAR(30) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
-  `lname` VARCHAR(30) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NULL DEFAULT NULL,
-  `username` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NULL,
-  `pwd` VARCHAR(90) NOT NULL,
-  `phone` INT NULL DEFAULT NULL,
-  `facebook_connect` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NULL DEFAULT NULL,
-  `location_location_id` INT NOT NULL,
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
-  UNIQUE INDEX `phone_UNIQUE` (`phone` ASC) VISIBLE,
-  UNIQUE INDEX `facebook_connect_UNIQUE` (`facebook_connect` ASC) VISIBLE,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+DROP TABLE IF EXISTS `location_has_event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `location_has_event` (
+  `location_location_id` int NOT NULL,
+  `event_event_id` int NOT NULL,
+  PRIMARY KEY (`location_location_id`,`event_event_id`),
+  KEY `fk_location_has_event_event1_idx` (`event_event_id`),
+  KEY `fk_location_has_event_location1_idx` (`location_location_id`),
+  CONSTRAINT `fk_location_has_event_event1` FOREIGN KEY (`event_event_id`) REFERENCES `event` (`event_id`),
+  CONSTRAINT `fk_location_has_event_location1` FOREIGN KEY (`location_location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `location_has_event`
+--
+
+LOCK TABLES `location_has_event` WRITE;
+/*!40000 ALTER TABLE `location_has_event` DISABLE KEYS */;
+/*!40000 ALTER TABLE `location_has_event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `location_has_info`
+--
+
+DROP TABLE IF EXISTS `location_has_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `location_has_info` (
+  `location_location_id` int NOT NULL,
+  `info_info_id` int NOT NULL,
+  PRIMARY KEY (`location_location_id`,`info_info_id`),
+  KEY `fk_location_has_info_info1_idx` (`info_info_id`),
+  KEY `fk_location_has_info_location1_idx` (`location_location_id`),
+  CONSTRAINT `fk_location_has_info_info1` FOREIGN KEY (`info_info_id`) REFERENCES `info` (`info_id`),
+  CONSTRAINT `fk_location_has_info_location1` FOREIGN KEY (`location_location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `location_has_info`
+--
+
+LOCK TABLES `location_has_info` WRITE;
+/*!40000 ALTER TABLE `location_has_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `location_has_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `fname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `lname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
+  `username` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
+  `pwd` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `phone` int DEFAULT NULL,
+  `facebook_connect` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
+  `location_location_id` int DEFAULT NULL,
   PRIMARY KEY (`email`),
-  INDEX `fk_user_location1_idx` (`location_location_id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_location1`
-    FOREIGN KEY (`location_location_id`)
-    REFERENCES `goldapp`.`location` (`location_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  UNIQUE KEY `phone_UNIQUE` (`phone`),
+  UNIQUE KEY `facebook_connect_UNIQUE` (`facebook_connect`),
+  KEY `fk_user_location1_idx` (`location_location_id`),
+  CONSTRAINT `fk_user_location1` FOREIGN KEY (`location_location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `user`
+--
 
--- -----------------------------------------------------
--- Table `goldapp`.`user_has_group`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`user_has_group` ;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('example@gmail.com','first','last',NULL,'abc123',10101010,NULL,NULL);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`user_has_group` (
-  `group_group_id` INT NOT NULL,
-  `user_email` VARCHAR(90) NOT NULL,
-  PRIMARY KEY (`group_group_id`, `user_email`),
-  INDEX `fk_user_has_group_group1_idx` (`group_group_id` ASC) VISIBLE,
-  INDEX `fk_user_has_group_user1_idx` (`user_email` ASC) VISIBLE,
-  CONSTRAINT `fk_user_has_group_group1`
-    FOREIGN KEY (`group_group_id`)
-    REFERENCES `goldapp`.`group` (`group_id`),
-  CONSTRAINT `fk_user_has_group_user1`
-    FOREIGN KEY (`user_email`)
-    REFERENCES `goldapp`.`user` (`email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+--
+-- Table structure for table `user_has_group`
+--
 
+DROP TABLE IF EXISTS `user_has_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_has_group` (
+  `group_group_id` int NOT NULL,
+  `user_email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  PRIMARY KEY (`group_group_id`,`user_email`),
+  KEY `fk_user_has_group_group1_idx` (`group_group_id`),
+  KEY `fk_user_has_group_user1_idx` (`user_email`),
+  CONSTRAINT `fk_user_has_group_group1` FOREIGN KEY (`group_group_id`) REFERENCES `group` (`group_id`),
+  CONSTRAINT `fk_user_has_group_user1` FOREIGN KEY (`user_email`) REFERENCES `user` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- -----------------------------------------------------
--- Table `goldapp`.`user_has_interest`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `goldapp`.`user_has_interest` ;
+--
+-- Dumping data for table `user_has_group`
+--
 
-CREATE TABLE IF NOT EXISTS `goldapp`.`user_has_interest` (
-  `interest_interest_id` INT NOT NULL,
-  `user_email` VARCHAR(90) NOT NULL,
-  PRIMARY KEY (`interest_interest_id`, `user_email`),
-  INDEX `fk_user_has_interest_interest1_idx` (`interest_interest_id` ASC) VISIBLE,
-  INDEX `fk_user_has_interest_user1_idx1` (`user_email` ASC) VISIBLE,
-  CONSTRAINT `fk_user_has_interest_interest1`
-    FOREIGN KEY (`interest_interest_id`)
-    REFERENCES `goldapp`.`interest` (`interest_id`),
-  CONSTRAINT `fk_user_has_interest_user1`
-    FOREIGN KEY (`user_email`)
-    REFERENCES `goldapp`.`user` (`email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_esperanto_ci;
+LOCK TABLES `user_has_group` WRITE;
+/*!40000 ALTER TABLE `user_has_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_has_group` ENABLE KEYS */;
+UNLOCK TABLES;
 
+--
+-- Table structure for table `user_has_interest`
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+DROP TABLE IF EXISTS `user_has_interest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_has_interest` (
+  `interest_interest_id` int NOT NULL,
+  `user_email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  PRIMARY KEY (`interest_interest_id`,`user_email`),
+  KEY `fk_user_has_interest_interest1_idx` (`interest_interest_id`),
+  KEY `fk_user_has_interest_user1_idx1` (`user_email`),
+  CONSTRAINT `fk_user_has_interest_interest1` FOREIGN KEY (`interest_interest_id`) REFERENCES `interest` (`interest_id`),
+  CONSTRAINT `fk_user_has_interest_user1` FOREIGN KEY (`user_email`) REFERENCES `user` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_has_interest`
+--
+
+LOCK TABLES `user_has_interest` WRITE;
+/*!40000 ALTER TABLE `user_has_interest` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_has_interest` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-04-28  1:07:02
