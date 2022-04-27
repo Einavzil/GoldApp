@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         MainWindow.setMaximumSize(QtCore.QSize(1800, 1200))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(
-            "background-color: rgb(220, 221, 255);\n"
+            "background-color: #99d9ea;\n"
             "border-top-color: rgb(255, 255, 255);\n"
             "margin-left: 30px;\n"
             "margin-right: 30px;"
