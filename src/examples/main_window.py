@@ -6,8 +6,10 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1000, 800)
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet("background-color: rgb(220, 221, 255);\n"
-"border-top-color: rgb(255, 255, 255);")
+        MainWindow.setStyleSheet(
+            "background-color: rgb(220, 221, 255);\n"
+            "border-top-color: rgb(255, 255, 255);"
+        )
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.app_logo = QtWidgets.QLabel(self.centralwidget)
@@ -18,8 +20,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("color: rgb(255, 203, 99);\n"
-"")
+        self.app_logo.setStyleSheet("color: rgb(255, 203, 99);\n" "")
         self.app_logo.setObjectName("app_logo")
         self.email_input = QtWidgets.QLineEdit(self.centralwidget)
         self.email_input.setGeometry(QtCore.QRect(440, 260, 351, 51))
@@ -109,6 +110,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
