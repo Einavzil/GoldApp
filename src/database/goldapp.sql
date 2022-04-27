@@ -19,6 +19,9 @@
 -- Table structure for table `event`
 --
 
+CREATE DATABASE IF NOT EXISTS goldapp;
+USE goldapp;
+
 DROP TABLE IF EXISTS `event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
