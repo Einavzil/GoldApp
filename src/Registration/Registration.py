@@ -22,7 +22,7 @@ import login
 class Ui_MainWindow(object):
     def open_login(self):
         if login.check_email(self.email_box.text()) and login.check_password(
-            self.password_box.text()
+            self.email_box.text(), self.password_box.text()
         ):
             self.window = QtWidgets.QMainWindow()
             self.ui = Ui_MainScreen()
