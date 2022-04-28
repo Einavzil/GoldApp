@@ -1,64 +1,71 @@
+from multiprocessing.spawn import prepare
 import mysql.connector
 from cryptography.fernet import Fernet
 
-def check_email(email):
-    try:
-        dsn = {
+def connect():
+    dsn = {
         "user": "maria",
         "password": "password",
         "host": "127.0.0.1",
         "port": "3306",
         "database": "goldapp",
         "raise_on_warnings": True,
-    }
-        with mysql.connector.connect(**dsn) as conn:
-            cursor = conn.cursor(prepared=True)
-                
-            sql = """
-                SELECT
-                email
-                FROM user
-                WHERE email = ?
-                ;
-                """
-            args = (email,)
-            cursor.execute(sql, args)
-            result = cursor.fetchone()
-            if result[0] == email:
-                return True
+        }
+    try:
+        conn =  mysql.connector.connect(**dsn)
+        cursor = conn.cursor(prepared=True)
+        return conn, cursor
+    except Exception as err:
+        print(err)
+        
+
+def check_email(email):
+    try:
+        conn, cursor = connect()
             
+        sql = """
+            SELECT
+            email
+            FROM user
+            WHERE email = ?
+            ;
+            """
+
+        args = (email,)
+        cursor.execute(sql, args)
+        result = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        if result[0] == email:
+            return True
         return False
     
     except Exception as err:
         print(err)
 
+
 def check_password(email, password):
     try:
-        dsn = {
-        "user": "maria",
-        "password": "password",
-        "host": "127.0.0.1",
-        "port": "3306",
-        "database": "goldapp",
-        "raise_on_warnings": True,
-    }
-        with mysql.connector.connect(**dsn) as conn:
-            cursor = conn.cursor(prepared=True)
-            sql = """
-                SELECT
-                pwd
-                FROM user
-                WHERE email = ?
-                ;
-                """
+        conn, cursor = connect()
 
-            args = (email,)
-            cursor.execute(sql, args)
-            result = cursor.fetchone()
-            decrepted_pass = decrypt_pass(result[0])
-            if decrepted_pass == password:
-                return True
-            return False
+        sql = """
+            SELECT
+            pwd
+            FROM user
+            WHERE email = ?
+            ;
+            """
+
+        args = (email,)
+        cursor.execute(sql, args)
+        result = cursor.fetchone()
+            # cursor.close()
+            # conn.close()
+        
+        decrepted_pass = decrypt_pass(result[0])
+        if decrepted_pass == password:
+            return True
+        return False
 
     except Exception as err:
         print(err)
@@ -75,7 +82,7 @@ def encrypt_pass(password):
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
 
-    with open('enc_key.bin', 'rb') as key_file:
+    with open('src/enc_key.bin', 'rb') as key_file:
         key = key_file.readline()
 
     fernet = Fernet(key)

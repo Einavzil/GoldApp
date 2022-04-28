@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
             self.window.show()
 
     def open_create_account(self):
-        self.window = QtWidgets.QMainWindow()
+        self.window = QtWidgets.QWidget()
         self.ui = Ui_Form()
         self.ui.setupUi(self.window)
         self.window.show()
