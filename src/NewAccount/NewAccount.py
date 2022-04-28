@@ -9,9 +9,44 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+import sys
 
+sys.path.insert(0, "../src")
+from NewAccount import NewAccount
+import signup
 
 class Ui_Form(object):
+    
+    def passwords_match(self):
+        if self.pass_input.text() != self.rep_pass_input.text():
+            return False
+        elif self.pass_input.text() == "":
+            return False
+        return True
+
+    def create_account(self):
+        while not self.passwords_match():
+            self.show_popup_pass()
+            return False
+        
+        while '@' not in self.email_input.text():
+            self.show_popup_email()
+            return False
+        
+        while self.first_input.text() == "":
+            self.show_popup_fname()
+            return False
+
+        signup.insert_account(
+                self.first_input.text(),
+                self.last_input.text(),
+                self.email_input.text(),
+                self.pass_input.text(),
+                self.phone_input.text(),
+                self.comboBox.currentText()
+        )
+        
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(766, 818)
@@ -212,7 +247,7 @@ class Ui_Form(object):
         self.rep_pass_input.setObjectName("rep_pass_input")
         self.inputs.addWidget(self.rep_pass_input)
         self.comboBox = QtWidgets.QComboBox(self.inputs_layout)
-        self.comboBox.setEnabled(False)
+        self.comboBox.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -327,7 +362,12 @@ class Ui_Form(object):
         self.create_layout.setObjectName("create_layout")
         spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.MinimumExpanding)
         self.create_layout.addItem(spacerItem)
-        self.create_button = QtWidgets.QPushButton(self.groupbox)
+        
+        # Create account button
+        
+        self.create_button = QtWidgets.QPushButton(
+                self.groupbox, clicked=lambda: self.create_account()
+        )
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -365,12 +405,12 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.email_label.setText(_translate("Form", "Email:"))
-        self.first_label.setText(_translate("Form", "First name:"))
+        self.email_label.setText(_translate("Form", "Email: *"))
+        self.first_label.setText(_translate("Form", "First name: *"))
         self.last_label.setText(_translate("Form", "Last name:"))
         self.phone_label.setText(_translate("Form", "Phone number:"))
-        self.passwor_label.setText(_translate("Form", "Password:"))
-        self.rep_pass_label.setText(_translate("Form", "Repeat password:"))
+        self.passwor_label.setText(_translate("Form", "Password: *"))
+        self.rep_pass_label.setText(_translate("Form", "Repeat password: *"))
         self.passwor_label_2.setText(_translate("Form", "Location:"))
         self.comboBox.setItemText(0, _translate("Form", "Skåne"))
         self.comboBox.setItemText(1, _translate("Form", "Stockholm"))
@@ -386,9 +426,30 @@ class Ui_Form(object):
         self.checkBox_9.setText(_translate("Form", "Taking walks"))
         self.create_button.setText(_translate("Form", "Create"))
 
+    def show_popup_pass(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("passwords not match")
+        msg.setText("Error")
+        msg.setInformativeText("Either your passwords don't match or you didn't enter a password.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+        
+    def show_popup_email(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("email invalid")
+        msg.setText("Enter a valid email adress.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_fname(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("name is null")
+        msg.setText("You have to enter a name.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+        
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()
