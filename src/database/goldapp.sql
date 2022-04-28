@@ -1,15 +1,8 @@
-
-
-
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: goldapp
 -- ------------------------------------------------------
 -- Server version	8.0.28
-
-DROP DATABASE goldapp;
-CREATE DATABASE goldapp;
-USE goldapp;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -220,7 +213,7 @@ CREATE TABLE `user` (
   `fname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `lname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
   `username` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
-  `pwd` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `pwd` varchar(120) COLLATE utf8_esperanto_ci NOT NULL,
   `phone` int DEFAULT NULL,
   `facebook_connect` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
   `location_location_id` int DEFAULT NULL,
@@ -240,7 +233,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('example@gmail.com','first','last',NULL,'abc123',10101010,NULL,NULL);
+INSERT INTO `user` VALUES ('example@gmail.com','first','last',NULL,'gAAAAABiamwmZQTndgruoTKynqxMlupWEZNnX325vZ4lUqxGyX29PlffwQSA1YqGs3D9vTBqG1h_6aFjmuuDaHyTaezUIQFDNw==',10101010,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,4 +300,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-28  1:07:02
+-- Dump completed on 2022-04-28 12:40:56
