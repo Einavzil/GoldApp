@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(759, 881)
+        Form.resize(703, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
@@ -48,16 +48,159 @@ class Ui_Form(object):
         self.app_logo.setObjectName("app_logo")
         self.horizontalLayout_5.addWidget(self.app_logo)
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
-        spacerItem = QtWidgets.QSpacerItem(0, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.verticalLayout_2.addItem(spacerItem)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
+        self.widget = QtWidgets.QWidget(self.frame)
+        self.widget.setStyleSheet("margin-bottom: 8px;\n"
+"max-height: 500px;\n"
+"background:white;\n"
+"border-radius: 5px;")
+        self.widget.setObjectName("widget")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget)
+        self.horizontalLayout_3.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.photo_2 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_2.setFont(font)
+        self.photo_2.setStyleSheet("display: inline-block;\n"
+"min-width: 100px;\n"
+"min-height: 100px;\n"
+"max-width: 300px;\n"
+"max-height: 300px;\n"
+"margin-left:9px;\n"
+"border-radius: 3px;\n"
+"")
+        self.photo_2.setText("")
+        self.photo_2.setPixmap(QtGui.QPixmap("C:/Users/liisu/Desktop/AgileProject/GoldApp/src/examples\\../../../../../Downloads/unsplash.jpg"))
+        self.photo_2.setScaledContents(True)
+        self.photo_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_2.setObjectName("photo_2")
+        self.horizontalLayout_3.addWidget(self.photo_2)
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_5 = QtWidgets.QLabel(self.widget)
+        self.label_5.setStyleSheet("font-size: 18px;")
+        self.label_5.setObjectName("label_5")
+        self.verticalLayout_5.addWidget(self.label_5)
+        self.label_8 = QtWidgets.QLabel(self.widget)
+        self.label_8.setStyleSheet("font-size: 13px;")
+        self.label_8.setObjectName("label_8")
+        self.verticalLayout_5.addWidget(self.label_8)
+        self.label_7 = QtWidgets.QLabel(self.widget)
+        self.label_7.setStyleSheet("font-size: 13px;")
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_5.addWidget(self.label_7)
+        self.label_6 = QtWidgets.QLabel(self.widget)
+        self.label_6.setStyleSheet("font-size: 13px;\n"
+"min-height: 100px;\n"
+"max-width: 300px;")
+        self.label_6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_5.addWidget(self.label_6)
+        self.read_more = QtWidgets.QPushButton(self.widget)
+        self.read_more.setStyleSheet("QPushButton{\n"
+"background-color:  rgb(255, 203, 99);\n"
+"border: none;\n"
+"border-radius: 10px;\n"
+"color: white;\n"
+"padding: 10px 23px;\n"
+"margin: 10px 60px 10px 60px;\n"
+"text-align: center;\n"
+"text-decoration: none;\n"
+"display: inline-block;\n"
+"font-size: 13px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:  rgb(255, 220, 99);\n"
+"}\n"
+"")
+        self.read_more.setObjectName("read_more")
+        self.verticalLayout_5.addWidget(self.read_more)
+        self.horizontalLayout_3.addLayout(self.verticalLayout_5)
+        self.gridLayout_3.addWidget(self.widget, 3, 0, 1, 1)
+        self.widget1 = QtWidgets.QWidget(self.frame)
+        self.widget1.setStyleSheet("margin-bottom: 8px;\n"
+"max-height: 500px;\n"
+"background:white;\n"
+"border-radius: 5px;")
+        self.widget1.setObjectName("widget1")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget1)
+        self.horizontalLayout_2.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.photo = QtWidgets.QLabel(self.widget1)
+        self.photo.setMinimumSize(QtCore.QSize(109, 108))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo.setFont(font)
+        self.photo.setStyleSheet("display: inline-block;\n"
+"min-width: 100px;\n"
+"min-height: 100px;\n"
+"max-width: 300px;\n"
+"max-height: 300px;\n"
+"margin-left:9px;\n"
+"border-radius: 3px;\n"
+"")
+        self.photo.setText("")
+        self.photo.setPixmap(QtGui.QPixmap("C:/Users/liisu/Desktop/AgileProject/GoldApp/src/examples\\../../../../../Downloads/unsplash.jpg"))
+        self.photo.setScaledContents(True)
+        self.photo.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo.setObjectName("photo")
+        self.horizontalLayout_2.addWidget(self.photo)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label = QtWidgets.QLabel(self.widget1)
+        self.label.setStyleSheet("font-size: 18px;")
+        self.label.setObjectName("label")
+        self.verticalLayout_4.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(self.widget1)
+        self.label_2.setStyleSheet("font-size: 13px;")
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_4.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(self.widget1)
+        self.label_3.setStyleSheet("font-size: 13px;")
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_4.addWidget(self.label_3)
+        self.label_4 = QtWidgets.QLabel(self.widget1)
+        self.label_4.setStyleSheet("font-size: 13px;\n"
+"min-height: 100px;\n"
+"max-width: 300px;")
+        self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_4.addWidget(self.label_4)
+        self.pushButton = QtWidgets.QPushButton(self.widget1)
+        self.pushButton.setStyleSheet("QPushButton{\n"
+"background-color:  rgb(255, 203, 99);\n"
+"border: none;\n"
+"border-radius: 10px;\n"
+"color: white;\n"
+"padding: 10px 23px;\n"
+"margin: 10px 60px 10px 60px;\n"
+"text-align: center;\n"
+"text-decoration: none;\n"
+"display: inline-block;\n"
+"font-size: 13px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:  rgb(255, 220, 99);\n"
+"}\n"
+"")
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout_4.addWidget(self.pushButton)
+        self.horizontalLayout_2.addLayout(self.verticalLayout_4)
+        self.gridLayout_3.addWidget(self.widget1, 2, 0, 1, 1)
         self.widget_2 = QtWidgets.QWidget(self.frame)
         self.widget_2.setEnabled(True)
         self.widget_2.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.widget_2.setStyleSheet("margin-bottom: 8px")
+        self.widget_2.setStyleSheet("")
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget_2)
         self.horizontalLayout.setContentsMargins(0, 9, -1, -1)
@@ -76,123 +219,13 @@ class Ui_Form(object):
         self.events_loc_label.setObjectName("events_loc_label")
         self.horizontalLayout.addWidget(self.events_loc_label)
         self.gridLayout_3.addWidget(self.widget_2, 1, 0, 1, 1)
-        self.widget = QtWidgets.QWidget(self.frame)
-        self.widget.setStyleSheet("margin-bottom: 8px;\n"
-"max-height: 300px;")
-        self.widget.setObjectName("widget")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget)
-        self.horizontalLayout_2.setContentsMargins(0, -1, -1, -1)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.photo = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI Semibold")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.photo.setFont(font)
-        self.photo.setStyleSheet("display: inline-block;\n"
-"min-width: 100px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;\n"
-"max-height: 300px;\n"
-"\n"
-"")
-        self.photo.setText("")
-        self.photo.setPixmap(QtGui.QPixmap("C:/Users/liisu/Desktop/AgileProject/GoldApp/src/examples\\../../../../../Downloads/unsplash.jpg"))
-        self.photo.setScaledContents(True)
-        self.photo.setAlignment(QtCore.Qt.AlignCenter)
-        self.photo.setObjectName("photo")
-        self.horizontalLayout_2.addWidget(self.photo)
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.event_text = QtWidgets.QTextBrowser(self.widget)
-        self.event_text.setStyleSheet("min-height:150px;\n"
-"max-height:300px;")
-        self.event_text.setObjectName("event_text")
-        self.verticalLayout_4.addWidget(self.event_text)
-        self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 15px 32px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 16px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}\n"
-"")
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_4.addWidget(self.pushButton)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_4)
-        self.gridLayout_3.addWidget(self.widget, 2, 0, 1, 1)
-        self.widget1 = QtWidgets.QWidget(self.frame)
-        self.widget1.setStyleSheet("margin-bottom: 8px;\n"
-"max-height: 300px;")
-        self.widget1.setObjectName("widget1")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget1)
-        self.horizontalLayout_3.setContentsMargins(0, -1, -1, -1)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.photo_2 = QtWidgets.QLabel(self.widget1)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI Semibold")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.photo_2.setFont(font)
-        self.photo_2.setStyleSheet("display: inline-block;\n"
-"min-width: 100px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;\n"
-"max-height: 300px;\n"
-"")
-        self.photo_2.setText("")
-        self.photo_2.setPixmap(QtGui.QPixmap("C:/Users/liisu/Desktop/AgileProject/GoldApp/src/examples\\../../../../../Downloads/unsplash.jpg"))
-        self.photo_2.setScaledContents(True)
-        self.photo_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.photo_2.setObjectName("photo_2")
-        self.horizontalLayout_3.addWidget(self.photo_2)
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.event_text_2 = QtWidgets.QTextBrowser(self.widget1)
-        self.event_text_2.setStyleSheet("min-height:150px;\n"
-"max-height:300px;")
-        self.event_text_2.setObjectName("event_text_2")
-        self.verticalLayout_5.addWidget(self.event_text_2)
-        self.read_more = QtWidgets.QPushButton(self.widget1)
-        self.read_more.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 15px 32px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 16px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}\n"
-"")
-        self.read_more.setObjectName("read_more")
-        self.verticalLayout_5.addWidget(self.read_more)
-        self.horizontalLayout_3.addLayout(self.verticalLayout_5)
-        self.gridLayout_3.addWidget(self.widget1, 3, 0, 1, 1)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.gridLayout_3.addLayout(self.verticalLayout, 5, 0, 1, 1)
         self.verticalLayout_3.addLayout(self.gridLayout_3)
         self.verticalLayout_2.addLayout(self.verticalLayout_3)
         self.gridLayout_4.addWidget(self.frame, 0, 1, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem1, 0, 2, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem2, 0, 0, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem, 0, 2, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem1, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -201,27 +234,17 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.events_loc_label.setText(_translate("Form", "<html><head/><body><p align=\"center\">Local Events and Meetups in {location}</p></body></html>"))
-        self.event_text.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt;\">Goldies Chess Tour</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Come by at Central park on Sat at 2pm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Bring your friend or bring a sandwich...</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">We have the fun and chess!</span></p></body></html>"))
-        self.pushButton.setText(_translate("Form", "Read More"))
-        self.event_text_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt;\">Goldies Chess Tour</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Come by at Central park on Sat at 2pm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Bring your friend or bring a sandwich...</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">We have the fun and chess!</span></p></body></html>"))
+        self.label_5.setText(_translate("Form", "Event:"))
+        self.label_8.setText(_translate("Form", "Date & Time:"))
+        self.label_7.setText(_translate("Form", "Location:"))
+        self.label_6.setText(_translate("Form", "Description:"))
         self.read_more.setText(_translate("Form", "Read More"))
+        self.label.setText(_translate("Form", "Event:"))
+        self.label_2.setText(_translate("Form", "Date & Time:"))
+        self.label_3.setText(_translate("Form", "Location:"))
+        self.label_4.setText(_translate("Form", "Description:"))
+        self.pushButton.setText(_translate("Form", "Read More"))
+        self.events_loc_label.setText(_translate("Form", "<html><head/><body><p align=\"center\">Local Events and Meetups<span id=\"location\">:</span></p></body></html> "))
 
 
 if __name__ == "__main__":
