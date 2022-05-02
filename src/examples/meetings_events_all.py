@@ -35,19 +35,21 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("QLabel{\n"
-"color: rgb(255, 203, 99);\n"
-"background-color: white;\n"
-"border-color: black;\n"
-"border-radius: 10px;\n"
-"border-style: none;\n"
-"margin-top: 10px;\n"
-"margin-bottom: 10px;\n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"margin-left: 0px;\n"
-"margin-right: 0px;\n"
-"}")
+        self.app_logo.setStyleSheet(
+            "QLabel{\n"
+            "color: rgb(255, 203, 99);\n"
+            "background-color: white;\n"
+            "border-color: black;\n"
+            "border-radius: 10px;\n"
+            "border-style: none;\n"
+            "margin-top: 10px;\n"
+            "margin-bottom: 10px;\n"
+            "padding-left: 20px;\n"
+            "padding-right: 20px;\n"
+            "margin-left: 0px;\n"
+            "margin-right: 0px;\n"
+            "}"
+        )
         self.app_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.app_logo.setObjectName("app_logo")
         self.horizontalLayout_5.addWidget(self.app_logo)
@@ -57,10 +59,12 @@ class Ui_Form(object):
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.widget = QtWidgets.QWidget(self.frame)
-        self.widget.setStyleSheet("margin-bottom: 8px;\n"
-"max-height: 500px;\n"
-"background:white;\n"
-"border-radius: 5px;")
+        self.widget.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
         self.widget.setObjectName("widget")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout_3.setContentsMargins(0, -1, -1, -1)
@@ -72,14 +76,16 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.photo_2.setFont(font)
-        self.photo_2.setStyleSheet("display: inline-block;\n"
-"min-width: 100px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;\n"
-"max-height: 300px;\n"
-"margin-left:9px;\n"
-"border-radius: 3px;\n"
-"")
+        self.photo_2.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
         self.photo_2.setText("")
         self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, f"image\\fishing.jpg")))
         self.photo_2.setScaledContents(True)
@@ -105,38 +111,44 @@ class Ui_Form(object):
         self.interest_2.setObjectName("interest_2")
         self.verticalLayout_5.addWidget(self.interest_2)
         self.description_2 = QtWidgets.QLabel(self.widget)
-        self.description_2.setStyleSheet("font-size: 13px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;")
-        self.description_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.description_2.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+        self.description_2.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
         self.description_2.setObjectName("description_2")
         self.verticalLayout_5.addWidget(self.description_2)
         self.read_more_2 = QtWidgets.QPushButton(self.widget)
-        self.read_more_2.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 10px 23px;\n"
-"margin: 10px 60px 10px 60px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 13px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}\n"
-"")
+        self.read_more_2.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
         self.read_more_2.setObjectName("read_more_2")
         self.verticalLayout_5.addWidget(self.read_more_2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
         self.gridLayout_3.addWidget(self.widget, 3, 0, 1, 1)
         self.widget1 = QtWidgets.QWidget(self.frame)
-        self.widget1.setStyleSheet("margin-bottom: 8px;\n"
-"max-height: 500px;\n"
-"background:white;\n"
-"border-radius: 5px;")
+        self.widget1.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
         self.widget1.setObjectName("widget1")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget1)
         self.horizontalLayout_2.setContentsMargins(0, -1, -1, -1)
@@ -149,14 +161,16 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.photo.setFont(font)
-        self.photo.setStyleSheet("display: inline-block;\n"
-"min-width: 100px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;\n"
-"max-height: 300px;\n"
-"margin-left:9px;\n"
-"border-radius: 3px;\n"
-"")
+        self.photo.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
         self.photo.setText("")
         self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, 'image\chess.jpg')))
         self.photo.setScaledContents(True)
@@ -182,29 +196,33 @@ class Ui_Form(object):
         self.interest.setObjectName("interest")
         self.verticalLayout_4.addWidget(self.interest)
         self.description = QtWidgets.QLabel(self.widget1)
-        self.description.setStyleSheet("font-size: 13px;\n"
-"min-height: 100px;\n"
-"max-width: 300px;")
-        self.description.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.description.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+        self.description.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
         self.description.setObjectName("description")
         self.verticalLayout_4.addWidget(self.description)
         self.read_more = QtWidgets.QPushButton(self.widget1)
-        self.read_more.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 10px 23px;\n"
-"margin: 10px 60px 10px 60px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 13px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}\n"
-"")
+        self.read_more.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
         self.read_more.setObjectName("read_more")
         self.verticalLayout_4.addWidget(self.read_more)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
@@ -234,9 +252,13 @@ class Ui_Form(object):
         self.verticalLayout_3.addLayout(self.gridLayout_3)
         self.verticalLayout_2.addLayout(self.verticalLayout_3)
         self.gridLayout_4.addWidget(self.frame, 0, 1, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_4.addItem(spacerItem, 0, 2, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_4.addItem(spacerItem1, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
@@ -246,19 +268,38 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.event_2.setText(_translate("Form", "Event<span class=\"event\">:</span>"))
-        self.date_2.setText(_translate("Form", "Date & Time<span class=\"date\">:</span>"))
-        self.location_2.setText(_translate("Form", "Location<span class=\"address\">:</span>"))
-        self.interest_2.setText(_translate("Form", "Interest<span class=\"interest\">:</span>"))
-        self.description_2.setText(_translate("Form", "Description<span class=\"desc\">:</span>"))
+        self.event_2.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_2.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_2.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_2.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_2.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
         self.read_more_2.setText(_translate("Form", "Read More"))
-        self.event.setText(_translate("Form", "Event<span class=\"event\">:</span>"))
-        self.date.setText(_translate("Form", "Date & Time<span class=\"date\">:</span>"))
-        self.location.setText(_translate("Form", "Location<span class=\"address\">:</span>"))
-        self.interest.setText(_translate("Form", "Interest<span class=\"interest\">:</span>"))
-        self.description.setText(_translate("Form", "Description<span class=\"desc\">:</span>"))
+        self.event.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date.setText(_translate("Form", 'Date & Time<span class="date">:</span>'))
+        self.location.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
         self.read_more.setText(_translate("Form", "Read More"))
-        self.events_location.setText(_translate("Form", "<html><head/><body><p align=\"center\">Local Events and Meetups<span id=\"events_location\" class=\"events_location\">:</span></p></body></html> "))
+        self.events_location.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p align="center">Local Events and Meetups<span id="events_location" class="events_location">:</span></p></body></html> ',
+            )
+        )
 
 
 if __name__ == "__main__":

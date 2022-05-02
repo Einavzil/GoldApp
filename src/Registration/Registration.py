@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setUnderline(False)
         font.setStrikeOut(False)
-        self.login_button.setFont(font)
+        self.login_button.setFont(font)  ###hello
         self.login_button.setStyleSheet(
             "QPushButton{\n"
             "background-color:  rgb(255, 203, 99);\n"
