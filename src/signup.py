@@ -28,6 +28,8 @@ def insert_account(fname, lname, email, pwd, phone, location):
     """
     args = (email, fname, lname, enc_pwd, phone)
     cursor.execute(sql, args)
+    # conn.commit()
+
     cursor.close()
     conn.close()
     
