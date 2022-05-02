@@ -49,9 +49,9 @@ class Ui_Form(object):
             self.comboBox.currentText(),
         )
         self.input_interest(email)
-        
+
     def input_interest(self, email):
-        if self.checkBox.isChecked():
+        if self.checkBox_1.isChecked():
             signup.add_interest(email, 1)
         if self.checkBox_2.isChecked():
             signup.add_interest(email, 2)
@@ -133,15 +133,15 @@ class Ui_Form(object):
         self.widget2.setObjectName("widget2")
         self.gridLayout = QtWidgets.QGridLayout(self.widget2)
         self.gridLayout.setObjectName("gridLayout")
- 
+
         # Checkbox 1
-        self.checkBox = QtWidgets.QCheckBox(self.widget2)
+        self.checkBox_1 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
-        self.checkBox.setFont(font)
-        self.checkBox.setObjectName("checkBox")
-        self.gridLayout.addWidget(self.checkBox, 0, 0, 1, 1)
+        self.checkBox_1.setFont(font)
+        self.checkBox_1.setObjectName("checkBox")
+        self.gridLayout.addWidget(self.checkBox_1, 0, 0, 1, 1)
         # Checkbox 2
         self.checkBox_2 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
@@ -490,7 +490,7 @@ class Ui_Form(object):
         self.checkBox_3.setText(_translate("Form", "Cinema/Theater"))
         self.checkBox_2.setText(_translate("Form", "Cooking"))
         self.checkBox_8.setText(_translate("Form", "Hunting"))
-        self.checkBox.setText(_translate("Form", "Fishing"))
+        self.checkBox_1.setText(_translate("Form", "Fishing"))
         self.checkBox_5.setText(_translate("Form", "Art"))
         self.checkBox_7.setText(_translate("Form", "Baking"))
         self.checkBox_9.setText(_translate("Form", "Taking walks"))
