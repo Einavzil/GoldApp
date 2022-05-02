@@ -9,23 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import (
-    QWidget,
-    QSlider,
-    QLineEdit,
-    QLabel,
-    QPushButton,
-    QScrollArea,
-    QApplication,
-    QHBoxLayout,
-    QVBoxLayout,
-    QMainWindow,
-)
 from PyQt5.QtWidgets import QMessageBox
 import sys
 
 sys.path.insert(0, "../src")
-from NewAccount import NewAccount
 import signup
 
 
@@ -41,10 +28,6 @@ class Ui_Form(object):
         return True
 
     def create_account(self):
-        while not self.passwords_match():
-            self.show_popup_pass()
-            return False
-
         while "@" not in self.email_input.text():
             self.show_popup_email()
             return False
@@ -53,7 +36,11 @@ class Ui_Form(object):
             self.show_popup_fname()
             return False
 
-        signup.insert_account(
+        while not self.passwords_match():
+            self.show_popup_pass()
+            return False
+
+        email = signup.insert_account(
             self.first_input.text(),
             self.last_input.text(),
             self.email_input.text(),
@@ -61,6 +48,27 @@ class Ui_Form(object):
             self.phone_input.text(),
             self.comboBox.currentText(),
         )
+        self.input_interest(email)
+        
+    def input_interest(self, email):
+        if self.checkBox.isChecked():
+            signup.add_interest(email, 1)
+        if self.checkBox_2.isChecked():
+            signup.add_interest(email, 2)
+        if self.checkBox_3.isChecked():
+            signup.add_interest(email, 3)
+        if self.checkBox_4.isChecked():
+            signup.add_interest(email, 4)
+        if self.checkBox_5.isChecked():
+            signup.add_interest(email, 5)
+        if self.checkBox_6.isChecked():
+            signup.add_interest(email, 6)
+        if self.checkBox_7.isChecked():
+            signup.add_interest(email, 7)
+        if self.checkBox_8.isChecked():
+            signup.add_interest(email, 8)
+        if self.checkBox_9.isChecked():
+            signup.add_interest(email, 9)
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -125,20 +133,24 @@ class Ui_Form(object):
         self.widget2.setObjectName("widget2")
         self.gridLayout = QtWidgets.QGridLayout(self.widget2)
         self.gridLayout.setObjectName("gridLayout")
-        self.checkBox_4 = QtWidgets.QCheckBox(self.widget2)
+ 
+        # Checkbox 1
+        self.checkBox = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
-        self.checkBox_4.setFont(font)
-        self.checkBox_4.setObjectName("checkBox_4")
-        self.gridLayout.addWidget(self.checkBox_4, 1, 1, 1, 1)
-        self.checkBox_6 = QtWidgets.QCheckBox(self.widget2)
+        self.checkBox.setFont(font)
+        self.checkBox.setObjectName("checkBox")
+        self.gridLayout.addWidget(self.checkBox, 0, 0, 1, 1)
+        # Checkbox 2
+        self.checkBox_2 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
-        self.checkBox_6.setFont(font)
-        self.checkBox_6.setObjectName("checkBox_6")
-        self.gridLayout.addWidget(self.checkBox_6, 2, 1, 1, 1)
+        self.checkBox_2.setFont(font)
+        self.checkBox_2.setObjectName("checkBox_2")
+        self.gridLayout.addWidget(self.checkBox_2, 1, 0, 1, 1)
+        # Checkbox 3
         self.checkBox_3 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
@@ -146,41 +158,47 @@ class Ui_Form(object):
         self.checkBox_3.setFont(font)
         self.checkBox_3.setObjectName("checkBox_3")
         self.gridLayout.addWidget(self.checkBox_3, 2, 0, 1, 1)
-        self.checkBox_2 = QtWidgets.QCheckBox(self.widget2)
+        # Checkbox 4
+        self.checkBox_4 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
-        self.checkBox_2.setFont(font)
-        self.checkBox_2.setObjectName("checkBox_2")
-        self.gridLayout.addWidget(self.checkBox_2, 0, 0, 1, 1)
-        self.checkBox_8 = QtWidgets.QCheckBox(self.widget2)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI Variable Display")
-        font.setPointSize(14)
-        self.checkBox_8.setFont(font)
-        self.checkBox_8.setObjectName("checkBox_8")
-        self.gridLayout.addWidget(self.checkBox_8, 0, 2, 1, 1)
-        self.checkBox = QtWidgets.QCheckBox(self.widget2)
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI Variable Display")
-        font.setPointSize(14)
-        self.checkBox.setFont(font)
-        self.checkBox.setObjectName("checkBox")
-        self.gridLayout.addWidget(self.checkBox, 1, 0, 1, 1)
+        self.checkBox_4.setFont(font)
+        self.checkBox_4.setObjectName("checkBox_4")
+        self.gridLayout.addWidget(self.checkBox_4, 0, 1, 1, 1)
+        # Checkbox 5
         self.checkBox_5 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
         self.checkBox_5.setFont(font)
         self.checkBox_5.setObjectName("checkBox_5")
-        self.gridLayout.addWidget(self.checkBox_5, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.checkBox_5, 1, 1, 1, 1)
+        # Checkbox 6
+        self.checkBox_6 = QtWidgets.QCheckBox(self.widget2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Variable Display")
+        font.setPointSize(14)
+        self.checkBox_6.setFont(font)
+        self.checkBox_6.setObjectName("checkBox_6")
+        self.gridLayout.addWidget(self.checkBox_6, 2, 1, 1, 1)
+        # Checkbox 7
         self.checkBox_7 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
         font.setPointSize(14)
         self.checkBox_7.setFont(font)
         self.checkBox_7.setObjectName("checkBox_7")
-        self.gridLayout.addWidget(self.checkBox_7, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.checkBox_7, 0, 2, 1, 1)
+        # Checkbox 8
+        self.checkBox_8 = QtWidgets.QCheckBox(self.widget2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Variable Display")
+        font.setPointSize(14)
+        self.checkBox_8.setFont(font)
+        self.checkBox_8.setObjectName("checkBox_8")
+        self.gridLayout.addWidget(self.checkBox_8, 1, 2, 1, 1)
+        # Checkbox 9
         self.checkBox_9 = QtWidgets.QCheckBox(self.widget2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display")
@@ -188,6 +206,7 @@ class Ui_Form(object):
         self.checkBox_9.setFont(font)
         self.checkBox_9.setObjectName("checkBox_9")
         self.gridLayout.addWidget(self.checkBox_9, 2, 2, 1, 1)
+
         self.verticalLayout.addWidget(self.widget2)
         self.horizontalLayout.addWidget(self.widget1)
         self.gridLayout_5.addWidget(self.interests_layout, 2, 0, 1, 1)
@@ -382,7 +401,7 @@ class Ui_Form(object):
         self.rep_pass_input.setObjectName("rep_pass_input")
         self.inputs.addWidget(self.rep_pass_input)
         self.comboBox = QtWidgets.QComboBox(self.inputs_layout)
-        self.comboBox.setEnabled(False)
+        self.comboBox.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
         )
@@ -466,14 +485,14 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.interests_lable.setText(_translate("Form", "Choose your interests:"))
-        self.checkBox_4.setText(_translate("Form", "Art"))
+        self.checkBox_4.setText(_translate("Form", "Chess"))
         self.checkBox_6.setText(_translate("Form", "Music"))
         self.checkBox_3.setText(_translate("Form", "Cinema/Theater"))
-        self.checkBox_2.setText(_translate("Form", "Fishing"))
-        self.checkBox_8.setText(_translate("Form", "Baking"))
-        self.checkBox.setText(_translate("Form", "Cooking"))
-        self.checkBox_5.setText(_translate("Form", "Hunting"))
-        self.checkBox_7.setText(_translate("Form", "Board games"))
+        self.checkBox_2.setText(_translate("Form", "Cooking"))
+        self.checkBox_8.setText(_translate("Form", "Hunting"))
+        self.checkBox.setText(_translate("Form", "Fishing"))
+        self.checkBox_5.setText(_translate("Form", "Art"))
+        self.checkBox_7.setText(_translate("Form", "Baking"))
         self.checkBox_9.setText(_translate("Form", "Taking walks"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
         self.email_label.setText(_translate("Form", "Email:"))

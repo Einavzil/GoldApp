@@ -1,8 +1,3 @@
-CREATE DATABASE goldapp;
-USE goldapp;
-
-
-
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: goldapp
@@ -118,7 +113,7 @@ CREATE TABLE `interest` (
   PRIMARY KEY (`interest_id`),
   UNIQUE KEY `interest_UNIQUE` (`interest`),
   UNIQUE KEY `interest_id_UNIQUE` (`interest_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +122,7 @@ CREATE TABLE `interest` (
 
 LOCK TABLES `interest` WRITE;
 /*!40000 ALTER TABLE `interest` DISABLE KEYS */;
-INSERT INTO `interest` VALUES (1,'Cooking','https://static01.nyt.com/images/2015/04/22/dining/22WICHITA2/22WICHITA2-articleLarge.jpg?quality=75&auto=webp&disable=upscale');
+INSERT INTO `interest` VALUES (1,'Fishing','\\fishing.jpg'),(2,'Cooking','cooking.jpg'),(3,'Cinema/Theater','cinema.jpg'),(4,'Chess','chess.jpg'),(5,'Art','art.jpg'),(6,'Music','music.jpg'),(7,'Baking','baking.jpg'),(8,'Hunting','hunting.jpg'),(9,'Taking walks','walk.jpg');
 /*!40000 ALTER TABLE `interest` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +137,7 @@ CREATE TABLE `location` (
   `location_id` int NOT NULL AUTO_INCREMENT,
   `place` varchar(100) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,6 +146,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
+INSERT INTO `location` VALUES (1,'Skåne'),(2,'Stockholm');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +281,7 @@ CREATE TABLE `user_has_interest` (
   KEY `fk_user_has_interest_interest1_idx` (`interest_interest_id`),
   KEY `fk_user_has_interest_user1_idx1` (`user_email`),
   CONSTRAINT `fk_user_has_interest_interest1` FOREIGN KEY (`interest_interest_id`) REFERENCES `interest` (`interest_id`),
-  CONSTRAINT `fk_user_has_interest_user1` FOREIGN KEY (`user_email`) REFERENCES `user` (`email`)
+  CONSTRAINT `fk_user_has_interest_user1` FOREIGN KEY (`user_email`) REFERENCES `user` (`email`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -307,4 +303,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-02 12:01:56
+-- Dump completed on 2022-05-02 20:41:57

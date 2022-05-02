@@ -12,7 +12,7 @@ from importlib.resources import path
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 
-path = os.path.dirname(os.path.abspath(__file__))
+path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 
 
 class Ui_Form(object):
@@ -81,7 +81,7 @@ class Ui_Form(object):
 "border-radius: 3px;\n"
 "")
         self.photo_2.setText("")
-        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, 'chess.jpg')))
+        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, f"image\\fishing.jpg")))
         self.photo_2.setScaledContents(True)
         self.photo_2.setAlignment(QtCore.Qt.AlignCenter)
         self.photo_2.setObjectName("photo_2")
@@ -158,7 +158,7 @@ class Ui_Form(object):
 "border-radius: 3px;\n"
 "")
         self.photo.setText("")
-        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, 'chess.jpg')))
+        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, 'image\chess.jpg')))
         self.photo.setScaledContents(True)
         self.photo.setAlignment(QtCore.Qt.AlignCenter)
         self.photo.setObjectName("photo")
@@ -263,7 +263,7 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
-    print(os.path.join(path, 'chess.png'))
+    print(os.path.join(path, "image\\fishing.jpg"))
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()
