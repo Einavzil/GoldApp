@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>703</width>
+    <width>524</width>
     <height>881</height>
    </rect>
   </property>
@@ -97,7 +97,7 @@ border-radius: 3px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../../../../../Downloads/unsplash.jpg</pixmap>
+                <pixmap>../image/chess.jpg</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -110,44 +110,54 @@ border-radius: 3px;
              <item>
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
-                <widget class="QLabel" name="label_5">
+                <widget class="QLabel" name="event_2">
                  <property name="styleSheet">
                   <string notr="true">font-size: 18px;</string>
                  </property>
                  <property name="text">
-                  <string>Event:</string>
+                  <string>Event&lt;span class=&quot;event&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_8">
+                <widget class="QLabel" name="date_2">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;</string>
                  </property>
                  <property name="text">
-                  <string>Date &amp; Time:</string>
+                  <string>Date &amp; Time&lt;span class=&quot;date&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="location_2">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;</string>
                  </property>
                  <property name="text">
-                  <string>Location:</string>
+                  <string>Location&lt;span class=&quot;address&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_6">
+                <widget class="QLabel" name="interest_2">
+                 <property name="styleSheet">
+                  <string notr="true">font-size: 13px;</string>
+                 </property>
+                 <property name="text">
+                  <string>Interest&lt;span class=&quot;interest&quot;&gt;:&lt;/span&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="description_2">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;
 min-height: 100px;
 max-width: 300px;</string>
                  </property>
                  <property name="text">
-                  <string>Description:</string>
+                  <string>Description&lt;span class=&quot;desc&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -155,7 +165,7 @@ max-width: 300px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="read_more">
+                <widget class="QPushButton" name="read_more_2">
                  <property name="styleSheet">
                   <string notr="true">QPushButton{
 background-color:  rgb(255, 203, 99);
@@ -226,7 +236,7 @@ border-radius: 3px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../../../../../Downloads/unsplash.jpg</pixmap>
+                <pixmap>../image/chess.jpg</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -237,46 +247,56 @@ border-radius: 3px;
               </widget>
              </item>
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0,0">
+              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0,0,0">
                <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="event">
                  <property name="styleSheet">
                   <string notr="true">font-size: 18px;</string>
                  </property>
                  <property name="text">
-                  <string>Event:</string>
+                  <string>Event&lt;span class=&quot;event&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="date">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;</string>
                  </property>
                  <property name="text">
-                  <string>Date &amp; Time:</string>
+                  <string>Date &amp; Time&lt;span class=&quot;date&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_3">
+                <widget class="QLabel" name="location">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;</string>
                  </property>
                  <property name="text">
-                  <string>Location:</string>
+                  <string>Location&lt;span class=&quot;address&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="interest">
+                 <property name="styleSheet">
+                  <string notr="true">font-size: 13px;</string>
+                 </property>
+                 <property name="text">
+                  <string>Interest&lt;span class=&quot;interest&quot;&gt;:&lt;/span&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="description">
                  <property name="styleSheet">
                   <string notr="true">font-size: 13px;
 min-height: 100px;
 max-width: 300px;</string>
                  </property>
                  <property name="text">
-                  <string>Description:</string>
+                  <string>Description&lt;span class=&quot;desc&quot;&gt;:&lt;/span&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -284,7 +304,7 @@ max-width: 300px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="read_more">
                  <property name="styleSheet">
                   <string notr="true">QPushButton{
 background-color:  rgb(255, 203, 99);
@@ -332,7 +352,7 @@ background-color:  rgb(255, 220, 99);
               <number>9</number>
              </property>
              <item>
-              <widget class="QLabel" name="events_loc_label">
+              <widget class="QLabel" name="events_location">
                <property name="minimumSize">
                 <size>
                  <width>404</width>
@@ -351,7 +371,7 @@ background-color:  rgb(255, 220, 99);
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Local Events and Meetups&lt;span id=&quot;location&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Local Events and Meetups&lt;span id=&quot;events_location&quot; class=&quot;events_location&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </string>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -378,8 +398,8 @@ background-color:  rgb(255, 220, 99);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
-       <height>20</height>
+       <width>10</width>
+       <height>10</height>
       </size>
      </property>
     </spacer>
@@ -391,8 +411,8 @@ background-color:  rgb(255, 220, 99);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
-       <height>20</height>
+       <width>10</width>
+       <height>10</height>
       </size>
      </property>
     </spacer>
