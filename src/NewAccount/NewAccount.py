@@ -9,6 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import (
+    QWidget,
+    QSlider,
+    QLineEdit,
+    QLabel,
+    QPushButton,
+    QScrollArea,
+    QApplication,
+    QHBoxLayout,
+    QVBoxLayout,
+    QMainWindow,
+)
 from PyQt5.QtWidgets import QMessageBox
 import sys
 
@@ -16,8 +28,11 @@ sys.path.insert(0, "../src")
 from NewAccount import NewAccount
 import signup
 
-class Ui_Form(object):
-    
+
+class Ui_Form(QMainWindow):
+    def __init__(self):
+        super(Ui_Form, self).__init__()
+
     def passwords_match(self):
         if self.pass_input.text() != self.rep_pass_input.text():
             return False
@@ -29,33 +44,45 @@ class Ui_Form(object):
         while not self.passwords_match():
             self.show_popup_pass()
             return False
-        
-        while '@' not in self.email_input.text():
+
+        while "@" not in self.email_input.text():
             self.show_popup_email()
             return False
-        
+
         while self.first_input.text() == "":
             self.show_popup_fname()
             return False
 
         signup.insert_account(
-                self.first_input.text(),
-                self.last_input.text(),
-                self.email_input.text(),
-                self.pass_input.text(),
-                self.phone_input.text(),
-                self.comboBox.currentText()
+            self.first_input.text(),
+            self.last_input.text(),
+            self.email_input.text(),
+            self.pass_input.text(),
+            self.phone_input.text(),
+            self.comboBox.currentText(),
         )
-        
+
     def setupUi(self, Form):
+        self.scroll = (
+            QScrollArea()
+        )  # Scroll Area which contains the widgets, set as the centralWidget
+        self.widget = QWidget()  # Widget that contains the collection of Vertical Box
+        self.vbox = QVBoxLayout()
+        # Scroll Area Properties
+        self.scroll.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scroll.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.scroll.setWidgetResizable(True)
+        self.scroll.setWidget(self.widget)
+
+        self.setCentralWidget(self.scroll)
         Form.setObjectName("Form")
-        Form.resize(766, 818)
-        Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.resize(600, 818)
+        Form.setStyleSheet(
+            "background-color: rgb(220, 221, 255);\n" + "overflow: scroll;"
+        )
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.widget = QtWidgets.QWidget(Form)
-        self.widget.setMinimumSize(QtCore.QSize(650, 800))
-        self.widget.setMaximumSize(QtCore.QSize(650, 800))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -82,19 +109,21 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("QLabel{\n"
-"color: rgb(255, 203, 99);\n"
-"background-color: white;\n"
-"border-color: black;\n"
-"border-radius: 10px;\n"
-"border-style: none;\n"
-"margin-top: 10px;\n"
-"margin-bottom: 10px;\n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"margin-left: 0px;\n"
-"margin-right: 0px;\n"
-"}")
+        self.app_logo.setStyleSheet(
+            "QLabel{\n"
+            "color: rgb(255, 203, 99);\n"
+            "background-color: white;\n"
+            "border-color: black;\n"
+            "border-radius: 10px;\n"
+            "border-style: none;\n"
+            "margin-top: 10px;\n"
+            "margin-bottom: 10px;\n"
+            "padding-left: 20px;\n"
+            "padding-right: 20px;\n"
+            "margin-left: 0px;\n"
+            "margin-right: 0px;\n"
+            "}"
+        )
         self.app_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.app_logo.setObjectName("app_logo")
         self.horizontalLayout_5.addWidget(self.app_logo)
@@ -114,7 +143,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.email_label.setFont(font)
         self.email_label.setStyleSheet("margin-right: 130px;")
-        self.email_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.email_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.email_label.setObjectName("email_label")
         self.labels.addWidget(self.email_label)
         self.first_label = QtWidgets.QLabel(self.labels_layout)
@@ -125,7 +156,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.first_label.setFont(font)
         self.first_label.setStyleSheet("margin-right: 74px;")
-        self.first_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.first_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.first_label.setObjectName("first_label")
         self.labels.addWidget(self.first_label)
         self.last_label = QtWidgets.QLabel(self.labels_layout)
@@ -136,7 +169,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.last_label.setFont(font)
         self.last_label.setStyleSheet("margin-right: 76px;")
-        self.last_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.last_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.last_label.setObjectName("last_label")
         self.labels.addWidget(self.last_label)
         self.phone_label = QtWidgets.QLabel(self.labels_layout)
@@ -147,7 +182,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.phone_label.setFont(font)
         self.phone_label.setStyleSheet("margin-right: 26px;")
-        self.phone_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.phone_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.phone_label.setObjectName("phone_label")
         self.labels.addWidget(self.phone_label, 0, QtCore.Qt.AlignLeft)
         self.passwor_label = QtWidgets.QLabel(self.labels_layout)
@@ -168,7 +205,9 @@ class Ui_Form(object):
         font.setWeight(75)
         self.rep_pass_label.setFont(font)
         self.rep_pass_label.setStyleSheet("margin-right: 35px;")
-        self.rep_pass_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.rep_pass_label.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.rep_pass_label.setObjectName("rep_pass_label")
         self.labels.addWidget(self.rep_pass_label)
         self.passwor_label_2 = QtWidgets.QLabel(self.labels_layout)
@@ -183,13 +222,16 @@ class Ui_Form(object):
         self.labels.addWidget(self.passwor_label_2)
         self.gridLayout_2.addWidget(self.labels_layout, 0, 0, 1, 1)
         self.inputs_layout = QtWidgets.QWidget(self.groupbox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.inputs_layout.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.inputs_layout.sizePolicy().hasHeightForWidth()
+        )
         self.inputs_layout.setSizePolicy(sizePolicy)
-        self.inputs_layout.setStyleSheet("margin-top: 4px;\n"
-"margin-right: 7px;")
+        self.inputs_layout.setStyleSheet("margin-top: 4px;\n" "margin-right: 7px;")
         self.inputs_layout.setObjectName("inputs_layout")
         self.inputs = QtWidgets.QVBoxLayout(self.inputs_layout)
         self.inputs.setObjectName("inputs")
@@ -248,7 +290,9 @@ class Ui_Form(object):
         self.inputs.addWidget(self.rep_pass_input)
         self.comboBox = QtWidgets.QComboBox(self.inputs_layout)
         self.comboBox.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.comboBox.sizePolicy().hasHeightForWidth())
@@ -260,8 +304,9 @@ class Ui_Form(object):
         font.setBold(False)
         font.setWeight(50)
         self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"padding-left: 0px;")
+        self.comboBox.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "padding-left: 0px;"
+        )
         self.comboBox.setFrame(True)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
@@ -284,8 +329,7 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.interests_lable.setFont(font)
-        self.interests_lable.setStyleSheet("margin-bottom: 10px;\n"
-"margin-top: 10px;")
+        self.interests_lable.setStyleSheet("margin-bottom: 10px;\n" "margin-top: 10px;")
         self.interests_lable.setObjectName("interests_lable")
         self.verticalLayout.addWidget(self.interests_lable)
         self.widget2 = QtWidgets.QWidget(self.widget1)
@@ -360,38 +404,49 @@ class Ui_Form(object):
         self.gridLayout_5.addWidget(self.interests_layout, 2, 0, 1, 1)
         self.create_layout = QtWidgets.QVBoxLayout()
         self.create_layout.setObjectName("create_layout")
-        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.MinimumExpanding)
-        self.create_layout.addItem(spacerItem)
-        
-        # Create account button
-        
-        self.create_button = QtWidgets.QPushButton(
-                self.groupbox, clicked=lambda: self.create_account()
+        spacerItem = QtWidgets.QSpacerItem(
+            20,
+            20,
+            QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.MinimumExpanding,
         )
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.create_layout.addItem(spacerItem)
+
+        # Create account button
+
+        self.create_button = QtWidgets.QPushButton(
+            self.groupbox, clicked=lambda: self.create_account()
+        )
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.create_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.create_button.sizePolicy().hasHeightForWidth()
+        )
         self.create_button.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.create_button.setFont(font)
-        self.create_button.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 10px;\n"
-"color: white;\n"
-"padding: 15px 32px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 16px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}")
+        self.create_button.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 15px 32px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 16px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}"
+        )
         self.create_button.setObjectName("create_button")
         self.create_layout.addWidget(self.create_button)
         self.gridLayout_5.addLayout(self.create_layout, 3, 0, 1, 1)
@@ -430,10 +485,12 @@ class Ui_Form(object):
         msg = QMessageBox()
         msg.setWindowTitle("passwords not match")
         msg.setText("Error")
-        msg.setInformativeText("Either your passwords don't match or you didn't enter a password.")
+        msg.setInformativeText(
+            "Either your passwords don't match or you didn't enter a password."
+        )
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
-        
+
     def show_popup_email(self):
         msg = QMessageBox()
         msg.setWindowTitle("email invalid")
@@ -447,7 +504,7 @@ class Ui_Form(object):
         msg.setText("You have to enter a name.")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
-        
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
