@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>280</width>
+    <width>266</width>
     <height>389</height>
    </rect>
   </property>
@@ -21,116 +21,103 @@ margin-right: 30px;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-     <widget class="QWidget" name="" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QPushButton" name="RoundButton">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-background-color:  rgb(255, 203, 99);
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="RoundButton">
+          <property name="styleSheet">
+           <string notr="true">background-color:  rgb(255, 203, 99);
 aspect-ratio: 1 / 1;
  color: white;
  border-width: 0px;
  border-radius:50px;
  min-width:100px;
- min-height:100px;
-}
-QPushButton:Hover{
-background-color: rgb(255, 220, 99);
-}</string>
-           </property>
-           <property name="text">
-            <string>Meetings</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="widget" native="true">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QWidget" name="widget_2" native="true">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-background-color:  rgb(255, 203, 99);
+ min-height:100px;</string>
+          </property>
+          <property name="text">
+           <string>Meetings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QWidget" name="widget_2" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:  rgb(255, 203, 99);
 aspect-ratio: 1 / 1;
  color: white;
  border-width: 0px;
  border-radius:50px;
+ max-width:100px;
+ max-height:100px;
  min-width:100px;
- min-height:100px;
-}
-QPushButton:Hover{
-background-color: rgb(255, 220, 99);
-}</string>
-           </property>
-           <property name="text">
-            <string>Attributes</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-background-color:  rgb(255, 203, 99);
+ min-height:100px;</string>
+          </property>
+          <property name="text">
+           <string>Attributes</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="styleSheet">
+           <string notr="true">background-color:  rgb(255, 203, 99);
 aspect-ratio: 1 / 1;
  color: white;
  border-width: 0px;
  border-radius:50px;
+ max-width:100px;
+ max-height:100px;
  min-width:100px;
- min-height:100px;
-}
-QPushButton:Hover{
-background-color: rgb(255, 220, 99);
-}</string>
-           </property>
-           <property name="text">
-            <string>Assistance</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QWidget" name="widget_3" native="true">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
+ min-height:100px;</string>
+          </property>
+          <property name="text">
+           <string>Assistance</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_3" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
