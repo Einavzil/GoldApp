@@ -28,10 +28,19 @@ def insert_account(fname, lname, email, pwd, phone, location):
     """
     args = (email, fname, lname, enc_pwd, phone)
     cursor.execute(sql, args)
-    # conn.commit()
+    conn.commit()
+    
+    sql_id_statement = """
+    SELECT LAST_INSERT_ID()
+    FROM user
+    ;
+    """
+    
+    cursor.execute(sql_id_statement)
+    user_id = cursor.fetchone()
 
-    cursor.close()
-    conn.close()
+    
+    return email
     
 def encrypt_pass(pwd):
     with open('src/enc_key.bin', 'rb') as key_file:
@@ -41,3 +50,19 @@ def encrypt_pass(pwd):
     enc_pwd = fernet.encrypt(pwd.encode())
     
     return enc_pwd.decode()
+
+def add_interest(user_id, interest):
+    
+    conn, cursor = connect()
+    sql = """
+    INSERT INTO user_has_interest (interest_interest_id, user_email)
+    VALUES (?, ?)
+    ;
+    """
+    
+    cursor.execute(sql, (interest, user_id))
+    print(cursor.fetchone())
+    conn.commit()
+    
+    cursor.close()
+    conn.close()

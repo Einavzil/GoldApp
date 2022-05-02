@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from card import Ui_Form as Card
 import os
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -16,6 +17,7 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 class Ui_Form(object):
     def setupUi(self, Form):
+        names = ["test1", "test2", "test3", "test4", "43", "$@#^#@", "%#@%#@$#2"]
         Form.setObjectName("Form")
         Form.resize(524, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
@@ -84,8 +86,6 @@ class Ui_Form(object):
         self.events_location.setObjectName("events_location")
         self.horizontalLayout.addWidget(self.events_location)
         self.main_board.addWidget(self.widget_2, 1, 0, 1, 1)
-        for i in range(10):
-            self.main_board.addWidget(self.widget_2, 1, 0, 1, 1)
         self.scrollArea = QtWidgets.QScrollArea(self.frame)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
@@ -178,7 +178,6 @@ class Ui_Form(object):
         self.read_more.setObjectName("read_more")
         self.verticalLayout_4.addWidget(self.read_more)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
-        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
         self.widget1 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.widget1.setStyleSheet(
             "margin-bottom: 8px;\n"
@@ -264,7 +263,16 @@ class Ui_Form(object):
         self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
+        # THIS IS THE MAIN LAYOUT
+        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
         self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+
+        j = 2
+        for i in names:
+            new_event = Card(i)
+            self.gridLayout.addWidget(new_event, j, 0, 1, 1)
+            j += 1
+
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.main_board.addWidget(self.scrollArea, 2, 0, 1, 1)
         self.verticalLayout_3.addLayout(self.main_board)
