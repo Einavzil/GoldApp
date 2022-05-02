@@ -1,27 +1,28 @@
 import mysql.connector
 from cryptography.fernet import Fernet
 
+
 def connect():
     dsn = {
         "user": "maria",
-        "password": "password",
+        "password": "P@ssw0rd",
         "host": "127.0.0.1",
         "port": "3306",
         "database": "goldapp",
         "raise_on_warnings": True,
-        }
+    }
     try:
-        conn =  mysql.connector.connect(**dsn)
+        conn = mysql.connector.connect(**dsn)
         cursor = conn.cursor(prepared=True)
         return conn, cursor
     except Exception as err:
         print(err)
-        
+
 
 def check_email(email):
     try:
         conn, cursor = connect()
-            
+
         sql = """
             SELECT
             email
@@ -38,7 +39,7 @@ def check_email(email):
         if result[0] == email:
             return True
         return False
-    
+
     except Exception as err:
         print(err)
 
@@ -58,9 +59,9 @@ def check_password(email, password):
         args = (email,)
         cursor.execute(sql, args)
         result = cursor.fetchone()
-            # cursor.close()
-            # conn.close()
-        
+        # cursor.close()
+        # conn.close()
+
         decrepted_pass = decrypt_pass(result[0])
         if decrepted_pass == password:
             return True
@@ -70,11 +71,10 @@ def check_password(email, password):
         print(err)
 
 
-    
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
 
-    with open('src/enc_key.bin', 'rb') as key_file:
+    with open("src/enc_key.bin", "rb") as key_file:
         key = key_file.readline()
 
     fernet = Fernet(key)
@@ -83,8 +83,8 @@ def decrypt_pass(password):
 
     return decr_pass.decode()
 
-if __name__ == "__main__":
-    print(check_email('example@gmail.com'))
-    if check_email('example@gmail.com'):
-        print(check_password('example@gmail.com', 'abc123'))
 
+if __name__ == "__main__":
+    print(check_email("example@gmail.com"))
+    if check_email("example@gmail.com"):
+        print(check_password("example@gmail.com", "abc123"))
