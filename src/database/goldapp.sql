@@ -1,3 +1,8 @@
+CREATE DATABASE goldapp;
+USE goldapp;
+
+
+
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: goldapp
@@ -109,10 +114,11 @@ DROP TABLE IF EXISTS `interest`;
 CREATE TABLE `interest` (
   `interest_id` int NOT NULL AUTO_INCREMENT,
   `interest` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `image_path` varchar(1024) COLLATE utf8_esperanto_ci DEFAULT NULL,
   PRIMARY KEY (`interest_id`),
   UNIQUE KEY `interest_UNIQUE` (`interest`),
   UNIQUE KEY `interest_id_UNIQUE` (`interest_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,6 +127,7 @@ CREATE TABLE `interest` (
 
 LOCK TABLES `interest` WRITE;
 /*!40000 ALTER TABLE `interest` DISABLE KEYS */;
+INSERT INTO `interest` VALUES (1,'Cooking','https://static01.nyt.com/images/2015/04/22/dining/22WICHITA2/22WICHITA2-articleLarge.jpg?quality=75&auto=webp&disable=upscale');
 /*!40000 ALTER TABLE `interest` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-28 21:39:02
+-- Dump completed on 2022-05-02 12:01:56
