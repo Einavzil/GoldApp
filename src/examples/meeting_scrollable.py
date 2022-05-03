@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from card import Ui_Form as Card
 import os
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -260,12 +259,9 @@ class Ui_Form(object):
         )
         self.read_more_2.setObjectName("read_more_2")
         self.verticalLayout_5.addWidget(self.read_more_2)
-        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
-        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
 
-
-        # box 3
+        # # box 3
         self.box3 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box3.setStyleSheet(
             "margin-bottom: 8px;\n"
@@ -349,13 +345,9 @@ class Ui_Form(object):
         )
         self.read_more_3.setObjectName("read_more_3")
         self.verticalLayout_box3.addWidget(self.read_more_3)
-        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
-        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
-        self.photo_3.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
 
-        # box 4
-
+        # # box 4
         self.box4 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box4.setStyleSheet(
             "margin-bottom: 8px;\n"
@@ -439,16 +431,457 @@ class Ui_Form(object):
         )
         self.read_more_4.setObjectName("read_more_4")
         self.verticalLayout_box4.addWidget(self.read_more_4)
+        self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
+
+        # box 5
+        self.box5 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box5.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box5.setObjectName("box5")
+        self.horizontalLayout_box5 = QtWidgets.QHBoxLayout(self.box5)
+        self.horizontalLayout_box5.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box5.setObjectName("horizontalLayout_box5")
+        self.photo_5 = QtWidgets.QLabel(self.box5)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_5.setFont(font)
+        self.photo_5.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_5.setText("")
+        self.photo_5.setPixmap(QtGui.QPixmap("../image/chess.jpg"))
+        self.photo_5.setScaledContents(True)
+        self.photo_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_5.setObjectName("photo_5")
+        self.horizontalLayout_box5.addWidget(self.photo_5)
+        self.verticalLayout_box5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box5.setObjectName("verticalLayout_box5")
+        self.event_5 = QtWidgets.QLabel(self.box5)
+        self.event_5.setStyleSheet("font-size: 18px;")
+        self.event_5.setObjectName("event_5")
+        self.verticalLayout_box5.addWidget(self.event_5)
+        self.date_5 = QtWidgets.QLabel(self.box5)
+        self.date_5.setStyleSheet("font-size: 13px;")
+        self.date_5.setObjectName("date_5")
+        self.verticalLayout_box5.addWidget(self.date_5)
+        self.location_5 = QtWidgets.QLabel(self.box5)
+        self.location_5.setStyleSheet("font-size: 13px;")
+        self.location_5.setObjectName("location_5")
+        self.verticalLayout_box5.addWidget(self.location_5)
+        self.interest_5 = QtWidgets.QLabel(self.box5)
+        self.interest_5.setStyleSheet("font-size: 13px;")
+        self.interest_5.setObjectName("interest_5")
+        self.verticalLayout_box5.addWidget(self.interest_5)
+        self.description_5 = QtWidgets.QLabel(self.box5)
+        self.description_5.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_5.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_5.setObjectName("description_5")
+        self.verticalLayout_box5.addWidget(self.description_5)
+        self.read_more_5 = QtWidgets.QPushButton(self.box5)
+        self.read_more_5.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_5.setObjectName("read_more_4")
+        self.verticalLayout_box5.addWidget(self.read_more_5)
+        self.horizontalLayout_box5.addLayout(self.verticalLayout_box5)
+
+        # box 6
+
+        self.box6 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box6.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box6.setObjectName("box5")
+        self.horizontalLayout_box6 = QtWidgets.QHBoxLayout(self.box6)
+        self.horizontalLayout_box6.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box6.setObjectName("horizontalLayout_box6")
+        self.photo_6 = QtWidgets.QLabel(self.box6)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_6.setFont(font)
+        self.photo_6.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_6.setText("")
+        self.photo_6.setPixmap(QtGui.QPixmap("../image/chess.jpg"))
+        self.photo_6.setScaledContents(True)
+        self.photo_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_6.setObjectName("photo_6")
+        self.horizontalLayout_box6.addWidget(self.photo_6)
+        self.verticalLayout_box6 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box6.setObjectName("verticalLayout_box6")
+        self.event_6 = QtWidgets.QLabel(self.box6)
+        self.event_6.setStyleSheet("font-size: 18px;")
+        self.event_6.setObjectName("event_6")
+        self.verticalLayout_box6.addWidget(self.event_6)
+        self.date_6 = QtWidgets.QLabel(self.box6)
+        self.date_6.setStyleSheet("font-size: 13px;")
+        self.date_6.setObjectName("date_6")
+        self.verticalLayout_box6.addWidget(self.date_6)
+        self.location_6 = QtWidgets.QLabel(self.box6)
+        self.location_6.setStyleSheet("font-size: 13px;")
+        self.location_6.setObjectName("location_6")
+        self.verticalLayout_box6.addWidget(self.location_6)
+        self.interest_6 = QtWidgets.QLabel(self.box6)
+        self.interest_6.setStyleSheet("font-size: 13px;")
+        self.interest_6.setObjectName("interest_6")
+        self.verticalLayout_box6.addWidget(self.interest_6)
+        self.description_6 = QtWidgets.QLabel(self.box6)
+        self.description_6.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_6.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_6.setObjectName("description_6")
+        self.verticalLayout_box6.addWidget(self.description_6)
+        self.read_more_6 = QtWidgets.QPushButton(self.box6)
+        self.read_more_6.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_6.setObjectName("read_more_6")
+        self.verticalLayout_box6.addWidget(self.read_more_6)
+        self.horizontalLayout_box6.addLayout(self.verticalLayout_box6)
+
+        # box 7
+
+        self.box7 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box7.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box7.setObjectName("box7")
+        self.horizontalLayout_box7 = QtWidgets.QHBoxLayout(self.box7)
+        self.horizontalLayout_box7.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box7.setObjectName("horizontalLayout_box7")
+        self.photo_7 = QtWidgets.QLabel(self.box7)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_7.setFont(font)
+        self.photo_7.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_7.setText("")
+        self.photo_7.setScaledContents(True)
+        self.photo_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_7.setObjectName("photo_7")
+        self.horizontalLayout_box7.addWidget(self.photo_7)
+        self.verticalLayout_box7 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box7.setObjectName("verticalLayout_box7")
+        self.event_7 = QtWidgets.QLabel(self.box7)
+        self.event_7.setStyleSheet("font-size: 18px;")
+        self.event_7.setObjectName("event_7")
+        self.verticalLayout_box7.addWidget(self.event_7)
+        self.date_7 = QtWidgets.QLabel(self.box7)
+        self.date_7.setStyleSheet("font-size: 13px;")
+        self.date_7.setObjectName("date_7")
+        self.verticalLayout_box7.addWidget(self.date_7)
+        self.location_7 = QtWidgets.QLabel(self.box7)
+        self.location_7.setStyleSheet("font-size: 13px;")
+        self.location_7.setObjectName("location_7")
+        self.verticalLayout_box7.addWidget(self.location_7)
+        self.interest_7 = QtWidgets.QLabel(self.box7)
+        self.interest_7.setStyleSheet("font-size: 13px;")
+        self.interest_7.setObjectName("interest_7")
+        self.verticalLayout_box7.addWidget(self.interest_7)
+        self.description_7 = QtWidgets.QLabel(self.box7)
+        self.description_7.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_7.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_7.setObjectName("description_7")
+        self.verticalLayout_box7.addWidget(self.description_7)
+        self.read_more_7 = QtWidgets.QPushButton(self.box7)
+        self.read_more_7.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_7.setObjectName("read_more_7")
+        self.verticalLayout_box7.addWidget(self.read_more_7)
+        self.horizontalLayout_box7.addLayout(self.verticalLayout_box7)
+
+        # box 8
+        self.box8 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box8.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box8.setObjectName("box8")
+        self.horizontalLayout_box8 = QtWidgets.QHBoxLayout(self.box8)
+        self.horizontalLayout_box8.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box8.setObjectName("horizontalLayout_box8")
+        self.photo_8 = QtWidgets.QLabel(self.box8)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_8.setFont(font)
+        self.photo_8.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_8.setText("")
+        self.photo_8.setScaledContents(True)
+        self.photo_8.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_8.setObjectName("photo_8")
+        self.horizontalLayout_box8.addWidget(self.photo_8)
+        self.verticalLayout_box8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box8.setObjectName("verticalLayout_box8")
+        self.event_8 = QtWidgets.QLabel(self.box8)
+        self.event_8.setStyleSheet("font-size: 18px;")
+        self.event_8.setObjectName("event_8")
+        self.verticalLayout_box8.addWidget(self.event_8)
+        self.date_8 = QtWidgets.QLabel(self.box8)
+        self.date_8.setStyleSheet("font-size: 13px;")
+        self.date_8.setObjectName("date_8")
+        self.verticalLayout_box8.addWidget(self.date_8)
+        self.location_8 = QtWidgets.QLabel(self.box8)
+        self.location_8.setStyleSheet("font-size: 13px;")
+        self.location_8.setObjectName("location_8")
+        self.verticalLayout_box8.addWidget(self.location_8)
+        self.interest_8 = QtWidgets.QLabel(self.box8)
+        self.interest_8.setStyleSheet("font-size: 13px;")
+        self.interest_8.setObjectName("interest_8")
+        self.verticalLayout_box8.addWidget(self.interest_8)
+        self.description_8 = QtWidgets.QLabel(self.box8)
+        self.description_8.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_8.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_8.setObjectName("description_8")
+        self.verticalLayout_box8.addWidget(self.description_8)
+        self.read_more_8 = QtWidgets.QPushButton(self.box8)
+        self.read_more_8.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_8.setObjectName("read_more_8")
+        self.verticalLayout_box8.addWidget(self.read_more_8)
+        self.horizontalLayout_box8.addLayout(self.verticalLayout_box8)
+
+        # box 9
+        self.box9 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box9.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box9.setObjectName("box9")
+        self.horizontalLayout_box9 = QtWidgets.QHBoxLayout(self.box9)
+        self.horizontalLayout_box9.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box9.setObjectName("horizontalLayout_box9")
+        self.photo_9 = QtWidgets.QLabel(self.box9)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_9.setFont(font)
+        self.photo_9.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_9.setText("")
+        self.photo_9.setScaledContents(True)
+        self.photo_9.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_9.setObjectName("photo_9")
+        self.horizontalLayout_box9.addWidget(self.photo_9)
+        self.verticalLayout_box9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box9.setObjectName("verticalLayout_box9")
+        self.event_9 = QtWidgets.QLabel(self.box9)
+        self.event_9.setStyleSheet("font-size: 18px;")
+        self.event_9.setObjectName("event_9")
+        self.verticalLayout_box9.addWidget(self.event_9)
+        self.date_9 = QtWidgets.QLabel(self.box9)
+        self.date_9.setStyleSheet("font-size: 13px;")
+        self.date_9.setObjectName("date_9")
+        self.verticalLayout_box9.addWidget(self.date_9)
+        self.location_9 = QtWidgets.QLabel(self.box9)
+        self.location_9.setStyleSheet("font-size: 13px;")
+        self.location_9.setObjectName("location_9")
+        self.verticalLayout_box9.addWidget(self.location_9)
+        self.interest_9 = QtWidgets.QLabel(self.box9)
+        self.interest_9.setStyleSheet("font-size: 13px;")
+        self.interest_9.setObjectName("interest_9")
+        self.verticalLayout_box9.addWidget(self.interest_9)
+        self.description_9 = QtWidgets.QLabel(self.box9)
+        self.description_9.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_9.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_9.setObjectName("description_9")
+        self.verticalLayout_box9.addWidget(self.description_9)
+        self.read_more_9 = QtWidgets.QPushButton(self.box9)
+        self.read_more_9.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_9.setObjectName("read_more_9")
+        self.verticalLayout_box9.addWidget(self.read_more_9)
+        self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
+
         self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_3.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.photo_4.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
-        self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
+        self.photo_5.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_6.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_7.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_8.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_9.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
 
         # THIS IS THE MAIN LAYOUT
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
         self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
         self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
         self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.box7, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.box8, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.box9, 8, 0, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.main_board.addWidget(self.scrollArea, 2, 0, 1, 1)
@@ -539,11 +972,99 @@ class Ui_Form(object):
         )
         self.read_more_4.setText(_translate("Form", "Read More"))
 
+        self.event_5.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_5.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_5.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_5.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_5.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_5.setText(_translate("Form", "Read More"))
+
+        self.event_6.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_6.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_6.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_6.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_6.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_6.setText(_translate("Form", "Read More"))
+
+        self.event_7.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_7.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_7.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_7.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_7.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_7.setText(_translate("Form", "Read More"))
+
+        self.event_8.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_8.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_8.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_8.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_8.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_8.setText(_translate("Form", "Read More"))
+
+        self.event_8.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_8.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_8.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_8.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_8.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_8.setText(_translate("Form", "Read More"))
+
+        self.event_9.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_9.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_9.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_9.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_9.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_9.setText(_translate("Form", "Read More"))
+
 
 if __name__ == "__main__":
     import sys
-
-    print(os.path.join(path, "chess.png"))
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
