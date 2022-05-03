@@ -17,7 +17,7 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        names = ["test1", "test2", "test3", "test4", "43", "$@#^#@", "%#@%#@$#2"]
+
         Form.setObjectName("Form")
         Form.resize(524, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
@@ -263,15 +263,192 @@ class Ui_Form(object):
         self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
+
+
+        # box 3
+        self.box3 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box3.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box3.setObjectName("box3")
+        self.horizontalLayout_box3 = QtWidgets.QHBoxLayout(self.box3)
+        self.horizontalLayout_box3.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box3.setObjectName("horizontalLayout_6")
+        self.photo_3 = QtWidgets.QLabel(self.box3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_3.setFont(font)
+        self.photo_3.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_3.setText("")
+        self.photo_3.setPixmap(QtGui.QPixmap("../image/chess.jpg"))
+        self.photo_3.setScaledContents(True)
+        self.photo_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_3.setObjectName("photo_3")
+        self.horizontalLayout_box3.addWidget(self.photo_3)
+        self.verticalLayout_box3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box3.setObjectName("verticalLayout_box3")
+        self.event_3 = QtWidgets.QLabel(self.box3)
+        self.event_3.setStyleSheet("font-size: 18px;")
+        self.event_3.setObjectName("event_3")
+        self.verticalLayout_box3.addWidget(self.event_3)
+        self.date_3 = QtWidgets.QLabel(self.box3)
+        self.date_3.setStyleSheet("font-size: 13px;")
+        self.date_3.setObjectName("date_3")
+        self.verticalLayout_box3.addWidget(self.date_3)
+        self.location_3 = QtWidgets.QLabel(self.box3)
+        self.location_3.setStyleSheet("font-size: 13px;")
+        self.location_3.setObjectName("location_3")
+        self.verticalLayout_box3.addWidget(self.location_3)
+        self.interest_3 = QtWidgets.QLabel(self.box3)
+        self.interest_3.setStyleSheet("font-size: 13px;")
+        self.interest_3.setObjectName("interest_3")
+        self.verticalLayout_box3.addWidget(self.interest_3)
+        self.description_3 = QtWidgets.QLabel(self.box3)
+        self.description_3.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_3.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_3.setObjectName("description_3")
+        self.verticalLayout_box3.addWidget(self.description_3)
+        self.read_more_3 = QtWidgets.QPushButton(self.box3)
+        self.read_more_3.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_3.setObjectName("read_more_3")
+        self.verticalLayout_box3.addWidget(self.read_more_3)
+        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_3.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
+
+        # box 4
+
+        self.box4 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box4.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background:white;\n"
+            "border-radius: 5px;"
+        )
+        self.box4.setObjectName("box4")
+        self.horizontalLayout_box4 = QtWidgets.QHBoxLayout(self.box4)
+        self.horizontalLayout_box4.setContentsMargins(0, -1, -1, -1)
+        self.horizontalLayout_box4.setObjectName("horizontalLayout_box4")
+        self.photo_4 = QtWidgets.QLabel(self.box4)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo_4.setFont(font)
+        self.photo_4.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 300px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo_4.setText("")
+        self.photo_4.setPixmap(QtGui.QPixmap("../image/chess.jpg"))
+        self.photo_4.setScaledContents(True)
+        self.photo_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.photo_4.setObjectName("photo_4")
+        self.horizontalLayout_box4.addWidget(self.photo_4)
+        self.verticalLayout_box4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_box4.setObjectName("verticalLayout_box3")
+        self.event_4 = QtWidgets.QLabel(self.box4)
+        self.event_4.setStyleSheet("font-size: 18px;")
+        self.event_4.setObjectName("event_4")
+        self.verticalLayout_box4.addWidget(self.event_4)
+        self.date_4 = QtWidgets.QLabel(self.box4)
+        self.date_4.setStyleSheet("font-size: 13px;")
+        self.date_4.setObjectName("date_4")
+        self.verticalLayout_box4.addWidget(self.date_4)
+        self.location_4 = QtWidgets.QLabel(self.box4)
+        self.location_4.setStyleSheet("font-size: 13px;")
+        self.location_4.setObjectName("location_4")
+        self.verticalLayout_box4.addWidget(self.location_4)
+        self.interest_4 = QtWidgets.QLabel(self.box4)
+        self.interest_4.setStyleSheet("font-size: 13px;")
+        self.interest_4.setObjectName("interest_4")
+        self.verticalLayout_box4.addWidget(self.interest_4)
+        self.description_4 = QtWidgets.QLabel(self.box4)
+        self.description_4.setStyleSheet(
+            "font-size: 13px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+
+        self.description_4.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description_4.setObjectName("description_4")
+        self.verticalLayout_box4.addWidget(self.description_4)
+        self.read_more_4 = QtWidgets.QPushButton(self.box4)
+        self.read_more_4.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 10px;\n"
+            "color: white;\n"
+            "padding: 10px 23px;\n"
+            "margin: 10px 60px 10px 60px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 13px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}\n"
+            ""
+        )
+        self.read_more_4.setObjectName("read_more_4")
+        self.verticalLayout_box4.addWidget(self.read_more_4)
+        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.photo_4.setPixmap(QtGui.QPixmap(os.path.join(path, "chess.jpg")))
+        self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
+
         # THIS IS THE MAIN LAYOUT
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
         self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
-
-        j = 2
-        for i in names:
-            new_event = Card(i)
-            self.gridLayout.addWidget(new_event, j, 0, 1, 1)
-            j += 1
+        self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.main_board.addWidget(self.scrollArea, 2, 0, 1, 1)
@@ -331,6 +508,36 @@ class Ui_Form(object):
             _translate("Form", 'Description<span class="desc">:</span>')
         )
         self.read_more_2.setText(_translate("Form", "Read More"))
+
+        self.event_3.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_3.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_3.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_3.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_3.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_3.setText(_translate("Form", "Read More"))
+
+        self.event_4.setText(_translate("Form", 'Event<span class="event">:</span>'))
+        self.date_4.setText(
+            _translate("Form", 'Date & Time<span class="date">:</span>')
+        )
+        self.location_4.setText(
+            _translate("Form", 'Location<span class="address">:</span>')
+        )
+        self.interest_4.setText(
+            _translate("Form", 'Interest<span class="interest">:</span>')
+        )
+        self.description_4.setText(
+            _translate("Form", 'Description<span class="desc">:</span>')
+        )
+        self.read_more_4.setText(_translate("Form", "Read More"))
 
 
 if __name__ == "__main__":
