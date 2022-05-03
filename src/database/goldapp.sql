@@ -4,6 +4,11 @@
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
+
+DROP DATABASE goldapp;
+CREATE DATABASE goldapp;
+USE goldapp;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
