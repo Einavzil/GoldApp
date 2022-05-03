@@ -1,4 +1,3 @@
-from audioop import add
 import mysql.connector
 # import sys
 # sys.path.insert(0, "../src")
@@ -23,7 +22,9 @@ def connect():
 
 
 def user_location():
-    """User location based on the email id they are signed in with."""
+    """User location based on the email id they are signed in with.
+    Shown in the area 'Local Events and Meetups: ...'.
+    """
     try:
         conn, cursor = connect()
         sql = """
@@ -37,7 +38,8 @@ def user_location():
             and email = ?
             ;
             """
-# hard coded at the moment!!!!
+
+        # hard coded at the moment!!!!
         args = ("example@gmail.com",)
         cursor.execute(sql, args)
         result = cursor.fetchone()
@@ -63,7 +65,8 @@ def user_interest():
             and email = ?
             ;
             """
-# hard coded at the moment!!!!
+
+        # hard coded at the moment!!!!
         args = ("example@gmail.com",)
         cursor.execute(sql, args)
         result = cursor.fetchall()
@@ -74,6 +77,41 @@ def user_interest():
         conn.close()
         print(interest_list)
         return interest_list        # List of user interest
+
+    except Exception as err:
+        print(err)
+
+def nr_of_events_to_display():
+    """The total number of events that could be displayed to that user.
+    Based on that could be 'loaded the events windows.'
+    """
+    try:
+        conn, cursor = connect()
+        sql = """
+            SELECT count(goldapp.event.name)
+            FROM goldapp.event
+            JOIN goldapp.interest
+            ON goldapp.event.interest_interest_id = interest.interest_id
+            JOIN goldapp.user_has_interest
+            ON goldapp.interest.interest_id = user_has_interest.interest_interest_id
+            JOIN goldapp.user
+            ON goldapp.user_has_interest.user_email = goldapp.user.email
+            JOIN goldapp.location
+            ON goldapp.user.location_location_id = location.location_id
+            WHERE location.place = goldapp.event.city
+            and email = ?
+            ;
+            """
+
+        # hard coded at the moment!!!!
+        args = ("example@gmail.com",)
+        cursor.execute(sql, args)
+        nr_of_events = cursor.fetchone()
+        print(nr_of_events[0])
+        
+        cursor.close()
+        conn.close()
+        return nr_of_events[0]
 
     except Exception as err:
         print(err)
@@ -117,6 +155,9 @@ def events_in_location():
         print(interest)
         print(image)
         print(desc)
+        # res = cursor.fetchall()
+        # for i in res:
+        #     print(i)
         
         cursor.close()
         conn.close()
@@ -130,4 +171,5 @@ def events_in_location():
 if __name__ == "__main__":
     user_location()
     user_interest()
+    nr_of_events_to_display()
     events_in_location()
