@@ -22,161 +22,69 @@ def connect():
         print(err)
 
 
-def user_location():
-    """User location based on the email id they are signed in with.
-    Shown in the area 'Local Events and Meetups: ...'.
+def events_ids(events_id):
+    """This function will fetch all events from the database
+    based on the id's received.
     """
+    id_tuple = tuple(events_id)
     try:
         conn, cursor = connect()
-        sql = """
-            SELECT
-            goldapp.location.place
-            FROM
-	        goldapp.user,
-	        goldapp.location
-            WHERE
-	        location.location_id = user.location_location_id
-            and email = ?
-            ;
-            """
-
-        # hard coded at the moment!!!!
-        args = ("example@gmail.com",)
-        cursor.execute(sql, args)
-        result = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        print(result[0])
-        return result[0]  # The location
-
-    except Exception as err:
-        print(err)
-
-
-def user_interest():
-    try:
-        conn, cursor = connect()
-        sql = """
-            SELECT i.interest
-            FROM goldapp.interest AS i
-            JOIN goldapp.user_has_interest AS ints
-            ON i.interest_id = ints.interest_interest_id
-            JOIN goldapp.user AS u
-            ON ints.user_email = u.email
-            and email = ?
-            ;
-            """
-
-        # hard coded at the moment!!!!
-        args = ("example@gmail.com",)
-        cursor.execute(sql, args)
-        result = cursor.fetchall()
-        interest_list = []
-        for res in result:
-            interest_list.append(res[0])
-        cursor.close()
-        conn.close()
-        print(interest_list)
-        return interest_list  # List of user interest
-
-    except Exception as err:
-        print(err)
-
-
-def nr_of_events_to_display():
-    """The total number of events that could be displayed to that user.
-    Based on that could be 'loaded the events windows.'
-    """
-    try:
-        conn, cursor = connect()
-        sql = """
-            SELECT count(goldapp.event.name)
-            FROM goldapp.event
-            JOIN goldapp.interest
-            ON goldapp.event.interest_interest_id = interest.interest_id
-            JOIN goldapp.user_has_interest
-            ON goldapp.interest.interest_id = user_has_interest.interest_interest_id
-            JOIN goldapp.user
-            ON goldapp.user_has_interest.user_email = goldapp.user.email
-            JOIN goldapp.location
-            ON goldapp.user.location_location_id = location.location_id
-            WHERE location.place = goldapp.event.city
-            and email = ?
-            ;
-            """
-        # fetching logged in user from the text file
-        with open("src/current_email.txt", "r") as current_email:
-            email = current_email.readline()
-
-        args = (email,)
-        cursor.execute(sql, args)
-        nr_of_events = cursor.fetchone()
-        print(nr_of_events[0])
-
-        cursor.close()
-        conn.close()
-        return nr_of_events[0]
-
-    except Exception as err:
-        print(err)
-
-
-def events_in_location():
-    """List of events based on user location and interests."""
-    try:
-        conn, cursor = connect()
-        sql = """
-            SELECT goldapp.event.name,
-	        event.eventdate,
+        sql = f"""
+        SELECT
+            event.name,
+            event.eventdate,
             event.eventtime,
-	        event.address_line,
+            event.address_line,
             event.city,
             interest.interest,
             interest.image_path,
-	        event.information
-            FROM goldapp.event
-            JOIN goldapp.interest
-            ON goldapp.event.interest_interest_id = interest.interest_id
-            JOIN goldapp.user_has_interest
-            ON goldapp.interest.interest_id = user_has_interest.interest_interest_id
-            JOIN goldapp.user
-            ON goldapp.user_has_interest.user_email = goldapp.user.email
-            JOIN goldapp.location
-            ON goldapp.user.location_location_id = location.location_id
-            WHERE location.place = goldapp.event.city
-            and email = ?
+            event.information
+        FROM event, interest
+        WHERE event.interest_interest_id = interest.interest_id
+        AND event.event_id IN {id_tuple}
+        ;
+        """
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        
+        print(result)
+    except Exception as err:
+        print(err)
+
+
+def event_ids_list():
+    """This function will get the id's of the events that need to be displayed."""
+    try:
+        conn, cursor = connect()
+        sql = """
+            SELECT event_id
+            FROM event
+            JOIN user
+            ON user.location_location_id = event.location_id
+            JOIN user_has_interest
+            ON user.email = user_has_interest.user_email
+            AND event.interest_interest_id = user_has_interest.interest_interest_id
+            WHERE user.email = ?
             ;
             """
-
         # fetching logged in user from the text file
         with open("src/current_email.txt", "r") as current_email:
             email = current_email.readline()
 
         args = (email,)
         cursor.execute(sql, args)
-        event_name, date, time, address, city, interest, image, desc = cursor.fetchone()
-        print(event_name)
-        print(date)
-        print(time)
-        print(address)
-        print(city)
-        print(interest)
-        print(image)
-        print(desc)
-        # res = cursor.fetchall()
-        # for i in res:
-        #     print(i)
-
+        event_id = cursor.fetchall()
+        events = []
+        for i in event_id:
+            events.append(i[0])
+        print(events)
         cursor.close()
         conn.close()
-        return event_name, date, time, address, city, interest, image, desc
+        return events
 
     except Exception as err:
         print(err)
 
 
 if __name__ == "__main__":
-    user_location()
-    user_interest()
-    nr_of_events_to_display()
-    events_in_location()
+    events_ids(event_ids_list())
