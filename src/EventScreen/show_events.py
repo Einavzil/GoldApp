@@ -8,9 +8,9 @@ import mysql.connector
 
 def connect():
     dsn = {
-        "user": "maria",
-        "password": "password",
-        "host": "127.0.0.1",
+        "user": "root",
+        "password": "root",
+        "host": "localhost",
         "port": "3306",
         "database": "goldapp",
         "raise_on_warnings": True,
@@ -21,6 +21,7 @@ def connect():
         return conn, cursor
     except Exception as err:
         print(err)
+
 
 def user_location():
     """User location based on the email id they are signed in with."""
@@ -37,7 +38,7 @@ def user_location():
                 and email = ?
             ;
             """
-            # fetching logged in user from the text file
+        # fetching logged in user from the text file
         with open("src/current_email.txt", "r") as current_email:
             email = current_email.readline()
 
@@ -47,10 +48,11 @@ def user_location():
         cursor.close()
         conn.close()
         print(result[0])
-        return result[0]            # The location
+        return result[0]  # The location
 
     except Exception as err:
         print(err)
+
 
 def events_details(events_id):
     """This function will fetch all events from the database
