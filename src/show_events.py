@@ -1,3 +1,4 @@
+from re import U
 import mysql.connector
 
 # import sys
@@ -21,6 +22,35 @@ def connect():
     except Exception as err:
         print(err)
 
+def user_location():
+    """User location based on the email id they are signed in with."""
+    try:
+        conn, cursor = connect()
+        sql = """
+            SELECT
+                goldapp.location.place
+            FROM
+	            goldapp.user,
+	            goldapp.location
+            WHERE
+	            location.location_id = user.location_location_id
+                and email = ?
+            ;
+            """
+            # fetching logged in user from the text file
+        with open("src/current_email.txt", "r") as current_email:
+            email = current_email.readline()
+
+        args = (email,)
+        cursor.execute(sql, args)
+        result = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        print(result[0])
+        return result[0]            # The location
+
+    except Exception as err:
+        print(err)
 
 def events_ids(events_id):
     """This function will fetch all events from the database
@@ -96,4 +126,5 @@ def show_events():
 
 
 if __name__ == "__main__":
+    user_location()
     show_events()
