@@ -3,13 +3,13 @@ import sys
 
 sys.path.insert(0, "../src")
 
-from Registration.Registration import Ui_MainWindow
+from NewAccount.NewAccount import Ui_Form
 
 
 class test_main(unittest.TestCase):
     def test_init(self):
-        res = Ui_MainWindow()
-        exp = Ui_MainWindow
+        res = Ui_Form()
+        exp = Ui_Form
         self.assertIsInstance(res, exp)
 
 

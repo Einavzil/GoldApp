@@ -1,17 +1,14 @@
 import os.path
-
-# Checks if the 'MainScreen.py' file exists
-def test_is_file_mainscreen():
-    print(
-        os.path.exists(
-            r"C:\Users\rhyme\Documents\HKR\GoldApp\src\MainScreen\MainScreen.py"
-        )
-    )
+import unittest
 
 
-def main():
-    test_is_file_mainscreen()
+class test_mainscreen(unittest.TestCase):
+    # Checks if the 'MainScreen.py' file exists
+    def test_is_file_mainscreen(self):
+        res = os.path.isfile("MainScreen.py")
+        exp = True
+        self.assertEquals(res, exp)
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

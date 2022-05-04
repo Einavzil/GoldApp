@@ -245,7 +245,6 @@ class Ui_MainWindow(object):
         self.app_logo.setText(_translate("MainWindow", "GoldApp"))
 
 
-print(__name__)
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
