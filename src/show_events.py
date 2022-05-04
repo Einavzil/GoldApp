@@ -46,8 +46,11 @@ def events_ids(events_id):
         """
         cursor.execute(sql)
         result = cursor.fetchall()
-        
-        print(result)
+        cursor.close()
+        conn.close()
+        # print(result)
+        return result
+
     except Exception as err:
         print(err)
 
@@ -77,7 +80,7 @@ def event_ids_list():
         events = []
         for i in event_id:
             events.append(i[0])
-        print(events)
+        # print(events)
         cursor.close()
         conn.close()
         return events
@@ -86,5 +89,11 @@ def event_ids_list():
         print(err)
 
 
+def show_events():
+    """Call this function to get all the events in list of tuples."""
+    print(events_ids(event_ids_list()))
+    return events_ids(event_ids_list())
+
+
 if __name__ == "__main__":
-    events_ids(event_ids_list())
+    show_events()
