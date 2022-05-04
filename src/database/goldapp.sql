@@ -1,13 +1,15 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `goldapp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `goldapp`;
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: goldapp
 -- ------------------------------------------------------
--- Server version	8.0.28
-
-
+-- Server version	8.0.27
 DROP DATABASE goldapp;
 CREATE DATABASE goldapp;
 USE goldapp;
+
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,10 +38,12 @@ CREATE TABLE `event` (
   `country` varchar(55) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `information` mediumtext CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `interest_interest_id` int NOT NULL,
+  `eventdate` date DEFAULT NULL,
+  `eventtime` time DEFAULT NULL,
   PRIMARY KEY (`event_id`),
   KEY `fk_event_interest1_idx` (`interest_interest_id`),
   CONSTRAINT `fk_event_interest1` FOREIGN KEY (`interest_interest_id`) REFERENCES `interest` (`interest_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +52,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
+INSERT INTO `event` VALUES (1,'Baking Competition','Main St 50','Stockholm','90002','Sweden','Come for a bake off',7,'2022-05-09','15:00:00'),(2,'Boys Chess Tour','Allee 35','Malmo','80001','Sweden','Nice day at the park for a chess with the boys',4,'2022-08-16','13:00:00'),(3,'Art Class with Class of Wine','Edgarmar ST 100','Stockholm','90002','Sweden','Nice and cozy Saturday with some painting and wine',5,'2022-09-03','14:00:00');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +119,7 @@ DROP TABLE IF EXISTS `interest`;
 CREATE TABLE `interest` (
   `interest_id` int NOT NULL AUTO_INCREMENT,
   `interest` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
-  `image_path` varchar(1024) COLLATE utf8_esperanto_ci DEFAULT NULL,
+  `image_path` varchar(1024) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
   PRIMARY KEY (`interest_id`),
   UNIQUE KEY `interest_UNIQUE` (`interest`),
   UNIQUE KEY `interest_id_UNIQUE` (`interest_id`)
@@ -142,7 +147,7 @@ CREATE TABLE `location` (
   `location_id` int NOT NULL AUTO_INCREMENT,
   `place` varchar(100) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`location_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +156,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (1,'Skåne'),(2,'Stockholm');
+INSERT INTO `location` VALUES (1,'Skåne'),(2,'Stockholm'),(3,'Kristianstad');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,6 +184,7 @@ CREATE TABLE `location_has_event` (
 
 LOCK TABLES `location_has_event` WRITE;
 /*!40000 ALTER TABLE `location_has_event` DISABLE KEYS */;
+INSERT INTO `location_has_event` VALUES (1,1),(2,2);
 /*!40000 ALTER TABLE `location_has_event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,11 +223,11 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `email` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `fname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `lname` varchar(30) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
   `username` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
-  `pwd` varchar(120) COLLATE utf8_esperanto_ci NOT NULL,
+  `pwd` varchar(120) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `phone` int DEFAULT NULL,
   `facebook_connect` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci DEFAULT NULL,
   `location_location_id` int DEFAULT NULL,
@@ -241,7 +247,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('example@gmail.com','first','last',NULL,'gAAAAABiamwmZQTndgruoTKynqxMlupWEZNnX325vZ4lUqxGyX29PlffwQSA1YqGs3D9vTBqG1h_6aFjmuuDaHyTaezUIQFDNw==',10101010,NULL,NULL);
+INSERT INTO `user` VALUES ('example@gmail.com','first','last',NULL,'gAAAAABiamwmZQTndgruoTKynqxMlupWEZNnX325vZ4lUqxGyX29PlffwQSA1YqGs3D9vTBqG1h_6aFjmuuDaHyTaezUIQFDNw==',10101010,NULL,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,7 +260,7 @@ DROP TABLE IF EXISTS `user_has_group`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_has_group` (
   `group_group_id` int NOT NULL,
-  `user_email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `user_email` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`group_group_id`,`user_email`),
   KEY `fk_user_has_group_group1_idx` (`group_group_id`),
   KEY `fk_user_has_group_user1_idx` (`user_email`),
@@ -281,7 +287,7 @@ DROP TABLE IF EXISTS `user_has_interest`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_has_interest` (
   `interest_interest_id` int NOT NULL,
-  `user_email` varchar(90) COLLATE utf8_esperanto_ci NOT NULL,
+  `user_email` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   PRIMARY KEY (`interest_interest_id`,`user_email`),
   KEY `fk_user_has_interest_interest1_idx` (`interest_interest_id`),
   KEY `fk_user_has_interest_user1_idx1` (`user_email`),
@@ -296,6 +302,7 @@ CREATE TABLE `user_has_interest` (
 
 LOCK TABLES `user_has_interest` WRITE;
 /*!40000 ALTER TABLE `user_has_interest` DISABLE KEYS */;
+INSERT INTO `user_has_interest` VALUES (4,'example@gmail.com'),(5,'example@gmail.com'),(7,'example@gmail.com');
 /*!40000 ALTER TABLE `user_has_interest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -308,4 +315,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-02 20:41:57
+-- Dump completed on 2022-05-04 10:53:52
