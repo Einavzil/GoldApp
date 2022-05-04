@@ -1,4 +1,5 @@
 import mysql.connector
+
 # import sys
 # sys.path.insert(0, "../src")
 # import login
@@ -12,9 +13,9 @@ def connect():
         "port": "3306",
         "database": "goldapp",
         "raise_on_warnings": True,
-        }
+    }
     try:
-        conn =  mysql.connector.connect(**dsn)
+        conn = mysql.connector.connect(**dsn)
         cursor = conn.cursor(prepared=True)
         return conn, cursor
     except Exception as err:
@@ -46,7 +47,7 @@ def user_location():
         cursor.close()
         conn.close()
         print(result[0])
-        return result[0]            # The location
+        return result[0]  # The location
 
     except Exception as err:
         print(err)
@@ -76,10 +77,11 @@ def user_interest():
         cursor.close()
         conn.close()
         print(interest_list)
-        return interest_list        # List of user interest
+        return interest_list  # List of user interest
 
     except Exception as err:
         print(err)
+
 
 def nr_of_events_to_display():
     """The total number of events that could be displayed to that user.
@@ -102,13 +104,15 @@ def nr_of_events_to_display():
             and email = ?
             ;
             """
+        # fetching logged in user from the text file
+        with open("src/current_email.txt", "r") as current_email:
+            email = current_email.readline()
 
-        # hard coded at the moment!!!!
-        args = ("example@gmail.com",)
+        args = (email,)
         cursor.execute(sql, args)
         nr_of_events = cursor.fetchone()
         print(nr_of_events[0])
-        
+
         cursor.close()
         conn.close()
         return nr_of_events[0]
@@ -143,8 +147,12 @@ def events_in_location():
             and email = ?
             ;
             """
-        # hard coded at the moment!!!!
-        args = ("example@gmail.com",)
+
+        # fetching logged in user from the text file
+        with open("src/current_email.txt", "r") as current_email:
+            email = current_email.readline()
+
+        args = (email,)
         cursor.execute(sql, args)
         event_name, date, time, address, city, interest, image, desc = cursor.fetchone()
         print(event_name)
@@ -158,14 +166,13 @@ def events_in_location():
         # res = cursor.fetchall()
         # for i in res:
         #     print(i)
-        
+
         cursor.close()
         conn.close()
         return event_name, date, time, address, city, interest, image, desc
 
     except Exception as err:
         print(err)
-    
 
 
 if __name__ == "__main__":
