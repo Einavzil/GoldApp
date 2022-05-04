@@ -1,17 +1,14 @@
 import os.path
-
-# Tests if  the 'registratition.py' file exists
-def test_is_file_registration():
-    print(
-        os.path.exists(
-            r"C:\Users\rhyme\Documents\HKR\GoldApp\src\Registration\Registration.py"
-        )
-    )
+import unittest
 
 
-def main():
-    test_is_file_registration()
+class test_registration(unittest.TestCase):
+    # Checks if the 'MainScreen.py' file exists
+    def test_is_file_registration(self):
+        res = os.path.isfile("registration.py")
+        exp = False  # Improve later
+        self.assertEquals(res, exp)
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

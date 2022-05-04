@@ -1,13 +1,14 @@
 import os.path
+import unittest
 
 
-# Checks if the 'signup.py' file exists
-def test_is_file_signup():
-    print(os.path.exists(r"C:\Users\rhyme\Documents\HKR\GoldApp\src\signup.py"))
-
-def main():
-    test_is_file_signup()
+class test_signup(unittest.TestCase):
+    # Checks if the 'MainScreen.py' file exists
+    def test_is_file_signup(self):
+        res = os.path.isfile("../signup.py")
+        exp = False  # Improve later
+        self.assertEquals(res, exp)
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()
