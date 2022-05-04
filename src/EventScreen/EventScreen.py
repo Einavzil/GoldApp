@@ -866,15 +866,6 @@ class Ui_Form(object):
         self.verticalLayout_box9.addWidget(self.read_more_9)
         self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
         # THIS IS THE MAIN LAYOUT
-        self.photo.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_2.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_3.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_4.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_5.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_6.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_7.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_8.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        self.photo_9.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
 
         box_set = [
             self.widget,
@@ -901,15 +892,6 @@ class Ui_Form(object):
         self.widget_4.setStyleSheet("padding-right: 5cm;")
         self.widget_4.setObjectName("widget_4")
         self.gridLayout_4.addWidget(self.widget_4, 0, 2, 1, 1)
-
-        spacerItem = QtWidgets.QSpacerItem(
-            10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
-        )
-        self.gridLayout_4.addItem(spacerItem, 0, 2, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            10, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
-        )
-        self.gridLayout_4.addItem(spacerItem1, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -985,6 +967,18 @@ class Ui_Form(object):
             self.description_9,
         ]
 
+        photo_set = [
+            self.photo,
+            self.photo_2,
+            self.photo_3,
+            self.photo_4,
+            self.photo_5,
+            self.photo_6,
+            self.photo_7,
+            self.photo_8,
+            self.photo_9,
+        ]
+
         read_more_set = [
             self.read_more,
             self.read_more_2,
@@ -996,6 +990,13 @@ class Ui_Form(object):
             self.read_more_8,
             self.read_more_9,
         ]
+
+        for field, info in zip(photo_set, event_details):
+            data = json.loads(info[0])
+            print(os.path.join(path, "image", data.get("image_path")))
+            field.setPixmap(
+                QtGui.QPixmap(os.path.join(path, f"image/" + data.get("image_path")))
+            )
 
         for field, info in zip(event_set, event_details):
             print(field)
