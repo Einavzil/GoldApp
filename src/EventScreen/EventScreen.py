@@ -10,13 +10,15 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
+import sys
 
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
+import show_events
 
-
-class Ui_Form(object):
+class Ui_Form(object):  
     def setupUi(self, Form):
-
+        event_list, event_detail = show_events.show_events()
+        print(event_detail)
         Form.setObjectName("Form")
         Form.resize(800, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
@@ -873,15 +875,60 @@ class Ui_Form(object):
         self.photo_8.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
         self.photo_9.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
 
-        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
-        self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
-        self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
-        self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
-        self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
-        self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
-        self.gridLayout.addWidget(self.box7, 6, 0, 1, 1)
-        self.gridLayout.addWidget(self.box8, 7, 0, 1, 1)
-        self.gridLayout.addWidget(self.box9, 8, 0, 1, 1)
+        if len(event_list) == 1:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        elif len(event_list) == 2:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+        elif len(event_list) == 3:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1) 
+        elif len(event_list) == 4:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+        elif len(event_list) == 5:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+            self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+        elif len(event_list) == 6:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+            self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+            self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
+        elif len(event_list) == 7:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+            self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+            self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
+            self.gridLayout.addWidget(self.box7, 6, 0, 1, 1)
+        elif len(event_list) == 8:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+            self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+            self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
+            self.gridLayout.addWidget(self.box7, 6, 0, 1, 1)
+            self.gridLayout.addWidget(self.box8, 7, 0, 1, 1)
+        elif len(event_list) == 9:
+            self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
+            self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
+            self.gridLayout.addWidget(self.box4, 3, 0, 1, 1)
+            self.gridLayout.addWidget(self.box5, 4, 0, 1, 1)
+            self.gridLayout.addWidget(self.box6, 5, 0, 1, 1)
+            self.gridLayout.addWidget(self.box7, 6, 0, 1, 1)
+            self.gridLayout.addWidget(self.box8, 7, 0, 1, 1)
+            self.gridLayout.addWidget(self.box9, 8, 0, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.main_board.addWidget(self.scrollArea, 2, 0, 1, 1)

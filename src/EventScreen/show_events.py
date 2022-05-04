@@ -52,7 +52,7 @@ def user_location():
     except Exception as err:
         print(err)
 
-def events_ids(events_id):
+def events_details(events_id):
     """This function will fetch all events from the database
     based on the id's received.
     """
@@ -121,10 +121,9 @@ def event_ids_list():
 
 def show_events():
     """Call this function to get all the events in list of tuples."""
-    print(events_ids(event_ids_list()))
-    return events_ids(event_ids_list())
+    event_list = event_ids_list()
+    return event_list, events_details(event_list)
 
 
 if __name__ == "__main__":
-    user_location()
-    show_events()
+    print(show_events())
