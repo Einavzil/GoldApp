@@ -1,4 +1,5 @@
 from re import U
+import json
 import mysql.connector
 
 # import sys
@@ -8,8 +9,8 @@ import mysql.connector
 
 def connect():
     dsn = {
-        "user": "root",
-        "password": "root",
+        "user": "maria",
+        "password": "password",
         "host": "localhost",
         "port": "3306",
         "database": "goldapp",
@@ -62,15 +63,15 @@ def events_details(events_id):
     try:
         conn, cursor = connect()
         sql = f"""
-        SELECT
-            event.name,
-            event.eventdate,
-            event.eventtime,
-            event.address_line,
-            event.city,
-            interest.interest,
-            interest.image_path,
-            event.information
+        SELECT JSON_OBJECT(
+            'name', event.name,
+            'event_date', event.eventdate,
+            'event_time', event.eventtime,
+            'address', event.address_line,
+            'city', event.city,
+            'interest', interest.interest,
+            'image_path', interest.image_path,
+            'information', event.information)
         FROM event, interest
         WHERE event.interest_interest_id = interest.interest_id
         AND event.event_id IN {id_tuple}
@@ -80,7 +81,6 @@ def events_details(events_id):
         result = cursor.fetchall()
         cursor.close()
         conn.close()
-        # print(result)
         return result
 
     except Exception as err:

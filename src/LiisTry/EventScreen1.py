@@ -16,7 +16,8 @@ import sys
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 import show_events1
 
-class Ui_Form(object):  
+
+class Ui_Form(object):
     def setupUi(self, Form):
         event_list, event_detail = show_events1.show_events()
         print(event_detail)
@@ -874,8 +875,8 @@ class Ui_Form(object):
         self.photo_6.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
         self.photo_7.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
         self.photo_8.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
-        
-#  this file is edited out cuz it is causing an issue
+
+        #  this file is edited out cuz it is causing an issue
         # self.photo_9.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
 
         if len(event_list) == 1:
@@ -886,7 +887,7 @@ class Ui_Form(object):
         elif len(event_list) == 3:
             self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
             self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
-            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1) 
+            self.gridLayout.addWidget(self.box3, 2, 0, 1, 1)
         elif len(event_list) == 4:
             self.gridLayout.addWidget(self.widget, 0, 0, 1, 1, QtCore.Qt.AlignVCenter)
             self.gridLayout.addWidget(self.widget1, 1, 0, 1, 1)
@@ -961,7 +962,7 @@ class Ui_Form(object):
         print(the_event)
         print("number2")
         print((the_event[0],))
-        
+
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
@@ -973,22 +974,48 @@ class Ui_Form(object):
         )
         # Box one
         if the_event[0]:
-            ename, edate, etime, eaddress, ecity, einterest, image_path, event_desc = show_events1.one_event(the_event[0])
+            (
+                ename,
+                edate,
+                etime,
+                eaddress,
+                ecity,
+                einterest,
+                image_path,
+                event_desc,
+            ) = show_events1.one_event(the_event[0])
             print(ename)
-            self.event.setText(_translate("Form", f'Event<span class="event">: {ename} </span>'))
-            self.date.setText(_translate("Form", f'Date & Time<span class="date">: {edate}, {etime}</span>'))
+            self.event.setText(
+                _translate("Form", f'Event<span class="event">: {ename} </span>')
+            )
+            self.date.setText(
+                _translate(
+                    "Form", f'Date & Time<span class="date">: {edate}, {etime}</span>'
+                )
+            )
             self.location.setText(
-                _translate("Form", f'Location<span class="address">: {eaddress}, {ecity}</span>')
+                _translate(
+                    "Form",
+                    f'Location<span class="address">: {eaddress}, {ecity}</span>',
+                )
             )
             self.interest.setText(
-                _translate("Form", f'Interest<span class="interest">: {einterest}</span>')
+                _translate(
+                    "Form", f'Interest<span class="interest">: {einterest}</span>'
+                )
             )
             self.description.setText(
-                _translate("Form", f'Description<span class="desc">: {event_desc}</span>')
+                _translate(
+                    "Form", f'Description<span class="desc">: {event_desc}</span>'
+                )
             )
         else:
-            self.event.setText(_translate("Form", 'Event<span class="event">: Coming soon </span>'))
-            self.date.setText(_translate("Form", 'Date & Time<span class="date">:</span>'))
+            self.event.setText(
+                _translate("Form", 'Event<span class="event">: Coming soon </span>')
+            )
+            self.date.setText(
+                _translate("Form", 'Date & Time<span class="date">:</span>')
+            )
             self.location.setText(
                 _translate("Form", 'Location<span class="address">:</span>')
             )
@@ -996,30 +1023,52 @@ class Ui_Form(object):
                 _translate("Form", 'Interest<span class="interest">:</span>')
             )
             self.description.setText(
-                _translate("Form",'Description<span class="desc">: </span>')
+                _translate("Form", 'Description<span class="desc">: </span>')
             )
-            
+
         self.read_more.setText(_translate("Form", "Read More"))
-    
+
         # box 2
         if the_event[1]:
-            ename, edate, etime, eaddress, ecity, einterest, image_path, event_desc = show_events1.one_event(the_event[1])
-            self.event_2.setText(_translate("Form", f'Event<span class="event">: {ename}</span>'))
+            (
+                ename,
+                edate,
+                etime,
+                eaddress,
+                ecity,
+                einterest,
+                image_path,
+                event_desc,
+            ) = show_events1.one_event(the_event[1])
+            self.event_2.setText(
+                _translate("Form", f'Event<span class="event">: {ename}</span>')
+            )
             self.date_2.setText(
-                _translate("Form", f'Date & Time<span class="date">: {edate}, {etime} </span>')
+                _translate(
+                    "Form", f'Date & Time<span class="date">: {edate}, {etime} </span>'
+                )
             )
             self.location_2.setText(
-                _translate("Form", f'Location<span class="address">: {eaddress}, {ecity}</span>')
+                _translate(
+                    "Form",
+                    f'Location<span class="address">: {eaddress}, {ecity}</span>',
+                )
             )
             self.interest_2.setText(
-                _translate("Form", f'Interest<span class="interest">: {einterest} </span>')
+                _translate(
+                    "Form", f'Interest<span class="interest">: {einterest} </span>'
+                )
             )
             self.description_2.setText(
-                _translate("Form", f'Description<span class="desc">: {event_desc}</span>')
+                _translate(
+                    "Form", f'Description<span class="desc">: {event_desc}</span>'
+                )
             )
-    
+
         else:
-            self.event_2.setText(_translate("Form", f'Event<span class="event">: Coming soon</span>'))
+            self.event_2.setText(
+                _translate("Form", f'Event<span class="event">: Coming soon</span>')
+            )
             self.date_2.setText(
                 _translate("Form", f'Date & Time<span class="date">:</span>')
             )
@@ -1033,7 +1082,6 @@ class Ui_Form(object):
                 _translate("Form", f'Description<span class="desc">:</span>')
             )
         self.read_more_2.setText(_translate("Form", "Read More"))
-
 
         # 3rd box
         self.event_3.setText(_translate("Form", 'Event<span class="event">:</span>'))

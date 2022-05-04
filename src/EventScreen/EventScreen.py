@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 import sys
+import json
 
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 from show_events import show_events
@@ -18,8 +19,7 @@ from show_events import show_events
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        box_set = set()
-        event_list, event_detail = show_events()
+        event_id_list = show_events()[0]
         Form.setObjectName("Form")
         Form.resize(800, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
@@ -876,7 +876,7 @@ class Ui_Form(object):
         self.photo_8.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
         self.photo_9.setPixmap(QtGui.QPixmap(os.path.join(path, "image/chess.jpg")))
 
-        box_set = {
+        box_set = [
             self.widget,
             self.widget1,
             self.box3,
@@ -886,11 +886,11 @@ class Ui_Form(object):
             self.box7,
             self.box8,
             self.box9,
-        }
+        ]
 
         # For LOOP for EINAV <3
-        for i, j in zip(box_set, range(len(event_list))):
-            self.gridLayout.addWidget(i, j, 0, 1, 1)
+        for i, j in zip(box_set, range(len(event_id_list))):
+            self.gridLayout.addWidget(i, j, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.main_board.addWidget(self.scrollArea, 2, 0, 1, 1)
@@ -915,6 +915,7 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
+        _, event_details = show_events()
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
@@ -924,158 +925,140 @@ class Ui_Form(object):
                 '<html><head/><body><p align="center">Local Events and Meetups<span id="events_location" class="events_location">:</span></p></body></html> ',
             )
         )
-        self.event.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date.setText(_translate("Form", 'Date & Time<span class="date">:</span>'))
-        self.location.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more.setText(_translate("Form", "Read More"))
-        self.event_2.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_2.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_2.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_2.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_2.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_2.setText(_translate("Form", "Read More"))
+        event_set = [
+            self.event,
+            self.event_2,
+            self.event_3,
+            self.event_4,
+            self.event_5,
+            self.event_6,
+            self.event_7,
+            self.event_8,
+            self.event_9,
+        ]
 
-        self.event_3.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_3.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_3.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_3.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_3.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_3.setText(_translate("Form", "Read More"))
+        date_set = [
+            self.date,
+            self.date_2,
+            self.date_3,
+            self.date_4,
+            self.date_5,
+            self.date_6,
+            self.date_7,
+            self.date_8,
+            self.date_9,
+        ]
 
-        self.event_4.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_4.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_4.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_4.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_4.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_4.setText(_translate("Form", "Read More"))
+        location_set = [
+            self.location,
+            self.location_2,
+            self.location_3,
+            self.location_4,
+            self.location_5,
+            self.location_6,
+            self.location_7,
+            self.location_8,
+            self.location_9,
+        ]
 
-        self.event_5.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_5.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_5.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_5.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_5.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_5.setText(_translate("Form", "Read More"))
+        interest_set = [
+            self.interest,
+            self.interest_2,
+            self.interest_3,
+            self.interest_4,
+            self.interest_5,
+            self.interest_6,
+            self.interest_7,
+            self.interest_8,
+            self.interest_9,
+        ]
 
-        self.event_6.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_6.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_6.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_6.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_6.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_6.setText(_translate("Form", "Read More"))
+        description_set = [
+            self.description,
+            self.description_2,
+            self.description_3,
+            self.description_4,
+            self.description_5,
+            self.description_6,
+            self.description_7,
+            self.description_8,
+            self.description_9,
+        ]
 
-        self.event_7.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_7.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_7.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_7.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_7.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_7.setText(_translate("Form", "Read More"))
+        read_more_set = [
+            self.read_more,
+            self.read_more_2,
+            self.read_more_3,
+            self.read_more_4,
+            self.read_more_5,
+            self.read_more_6,
+            self.read_more_7,
+            self.read_more_8,
+            self.read_more_9,
+        ]
 
-        self.event_8.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_8.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_8.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_8.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_8.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_8.setText(_translate("Form", "Read More"))
+        for field, info in zip(event_set, event_details, strict=False):
+            print(field)
+            print(info, field)
+            data = json.loads(info[0])
+            field.setText(
+                _translate(
+                    "Form",
+                    'Event<span class="event">: ' + str(data.get("name")) + "</span>",
+                )
+            )
 
-        self.event_8.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_8.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_8.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_8.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_8.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_8.setText(_translate("Form", "Read More"))
+        for field, info in zip(date_set, event_details):
+            data = json.loads(info[0])
+            field.setText(
+                _translate(
+                    "Form",
+                    'Date & Time<span class="date">: '
+                    + data.get("event_date")
+                    + "</span>",
+                )
+            )
 
-        self.event_9.setText(_translate("Form", 'Event<span class="event">:</span>'))
-        self.date_9.setText(
-            _translate("Form", 'Date & Time<span class="date">:</span>')
-        )
-        self.location_9.setText(
-            _translate("Form", 'Location<span class="address">:</span>')
-        )
-        self.interest_9.setText(
-            _translate("Form", 'Interest<span class="interest">:</span>')
-        )
-        self.description_9.setText(
-            _translate("Form", 'Description<span class="desc">:</span>')
-        )
-        self.read_more_9.setText(_translate("Form", "Read More"))
+        for field, info in zip(location_set, event_details):
+            data = json.loads(info[0])
+            field.setText(
+                _translate(
+                    "Form",
+                    'Location<span class="address">: '
+                    + data.get("address")
+                    + "</span>",
+                )
+            )
+
+        for field, info in zip(interest_set, event_details):
+            data = json.loads(info[0])
+            print(data.get("interest"))
+            field.setText(
+                _translate(
+                    "Form",
+                    'Interest<span class="interest">: '
+                    + data.get("interest")
+                    + "</span>",
+                )
+            )
+        for field, info in zip(description_set, event_details):
+            data = json.loads(info[0])
+            print(data.get("information"))
+            field.setText(
+                _translate(
+                    "Form",
+                    'Description<span class="desc">: '
+                    + data.get("information")
+                    + "</span>",
+                )
+            )
+        for i in read_more_set:
+            i.setText(_translate("Form", "Read More"))
 
 
 if __name__ == "__main__":
     import sys
 
-    print(path)
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()
