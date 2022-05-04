@@ -9,9 +9,20 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
+
+sys.path.insert(0, "../src")
+
+from EventScreen.EventScreen import Ui_Form
 
 
 class Ui_MainScreen(object):
+    def open_events(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, MainWindow):
         adapt_size = 150
         __global_size = str(adapt_size) + ";\n"
@@ -45,7 +56,9 @@ class Ui_MainScreen(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.RoundButton = QtWidgets.QPushButton(self.widget)
+        self.RoundButton = QtWidgets.QPushButton(
+            self.widget, clicked=lambda: self.open_events()
+        )
         self.RoundButton.setStyleSheet(
             "QPushButton{\n"
             "background-color:  rgb(255, 203, 99);\n"

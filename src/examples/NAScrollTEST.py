@@ -423,7 +423,7 @@ class Ui_Form(object):
         # Create account button
 
         self.create_button = QtWidgets.QPushButton(
-            self.groupbox, clicked=lambda: self.create_account()
+            self.groupBox, clicked=lambda: self.create_account()
         )
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding

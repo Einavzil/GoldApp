@@ -5,7 +5,7 @@ from cryptography.fernet import Fernet
 def connect():
     dsn = {
         "user": "maria",
-        "password": "P@ssw0rd",
+        "password": "password",
         "host": "127.0.0.1",
         "port": "3306",
         "database": "goldapp",
