@@ -347,7 +347,7 @@ class Ui_Form(object):
         self.verticalLayout_box3.addWidget(self.read_more_3)
         self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
 
-        # # box 4
+        # box 4
         self.box4 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box4.setStyleSheet(
             "margin-bottom: 8px;\n"

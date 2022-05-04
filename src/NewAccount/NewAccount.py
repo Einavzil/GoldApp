@@ -50,6 +50,7 @@ class Ui_Form(object):
         )
         self.input_interest(email)
 
+
     def input_interest(self, email):
         if self.checkBox_1.isChecked():
             signup.add_interest(email, 1)

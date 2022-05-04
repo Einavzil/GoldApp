@@ -1,15 +1,12 @@
-CREATE DATABASE  IF NOT EXISTS `goldapp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `goldapp`;
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
---
--- Host: localhost    Database: goldapp
--- ------------------------------------------------------
--- Server version	8.0.27
 DROP DATABASE goldapp;
 CREATE DATABASE goldapp;
 USE goldapp;
 
-
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+--
+-- Host: localhost    Database: goldapp
+-- ------------------------------------------------------
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,8 +37,11 @@ CREATE TABLE `event` (
   `interest_interest_id` int NOT NULL,
   `eventdate` date DEFAULT NULL,
   `eventtime` time DEFAULT NULL,
+  `location_id` int DEFAULT NULL,
   PRIMARY KEY (`event_id`),
   KEY `fk_event_interest1_idx` (`interest_interest_id`),
+  KEY `location_id` (`location_id`),
+  CONSTRAINT `event_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`),
   CONSTRAINT `fk_event_interest1` FOREIGN KEY (`interest_interest_id`) REFERENCES `interest` (`interest_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -52,7 +52,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (1,'Baking Competition','Main St 50','Stockholm','90002','Sweden','Come for a bake off',7,'2022-05-09','15:00:00'),(2,'Boys Chess Tour','Allee 35','Malmo','80001','Sweden','Nice day at the park for a chess with the boys',4,'2022-08-16','13:00:00'),(3,'Art Class with Class of Wine','Edgarmar ST 100','Stockholm','90002','Sweden','Nice and cozy Saturday with some painting and wine',5,'2022-09-03','14:00:00');
+INSERT INTO `event` VALUES (1,'Baking Competition','Main St 50','Stockholm','90002','Sweden','Come for a bake off',7,'2022-05-09','15:00:00',2),(2,'Boys Chess Tour','Allee 35','Malmo','80001','Sweden','Nice day at the park for a chess with the boys',4,'2022-08-16','13:00:00',1),(3,'Art Class with Class of Wine','Edgarmar ST 100','Stockholm','90002','Sweden','Nice and cozy Saturday with some painting and wine',5,'2022-09-03','14:00:00',2);
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,34 +158,6 @@ LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
 INSERT INTO `location` VALUES (1,'Skåne'),(2,'Stockholm'),(3,'Kristianstad');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `location_has_event`
---
-
-DROP TABLE IF EXISTS `location_has_event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `location_has_event` (
-  `location_location_id` int NOT NULL,
-  `event_event_id` int NOT NULL,
-  PRIMARY KEY (`location_location_id`,`event_event_id`),
-  KEY `fk_location_has_event_event1_idx` (`event_event_id`),
-  KEY `fk_location_has_event_location1_idx` (`location_location_id`),
-  CONSTRAINT `fk_location_has_event_event1` FOREIGN KEY (`event_event_id`) REFERENCES `event` (`event_id`),
-  CONSTRAINT `fk_location_has_event_location1` FOREIGN KEY (`location_location_id`) REFERENCES `location` (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `location_has_event`
---
-
-LOCK TABLES `location_has_event` WRITE;
-/*!40000 ALTER TABLE `location_has_event` DISABLE KEYS */;
-INSERT INTO `location_has_event` VALUES (1,1),(2,2);
-/*!40000 ALTER TABLE `location_has_event` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -315,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-04 10:53:52
+-- Dump completed on 2022-05-04 12:16:41
