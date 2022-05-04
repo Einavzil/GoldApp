@@ -922,7 +922,7 @@ class Ui_Form(object):
         self.events_location.setText(
             _translate(
                 "Form",
-                '<html><head/><body><p align="center">Local Events and Meetups<span id="events_location" class="events_location">:</span></p></body></html> ',
+                f'<html><head/><body><p align="center">Local Events and Meetups<span id="events_location" class="events_location">: { json.loads(event_details[0][0]).get("city")}</span></p></body></html> ',
             )
         )
         event_set = [
