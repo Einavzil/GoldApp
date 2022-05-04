@@ -997,7 +997,7 @@ class Ui_Form(object):
             self.read_more_9,
         ]
 
-        for field, info in zip(event_set, event_details, strict=False):
+        for field, info in zip(event_set, event_details):
             print(field)
             print(info, field)
             data = json.loads(info[0])
