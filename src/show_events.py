@@ -52,7 +52,7 @@ def user_location():
         result = cursor.fetchone()
         cursor.close()
         conn.close()
-        print(result[0])
+        # print(result[0])
         return result[0]  # The location
 
     except Exception as err:
@@ -136,4 +136,5 @@ def show_events():
 
 
 if __name__ == "__main__":
-    print(show_events())
+    # print(show_events())
+    show_events()
