@@ -34,3 +34,13 @@ else
 endif
 installed:
 	$(PYTHON) -m pip list
+
+unittest:
+	@$(call MESSAGE,$@)
+	 $(PYTHON) -m unittest discover
+
+coverage:
+	@$(call MESSAGE,$@)
+	coverage run -m unittest discover
+	coverage html
+	coverage report -m
