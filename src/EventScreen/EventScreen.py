@@ -184,7 +184,7 @@ class Ui_Form(object):
         # self.read_more.setObjectName("read_more")
         # self.verticalLayout_4.addWidget(self.read_more)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
-        
+
         # box 2
         self.box2 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box2.setStyleSheet(

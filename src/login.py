@@ -67,7 +67,9 @@ def check_password(email, password):
 
         decrepted_pass = decrypt_pass(result[0])
         if decrepted_pass == password:
+            store_current_email(email)
             return True
+
         return False
 
     except Exception as err:
@@ -93,7 +95,7 @@ def decrypt_pass(password):
 
 def store_current_email(email):
     try:
-        with open("current_email.txt", "w") as login_file:
+        with open("src\current_email.txt", "w") as login_file:
             login_file.write(email)
     except:
         with open("src\current_email.txt", "w") as login_file:
