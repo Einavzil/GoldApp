@@ -34,10 +34,7 @@ class TestShowEvents(unittest.TestCase):
 
     def test_event_ids_list(self):
         """Event List."""
-        with open("src/current_email.txt", "r") as current_email:
-            email = current_email.readline()
-        exp = show_events.event_ids_list()
-        res = email
+        
 
 
     def test_show_events(self):
