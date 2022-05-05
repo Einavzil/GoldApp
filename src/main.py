@@ -2,6 +2,8 @@ from Registration.Registration import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
+sys.path.insert(0, "../src")
+
 
 def main():
     app = QtWidgets.QApplication(sys.argv)

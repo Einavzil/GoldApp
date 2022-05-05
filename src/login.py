@@ -1,5 +1,8 @@
 import mysql.connector
 from cryptography.fernet import Fernet
+import sys
+
+sys.path.insert(0, "../src")
 
 
 def connect():
@@ -73,7 +76,7 @@ def check_password(email, password):
 
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
-
+    print(sys.path)
     with open("enc_key.bin", "rb") as key_file:
         key = key_file.readline()
 

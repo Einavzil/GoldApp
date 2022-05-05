@@ -2,8 +2,9 @@ from re import U
 import json
 import mysql.connector
 
-# import sys
-# sys.path.insert(0, "../src")
+import sys
+
+sys.path.insert(0, "../src")
 # import login
 
 
