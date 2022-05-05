@@ -11,12 +11,20 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
+
 sys.path.insert(0, "../src")
 
 from EventScreen.EventScreen import Ui_Form
+from HelpPage.HelpPage import Ui_HelpPage
 
 
 class Ui_MainScreen(object):
+    def open_help_page(self):
+        self.help_window = QtWidgets.QMainWindow()
+        self.ui = Ui_HelpPage()
+        self.ui.setupUi(self.help_window)
+        self.help_window.show()
+
     def open_events(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Form()
@@ -118,7 +126,9 @@ class Ui_MainScreen(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_3 = QtWidgets.QPushButton(
+            self.widget, clicked=lambda: self.open_help_page()
+        )
         self.pushButton_3.setStyleSheet(
             "QPushButton{\n"
             "background-color:  rgb(124, 198, 99);\n"

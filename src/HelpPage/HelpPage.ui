@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(220, 221, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1186</width>
+         <height>550</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>135</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>135</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>313</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QWidget" name="" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QWidget" name="" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>520</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: white;
+border-radius: 5px;
+padding-left: 15px;</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="1">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item alignment="Qt::AlignVCenter">
+                 <widget class="QLineEdit" name="lineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>600</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-size: 30px;
+color: white;
+padding: 5px;
+background-color: orange;
+text-align: center;</string>
+                  </property>
+                  <property name="text">
+                   <string>Want to talk with proffesionals?</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_3" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="" native="true">
+                  <layout class="QVBoxLayout" name="verticalLayout">
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_2">
+                     <property name="styleSheet">
+                      <string notr="true">font-size: 20px;</string>
+                     </property>
+                     <property name="text">
+                      <string>The button to the right will</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_4">
+                     <property name="styleSheet">
+                      <string notr="true">font-size: 20px;</string>
+                     </property>
+                     <property name="text">
+                      <string>bring up call centers local to your area.</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_3">
+                     <property name="styleSheet">
+                      <string notr="true">font-size: 20px;</string>
+                     </property>
+                     <property name="text">
+                      <string>If you want more personilized help</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_5">
+                     <property name="styleSheet">
+                      <string notr="true">font-size: 20px;</string>
+                     </property>
+                     <property name="text">
+                      <string>please fill up the form below.</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widget_4" native="true"/>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget" native="true"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="QWidget" name="widget_2" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_5" native="true">
+             <property name="styleSheet">
+              <string notr="true">margin-left: 15px</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_6" native="true"/>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background-color: rgb(255, 203, 99);
+border-width: 0px;
+border-radius:75px;
+min-height: 150px;
+min-width: 150px;
+max-height: 150px;
+max-width: 150px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Press Here</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
