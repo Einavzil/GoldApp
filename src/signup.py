@@ -53,7 +53,7 @@ def get_location_id(location):
 
 
 def encrypt_pass(pwd):
-    with open("src/enc_key.bin", "rb") as key_file:
+    with open("enc_key.bin", "rb") as key_file:
         key = key_file.readline()
 
     fernet = Fernet(key)

@@ -74,7 +74,7 @@ def check_password(email, password):
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
 
-    with open("src/enc_key.bin", "rb") as key_file:
+    with open("enc_key.bin", "rb") as key_file:
         key = key_file.readline()
 
     fernet = Fernet(key)
@@ -84,7 +84,15 @@ def decrypt_pass(password):
     return decr_pass.decode()
 
 
+def store_current_email(email):
+
+    with open("current_email.txt", "w") as login_file:
+        login_file.write(email)
+
+
 if __name__ == "__main__":
     print(check_email("example@gmail.com"))
     if check_email("example@gmail.com"):
         print(check_password("example@gmail.com", "abc123"))
+
+    store_current_email("example@gmail.com")

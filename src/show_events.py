@@ -40,7 +40,7 @@ def user_location():
             ;
             """
         # fetching logged in user from the text file
-        with open("src/current_email.txt", "r") as current_email:
+        with open("current_email.txt", "r") as current_email:
             email = current_email.readline()
 
         args = (email,)
@@ -103,7 +103,7 @@ def event_ids_list():
             ;
             """
         # fetching logged in user from the text file
-        with open("src/current_email.txt", "r") as current_email:
+        with open("current_email.txt", "r") as current_email:
             email = current_email.readline()
 
         args = (email,)
