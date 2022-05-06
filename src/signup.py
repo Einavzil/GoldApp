@@ -20,21 +20,23 @@ def connect():
 
 
 def insert_account(fname, lname, email, pwd, phone, location):
-    conn, cursor = connect()
-    enc_pwd = encrypt_pass(pwd)
-    location_id = get_location_id(location)
+    try:
+        conn, cursor = connect()
+        enc_pwd = encrypt_pass(pwd)
+        location_id = get_location_id(location)
 
-    sql = """
-    INSERT INTO user (email, fname, lname, pwd, phone, location_location_id)
-    VALUES (?, ?, ?, ?, ?, ?)
-    ;
-    """
-    args = (email, fname, lname, enc_pwd, phone, location_id)
-    cursor.execute(sql, args)
-    conn.commit()
+        sql = """
+        INSERT INTO user (email, fname, lname, pwd, phone, location_location_id)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ;
+        """
+        args = (email, fname, lname, enc_pwd, phone, location_id)
+        cursor.execute(sql, args)
+        conn.commit()
 
-    return email
-
+        return email
+    except Exception as err:
+        print(err)
 
 def get_location_id(location):
     conn, cursor = connect()
