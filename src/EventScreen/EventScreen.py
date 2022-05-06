@@ -184,6 +184,7 @@ class Ui_Form(object):
         # self.read_more.setObjectName("read_more")
         # self.verticalLayout_4.addWidget(self.read_more)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
+        self.gridLayout.addWidget(self.box1, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         # box 2
         self.box2 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -271,7 +272,7 @@ class Ui_Form(object):
         # self.read_more_2.setObjectName("read_more_2")
         # self.verticalLayout_5.addWidget(self.read_more_2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
-
+        self.gridLayout.addWidget(self.box2, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # # box 3
         self.box3 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box3.setStyleSheet(
@@ -359,7 +360,7 @@ class Ui_Form(object):
         # self.read_more_3.setObjectName("read_more_3")
         # self.verticalLayout_box3.addWidget(self.read_more_3)
         self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
-
+        self.gridLayout.addWidget(self.box3, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 4
         self.box4 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box4.setStyleSheet(
@@ -447,7 +448,7 @@ class Ui_Form(object):
         # self.read_more_4.setObjectName("read_more_4")
         # self.verticalLayout_box4.addWidget(self.read_more_4)
         self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
-
+        self.gridLayout.addWidget(self.box4, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 5
         self.box5 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box5.setStyleSheet(
@@ -535,7 +536,7 @@ class Ui_Form(object):
         # self.read_more_5.setObjectName("read_more_4")
         # self.verticalLayout_box5.addWidget(self.read_more_5)
         self.horizontalLayout_box5.addLayout(self.verticalLayout_box5)
-
+        self.gridLayout.addWidget(self.box5, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 6
 
         self.box6 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -624,7 +625,7 @@ class Ui_Form(object):
         # self.read_more_6.setObjectName("read_more_6")
         # self.verticalLayout_box6.addWidget(self.read_more_6)
         self.horizontalLayout_box6.addLayout(self.verticalLayout_box6)
-
+        self.gridLayout.addWidget(self.box6, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 7
 
         self.box7 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -712,7 +713,7 @@ class Ui_Form(object):
         # self.read_more_7.setObjectName("read_more_7")
         # self.verticalLayout_box7.addWidget(self.read_more_7)
         self.horizontalLayout_box7.addLayout(self.verticalLayout_box7)
-
+        self.gridLayout.addWidget(self.box7, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 8
         self.box8 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box8.setStyleSheet(
@@ -799,6 +800,7 @@ class Ui_Form(object):
         # self.read_more_8.setObjectName("read_more_8")
         # self.verticalLayout_box8.addWidget(self.read_more_8)
         self.horizontalLayout_box8.addLayout(self.verticalLayout_box8)
+        self.gridLayout.addWidget(self.box8, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         # box 9
         self.box9 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -887,6 +889,7 @@ class Ui_Form(object):
         # self.read_more_9.setObjectName("read_more_9")
         # self.verticalLayout_box9.addWidget(self.read_more_9)
         self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
+        self.gridLayout.addWidget(self.box9, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # THIS IS THE MAIN LAYOUT
 
         box_set = [
