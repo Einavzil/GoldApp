@@ -1,6 +1,4 @@
 import unittest
-import json
-import mysql.connector
 import sys
 import os
 
@@ -8,21 +6,21 @@ sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import show_events
 
 
-class TestShowEvents(unittest.TestCase):
-    """Unittest."""
+class test_show_events(unittest.TestCase):
+    """Unit tests for show_events.py file."""
    
     def test_connect(self):
         """Test the connection."""
         connection = show_events.connect()
         if connection == None:
-            self.assertFalse(connection)
-            self.assertRaises(Exception)
+            self.assertIsNone(connection)
+            self.assertRaises(Exception, show_events.connect)
         else:
             self.assertTrue(connection)
 
 
     def test_user_location(self):
-        """Location."""
+        """Location. Dependent on the example email."""
         with open("src\current_email.txt", "r") as current_email:
             email = current_email.readline()
         if email == 'example@gmail.com':
