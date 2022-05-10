@@ -39,6 +39,19 @@
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>135</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="4" column="1" alignment="Qt::AlignHCenter">
          <widget class="QPushButton" name="pushButton_2">
           <property name="styleSheet">
@@ -58,32 +71,6 @@ margin-top: 50px;
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>135</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>135</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="2" column="1">
          <spacer name="verticalSpacer">
           <property name="orientation">
@@ -97,10 +84,23 @@ margin-top: 50px;
           </property>
          </spacer>
         </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>135</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="0" column="1" rowspan="2">
          <widget class="QWidget" name="widget" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
+           <item alignment="Qt::AlignHCenter">
             <widget class="QWidget" name="widget" native="true">
              <property name="minimumSize">
               <size>
@@ -109,9 +109,12 @@ margin-top: 50px;
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: white;
+              <string notr="true">QWidget{
+background-color: white;
 border-radius: 5px;
-padding-left: 15px;</string>
+padding-left: 15px;
+
+}</string>
              </property>
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="1">
@@ -198,11 +201,11 @@ text-align: center;</string>
                 </item>
                </layout>
               </item>
-              <item row="0" column="0">
-               <widget class="QWidget" name="widget" native="true"/>
-              </item>
               <item row="0" column="2">
                <widget class="QWidget" name="widget_2" native="true"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget" native="true"/>
               </item>
              </layout>
             </widget>
@@ -263,6 +266,32 @@ max-width: 150px;
            </item>
           </layout>
          </widget>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="2">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="3" column="1">
          <widget class="QWidget" name="widget_7" native="true">
