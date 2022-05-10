@@ -16,7 +16,7 @@ sys.path.insert(0, "../src")
 import signup
 
 
-class Ui_Form(object):
+class Ui_Form(QtWidgets.QWidget):
     def __init__(self):
         super(Ui_Form, self).__init__()
 
@@ -27,7 +27,8 @@ class Ui_Form(object):
             return False
         return True
 
-    def create_account(self):
+    def create_account(self, Form):
+
         while "@" not in self.email_input.text():
             self.show_popup_email()
             return False
@@ -48,8 +49,9 @@ class Ui_Form(object):
             self.phone_input.text(),
             self.comboBox.currentText(),
         )
-        self.input_interest(email)
 
+        self.input_interest(email)
+        Form.close()
 
     def input_interest(self, email):
         if self.checkBox_1.isChecked():
@@ -444,7 +446,7 @@ class Ui_Form(object):
 
         # Create account button
         self.create_button = QtWidgets.QPushButton(
-            self.groupBox, clicked=lambda: self.create_account()
+            self.groupBox, clicked=lambda: self.create_account(Form)
         )
         sizePolicy.setHeightForWidth(
             self.create_button.sizePolicy().hasHeightForWidth()
