@@ -7,7 +7,7 @@ class test_registration(unittest.TestCase):
     def test_is_file_registration(self):
         res = os.path.isfile("registration.py")
         exp = False  # Improve later
-        self.assertEquals(res, exp)
+        self.assertEqual(res, exp)
 
 
 if __name__ == "__main__":

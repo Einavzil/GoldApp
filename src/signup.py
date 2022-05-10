@@ -1,3 +1,4 @@
+from msilib.schema import Error
 import mysql.connector
 from cryptography.fernet import Fernet
 
@@ -76,10 +77,13 @@ def add_interest(user_id, interest):
     VALUES (?, ?)
     ;
     """
+    try:
+        cursor.execute(sql, (interest, user_id))
+        print(cursor.fetchone())
+        conn.commit()
 
-    cursor.execute(sql, (interest, user_id))
-    print(cursor.fetchone())
-    conn.commit()
-
-    cursor.close()
-    conn.close()
+        cursor.close()
+        conn.close()
+        
+    except Exception as err:
+        print(err)
