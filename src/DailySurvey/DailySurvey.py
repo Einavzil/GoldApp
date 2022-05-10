@@ -9,9 +9,72 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+import sys
+
+sys.path.insert(0, "..\src")
+import daily_survey_db
 
 
-class Ui_Form(object):
+class Ui_Form_Survey(object):
+    def check_question1(self):
+        question1_list = [
+            self.radioButton1_q1,
+            self.radioButton2_q1,
+            self.radioButton3_q1,
+            self.radioButton4_q1,
+            self.radioButton5_q1,
+        ]
+        for i in question1_list:
+            if i.isChecked():
+                return question1_list.index(i) + 1
+        else:
+            return 0
+
+    def check_question2(self):
+        question2_list = [
+            self.radioButton1_q2,
+            self.radioButton2_q2,
+            self.radioButton3_q2,
+            self.radioButton4_q2,
+            self.radioButton5_q2,
+        ]
+        for i in question2_list:
+            if i.isChecked():
+                return question2_list.index(i) + 1
+        else:
+            return 0
+
+    def check_question3(self):
+        question3_list = [
+            self.radioButton1_q3,
+            self.radioButton2_q3,
+            self.radioButton3_q3,
+            self.radioButton4_q3,
+            self.radioButton5_q3,
+        ]
+        for i in question3_list:
+            if i.isChecked():
+                return question3_list.index(i) + 1
+        else:
+            return 0
+
+    def collect_data(self):
+        answer1, answer2, answer3 = (
+            self.check_question1(),
+            self.check_question2(),
+            self.check_question3(),
+        )
+        if answer1 == 0 or answer2 == 0 or answer3 == 0:
+            self.show_popup()
+            return False
+        answer4 = self.plainText_answer.toPlainText()
+        print(answer1)
+        print(answer2)
+        print(answer3)
+        print(answer4)
+        daily_survey_db.insert_data(answer1, answer2, answer3, answer4)
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(950, 1000)
@@ -135,51 +198,51 @@ class Ui_Form(object):
         self.question1_answers = QtWidgets.QHBoxLayout(self.groupbox)
         self.question1_answers.setContentsMargins(-1, 10, -1, 10)
         self.question1_answers.setObjectName("question1_answers")
-        self.radioButton_3 = QtWidgets.QRadioButton(self.groupbox)
+        self.radioButton1_q1 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_3.setFont(font)
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.question1_answers.addWidget(self.radioButton_3)
-        self.radioButton_4 = QtWidgets.QRadioButton(self.groupbox)
+        self.radioButton1_q1.setFont(font)
+        self.radioButton1_q1.setObjectName("radioButton_3")
+        self.question1_answers.addWidget(self.radioButton1_q1)
+        self.radioButton2_q1 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_4.setFont(font)
-        self.radioButton_4.setObjectName("radioButton_4")
-        self.question1_answers.addWidget(self.radioButton_4)
-        self.radioButton = QtWidgets.QRadioButton(self.groupbox)
+        self.radioButton2_q1.setFont(font)
+        self.radioButton2_q1.setObjectName("radioButton_4")
+        self.question1_answers.addWidget(self.radioButton2_q1)
+        self.radioButton3_q1 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton.setFont(font)
-        self.radioButton.setObjectName("radioButton")
-        self.question1_answers.addWidget(self.radioButton)
-        self.radioButton_5 = QtWidgets.QRadioButton(self.groupbox)
+        self.radioButton3_q1.setFont(font)
+        self.radioButton3_q1.setObjectName("radioButton")
+        self.question1_answers.addWidget(self.radioButton3_q1)
+        self.radioButton4_q1 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_5.setFont(font)
-        self.radioButton_5.setObjectName("radioButton_5")
-        self.question1_answers.addWidget(self.radioButton_5)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.groupbox)
+        self.radioButton4_q1.setFont(font)
+        self.radioButton4_q1.setObjectName("radioButton_5")
+        self.question1_answers.addWidget(self.radioButton4_q1)
+        self.radioButton5_q1 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_2.setFont(font)
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.question1_answers.addWidget(self.radioButton_2)
+        self.radioButton5_q1.setFont(font)
+        self.radioButton5_q1.setObjectName("radioButton_2")
+        self.question1_answers.addWidget(self.radioButton5_q1)
         self.question1_layout.addWidget(self.groupbox)
         self.gridLayout.addLayout(self.question1_layout, 0, 0, 1, 1)
         self.question2_layout = QtWidgets.QVBoxLayout()
@@ -201,51 +264,51 @@ class Ui_Form(object):
         self.question2_answers = QtWidgets.QHBoxLayout(self.question2_answers_2)
         self.question2_answers.setContentsMargins(-1, 10, -1, 10)
         self.question2_answers.setObjectName("question2_answers")
-        self.radioButton_6 = QtWidgets.QRadioButton(self.question2_answers_2)
+        self.radioButton1_q2 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_6.setFont(font)
-        self.radioButton_6.setObjectName("radioButton_6")
-        self.question2_answers.addWidget(self.radioButton_6)
-        self.radioButton_7 = QtWidgets.QRadioButton(self.question2_answers_2)
+        self.radioButton1_q2.setFont(font)
+        self.radioButton1_q2.setObjectName("radioButton_6")
+        self.question2_answers.addWidget(self.radioButton1_q2)
+        self.radioButton2_q2 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_7.setFont(font)
-        self.radioButton_7.setObjectName("radioButton_7")
-        self.question2_answers.addWidget(self.radioButton_7)
-        self.radioButton_8 = QtWidgets.QRadioButton(self.question2_answers_2)
+        self.radioButton2_q2.setFont(font)
+        self.radioButton2_q2.setObjectName("radioButton_7")
+        self.question2_answers.addWidget(self.radioButton2_q2)
+        self.radioButton3_q2 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_8.setFont(font)
-        self.radioButton_8.setObjectName("radioButton_8")
-        self.question2_answers.addWidget(self.radioButton_8)
-        self.radioButton_9 = QtWidgets.QRadioButton(self.question2_answers_2)
+        self.radioButton3_q2.setFont(font)
+        self.radioButton3_q2.setObjectName("radioButton_8")
+        self.question2_answers.addWidget(self.radioButton3_q2)
+        self.radioButton4_q2 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_9.setFont(font)
-        self.radioButton_9.setObjectName("radioButton_9")
-        self.question2_answers.addWidget(self.radioButton_9)
-        self.radioButton_10 = QtWidgets.QRadioButton(self.question2_answers_2)
+        self.radioButton4_q2.setFont(font)
+        self.radioButton4_q2.setObjectName("radioButton_9")
+        self.question2_answers.addWidget(self.radioButton4_q2)
+        self.radioButton5_q2 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_10.setFont(font)
-        self.radioButton_10.setObjectName("radioButton_10")
-        self.question2_answers.addWidget(self.radioButton_10)
+        self.radioButton5_q2.setFont(font)
+        self.radioButton5_q2.setObjectName("radioButton_10")
+        self.question2_answers.addWidget(self.radioButton5_q2)
         self.question2_layout.addWidget(self.question2_answers_2)
         self.gridLayout.addLayout(self.question2_layout, 1, 0, 1, 1)
         self.question3_layout = QtWidgets.QVBoxLayout()
@@ -267,51 +330,51 @@ class Ui_Form(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.groupbox1)
         self.horizontalLayout_2.setContentsMargins(-1, 10, -1, 10)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.radioButton_11 = QtWidgets.QRadioButton(self.groupbox1)
+        self.radioButton1_q3 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_11.setFont(font)
-        self.radioButton_11.setObjectName("radioButton_11")
-        self.horizontalLayout_2.addWidget(self.radioButton_11)
-        self.radioButton_12 = QtWidgets.QRadioButton(self.groupbox1)
+        self.radioButton1_q3.setFont(font)
+        self.radioButton1_q3.setObjectName("radioButton_11")
+        self.horizontalLayout_2.addWidget(self.radioButton1_q3)
+        self.radioButton2_q3 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_12.setFont(font)
-        self.radioButton_12.setObjectName("radioButton_12")
-        self.horizontalLayout_2.addWidget(self.radioButton_12)
-        self.radioButton_13 = QtWidgets.QRadioButton(self.groupbox1)
+        self.radioButton2_q3.setFont(font)
+        self.radioButton2_q3.setObjectName("radioButton_12")
+        self.horizontalLayout_2.addWidget(self.radioButton2_q3)
+        self.radioButton3_q3 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_13.setFont(font)
-        self.radioButton_13.setObjectName("radioButton_13")
-        self.horizontalLayout_2.addWidget(self.radioButton_13)
-        self.radioButton_14 = QtWidgets.QRadioButton(self.groupbox1)
+        self.radioButton3_q3.setFont(font)
+        self.radioButton3_q3.setObjectName("radioButton_13")
+        self.horizontalLayout_2.addWidget(self.radioButton3_q3)
+        self.radioButton4_q3 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_14.setFont(font)
-        self.radioButton_14.setObjectName("radioButton_14")
-        self.horizontalLayout_2.addWidget(self.radioButton_14)
-        self.radioButton_15 = QtWidgets.QRadioButton(self.groupbox1)
+        self.radioButton4_q3.setFont(font)
+        self.radioButton4_q3.setObjectName("radioButton_14")
+        self.horizontalLayout_2.addWidget(self.radioButton4_q3)
+        self.radioButton5_q3 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(9)
         font.setBold(True)
         font.setWeight(75)
-        self.radioButton_15.setFont(font)
-        self.radioButton_15.setObjectName("radioButton_15")
-        self.horizontalLayout_2.addWidget(self.radioButton_15)
+        self.radioButton5_q3.setFont(font)
+        self.radioButton5_q3.setObjectName("radioButton_15")
+        self.horizontalLayout_2.addWidget(self.radioButton5_q3)
         self.question3_layout.addWidget(self.groupbox1)
         self.gridLayout.addLayout(self.question3_layout, 2, 0, 1, 1)
         self.question4_layout = QtWidgets.QVBoxLayout()
@@ -377,7 +440,9 @@ class Ui_Form(object):
             40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
         )
         self.button_layout.addItem(spacerItem2)
-        self.submit_button = QtWidgets.QPushButton(self.main_layout)
+        self.submit_button = QtWidgets.QPushButton(
+            self.main_layout, clicked=lambda: self.collect_data()
+        )
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum
         )
@@ -471,6 +536,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        return True
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -488,30 +554,37 @@ class Ui_Form(object):
             )
         )
         self.question1_text.setText(_translate("Form", "Do you feel happy today?"))
-        self.radioButton_3.setText(_translate("Form", "Very unhappy"))
-        self.radioButton_4.setText(_translate("Form", "Unhappy"))
-        self.radioButton.setText(_translate("Form", "Not clear"))
-        self.radioButton_5.setText(_translate("Form", "Happy"))
-        self.radioButton_2.setText(_translate("Form", "Very happy"))
+        self.radioButton1_q1.setText(_translate("Form", "Very unhappy"))
+        self.radioButton2_q1.setText(_translate("Form", "Unhappy"))
+        self.radioButton3_q1.setText(_translate("Form", "Not clear"))
+        self.radioButton4_q1.setText(_translate("Form", "Happy"))
+        self.radioButton5_q1.setText(_translate("Form", "Very happy"))
         self.question2_text.setText(
             _translate("Form", "How satisfied are you with yourself today?")
         )
-        self.radioButton_6.setText(_translate("Form", "Not at all satisfied"))
-        self.radioButton_7.setText(_translate("Form", "Not satisfied"))
-        self.radioButton_8.setText(_translate("Form", "Not clear"))
-        self.radioButton_9.setText(_translate("Form", "Satisfied"))
-        self.radioButton_10.setText(_translate("Form", "Very much satisfied"))
+        self.radioButton1_q2.setText(_translate("Form", "Not at all satisfied"))
+        self.radioButton2_q2.setText(_translate("Form", "Not satisfied"))
+        self.radioButton3_q2.setText(_translate("Form", "Not clear"))
+        self.radioButton4_q2.setText(_translate("Form", "Satisfied"))
+        self.radioButton5_q2.setText(_translate("Form", "Very much satisfied"))
         self.question3_text.setText(_translate("Form", "How calm are you today?"))
-        self.radioButton_11.setText(_translate("Form", "Not calm at all"))
-        self.radioButton_12.setText(_translate("Form", "Not calm"))
-        self.radioButton_13.setText(_translate("Form", "Not clear"))
-        self.radioButton_14.setText(_translate("Form", "Calm"))
-        self.radioButton_15.setText(_translate("Form", "Very calm"))
+        self.radioButton1_q3.setText(_translate("Form", "Not calm at all"))
+        self.radioButton2_q3.setText(_translate("Form", "Not calm"))
+        self.radioButton3_q3.setText(_translate("Form", "Not clear"))
+        self.radioButton4_q3.setText(_translate("Form", "Calm"))
+        self.radioButton5_q3.setText(_translate("Form", "Very calm"))
         self.question4_text.setText(
             _translate("Form", "Do you want to add anything? (Optional)")
         )
         self.submit_button.setText(_translate("Form", "Submit"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
+
+    def show_popup(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("empty answers")
+        msg.setText("One of the first 3 questions is empty.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
 
 
 if __name__ == "__main__":
@@ -519,7 +592,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = Ui_Form_Survey()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())
