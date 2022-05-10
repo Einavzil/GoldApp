@@ -1,11 +1,10 @@
-from re import U
+# from re import U  # not sure if it's been an ups import, probably don't need it?
 import json
 import mysql.connector
 
 import sys
 
 sys.path.insert(0, "../src")
-# import login
 
 
 def connect():

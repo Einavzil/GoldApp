@@ -1,7 +1,7 @@
-from cgitb import reset
 import unittest
 import sys
 import os
+import mysql.connector
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import login
 
@@ -18,16 +18,18 @@ class test_login(unittest.TestCase):
 
     def test_connect(self):
         """Test the connection."""
-        connection = login.connect()
-        if connection == None:
-            self.assertIsNone(connection)
-            self.assertRaises(Exception, login.connect)
-        else:
-            self.assertTrue(connection)
+        conn, cursor = login.connect()
+        res = conn
+        exp = mysql.connector.connection_cext.CMySQLConnection
+        self.assertIsInstance(res, exp)
+        
+        res = cursor
+        exp = mysql.connector.cursor_cext.CMySQLCursorPrepared
+        self.assertIsInstance(res, exp)
 
 
     def test_check_email(self):
-        """Test."""
+        """Test check email."""
         email = "liis@gmail.com"
         res = login.check_email(email)
         exp = True

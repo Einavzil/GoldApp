@@ -7,7 +7,7 @@ class test_mainscreen(unittest.TestCase):
     def test_is_file_mainscreen(self):
         res = os.path.isfile("MainScreen.py")
         exp = False
-        self.assertEquals(res, exp)
+        self.assertEqual(res, exp)
 
 
 if __name__ == "__main__":
