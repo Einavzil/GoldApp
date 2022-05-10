@@ -1,13 +1,19 @@
 import unittest
 import sys
 import os
-
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import show_events
 
 
 class test_show_events(unittest.TestCase):
     """Unit tests for show_events.py file."""
+    
+    def test_is_file_show_events(self):
+        """Checks if the 'show_events.py' file exists."""
+        res = os.path.isfile("src\show_events.py")
+        exp = True
+        self.assertEqual(res, exp)
+
    
     def test_connect(self):
         """Test the connection."""

@@ -9,9 +9,9 @@ class test_signup(unittest.TestCase):
     """Unit tests for signup.py file."""
     
     def test_is_file_signup(self):
-        """Checks if the 'MainScreen.py' file exists."""
-        res = os.path.isfile("../signup.py")
-        exp = False  # Improve later
+        """Checks if the 'show_events.py' file exists."""
+        res = os.path.isfile("src\signup.py")
+        exp = True
         self.assertEqual(res, exp)
 
 
