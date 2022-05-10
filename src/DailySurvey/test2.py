@@ -22,7 +22,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
         Form.setSizePolicy(sizePolicy)
-        Form.setMinimumSize(QtCore.QSize(950, 950))
+        Form.setMinimumSize(QtCore.QSize(1200, 950))
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
         self.gridLayout_2 = QtWidgets.QGridLayout(Form)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
@@ -59,46 +59,46 @@ class Ui_Form(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.top_text)
         self.gridLayout_4.setContentsMargins(-1, -1, -1, 1)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        self.text1 = QtWidgets.QLabel(self.top_text)
+        self.header = QtWidgets.QLabel(self.top_text)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.text1.sizePolicy().hasHeightForWidth())
-        self.text1.setSizePolicy(sizePolicy)
-        self.text1.setMinimumSize(QtCore.QSize(892, 37))
-        self.text1.setMaximumSize(QtCore.QSize(892, 37))
+        sizePolicy.setHeightForWidth(self.header.sizePolicy().hasHeightForWidth())
+        self.header.setSizePolicy(sizePolicy)
+        self.header.setMinimumSize(QtCore.QSize(892, 37))
+        self.header.setMaximumSize(QtCore.QSize(892, 37))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.text1.setFont(font)
-        self.text1.setStyleSheet("")
-        self.text1.setAlignment(QtCore.Qt.AlignCenter)
-        self.text1.setObjectName("text1")
-        self.gridLayout_4.addWidget(self.text1, 0, 0, 1, 1)
-        self.text2 = QtWidgets.QLabel(self.top_text)
+        self.header.setFont(font)
+        self.header.setStyleSheet("margin-bottom:0px")
+        self.header.setAlignment(QtCore.Qt.AlignCenter)
+        self.header.setObjectName("text1")
+        self.gridLayout_4.addWidget(self.header, 0, 0, 1, 1)
+        self.subheader = QtWidgets.QLabel(self.top_text)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.text2.sizePolicy().hasHeightForWidth())
-        self.text2.setSizePolicy(sizePolicy)
-        self.text2.setMinimumSize(QtCore.QSize(892, 31))
-        self.text2.setMaximumSize(QtCore.QSize(892, 31))
+        sizePolicy.setHeightForWidth(self.subheader.sizePolicy().hasHeightForWidth())
+        self.subheader.setSizePolicy(sizePolicy)
+        self.subheader.setMinimumSize(QtCore.QSize(892, 31))
+        self.subheader.setMaximumSize(QtCore.QSize(892, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Light")
         font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
-        self.text2.setFont(font)
-        self.text2.setStyleSheet("")
-        self.text2.setAlignment(QtCore.Qt.AlignCenter)
-        self.text2.setObjectName("text2")
-        self.gridLayout_4.addWidget(self.text2, 1, 0, 1, 1)
+        self.subheader.setFont(font)
+        self.subheader.setStyleSheet("margins: 0px;")
+        self.subheader.setAlignment(QtCore.Qt.AlignCenter)
+        self.subheader.setObjectName("text2")
+        self.gridLayout_4.addWidget(self.subheader, 1, 0, 1, 1)
         self.bottom_layout.addWidget(self.top_text)
         self.questions_layout = QtWidgets.QWidget(self.main_layout)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -442,7 +442,6 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.app_logo.sizePolicy().hasHeightForWidth())
         self.app_logo.setSizePolicy(sizePolicy)
-        self.app_logo.setMaximumSize(QtCore.QSize(610, 194))
         font = QtGui.QFont()
         font.setFamily("Sitka Small")
         font.setPointSize(72)
@@ -456,8 +455,8 @@ class Ui_Form(object):
             "border-color: black;\n"
             "border-radius: 10px;\n"
             "border-style: none;\n"
-            "margin-top: 10px;\n"
-            "margin-bottom: 10px;\n"
+            "margin-top: 0px;\n"
+            "margin-bottom: 0px;\n"
             "padding-left: 20px;\n"
             "padding-right: 20px;\n"
             "margin-left: 0px;\n"
@@ -476,13 +475,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.text1.setText(
+        self.header.setText(
             _translate(
                 "Form",
-                "On this page you will be asked 4 daily questions about your mental state.",
+                "Four daily questions about your mental state.",
             )
         )
-        self.text2.setText(
+        self.subheader.setText(
             _translate(
                 "Form",
                 "Your answers will be saved and protected. No one is able to see them.",
