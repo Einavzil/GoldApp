@@ -15,19 +15,23 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(950, 1000)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
         Form.setSizePolicy(sizePolicy)
-        Form.setMinimumSize(QtCore.QSize(950, 1000))
+        Form.setMinimumSize(QtCore.QSize(950, 950))
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
         self.gridLayout_2 = QtWidgets.QGridLayout(Form)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.main_layout = QtWidgets.QWidget(Form)
         self.main_layout.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.main_layout.sizePolicy().hasHeightForWidth())
@@ -41,10 +45,14 @@ class Ui_Form(object):
         self.logo_layout = QtWidgets.QHBoxLayout()
         self.logo_layout.setContentsMargins(-1, -1, -1, 1)
         self.logo_layout.setObjectName("logo_layout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.logo_layout.addItem(spacerItem)
         self.app_logo = QtWidgets.QLabel(self.main_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.app_logo.sizePolicy().hasHeightForWidth())
@@ -56,41 +64,50 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.app_logo.setFont(font)
-        self.app_logo.setStyleSheet("QLabel{\n"
-"color: rgb(255, 203, 99);\n"
-"background-color: white;\n"
-"border-color: black;\n"
-"border-radius: 10px;\n"
-"border-style: none;\n"
-"margin-top: 10px;\n"
-"margin-bottom: 10px;\n"
-"padding-left: 20px;\n"
-"padding-right: 20px;\n"
-"margin-left: 0px;\n"
-"margin-right: 0px;\n"
-"}")
+        self.app_logo.setStyleSheet(
+            "QLabel{\n"
+            "color: rgb(255, 203, 99);\n"
+            "background-color: white;\n"
+            "border-color: black;\n"
+            "border-radius: 10px;\n"
+            "border-style: none;\n"
+            "margin-top: 10px;\n"
+            "margin-bottom: 10px;\n"
+            "padding-left: 20px;\n"
+            "padding-right: 20px;\n"
+            "margin-left: 0px;\n"
+            "margin-right: 0px;\n"
+            "}"
+        )
         self.app_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.app_logo.setObjectName("app_logo")
         self.logo_layout.addWidget(self.app_logo)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.logo_layout.addItem(spacerItem1)
         self.gridLayout_3.addLayout(self.logo_layout, 0, 0, 1, 1)
         self.bottom_layout = QtWidgets.QVBoxLayout()
         self.bottom_layout.setContentsMargins(-1, 10, -1, -1)
         self.bottom_layout.setObjectName("bottom_layout")
         self.top_text = QtWidgets.QWidget(self.main_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.top_text.sizePolicy().hasHeightForWidth())
         self.top_text.setSizePolicy(sizePolicy)
         self.top_text.setMinimumSize(QtCore.QSize(896, 76))
+        self.top_text.setMaximumSize(QtCore.QSize(896, 76))
         self.top_text.setObjectName("top_text")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.top_text)
         self.gridLayout_4.setContentsMargins(-1, -1, -1, 1)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.text1 = QtWidgets.QLabel(self.top_text)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.text1.sizePolicy().hasHeightForWidth())
@@ -108,7 +125,9 @@ class Ui_Form(object):
         self.text1.setObjectName("text1")
         self.gridLayout_4.addWidget(self.text1, 0, 0, 1, 1)
         self.text2 = QtWidgets.QLabel(self.top_text)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.text2.sizePolicy().hasHeightForWidth())
@@ -127,10 +146,14 @@ class Ui_Form(object):
         self.gridLayout_4.addWidget(self.text2, 1, 0, 1, 1)
         self.bottom_layout.addWidget(self.top_text)
         self.questions_layout = QtWidgets.QWidget(self.main_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.questions_layout.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.questions_layout.sizePolicy().hasHeightForWidth()
+        )
         self.questions_layout.setSizePolicy(sizePolicy)
         self.questions_layout.setMinimumSize(QtCore.QSize(625, 498))
         self.questions_layout.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -160,7 +183,7 @@ class Ui_Form(object):
         self.radioButton_3 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_3.setFont(font)
@@ -169,7 +192,7 @@ class Ui_Form(object):
         self.radioButton_4 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_4.setFont(font)
@@ -178,7 +201,7 @@ class Ui_Form(object):
         self.radioButton = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton.setFont(font)
@@ -187,7 +210,7 @@ class Ui_Form(object):
         self.radioButton_5 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_5.setFont(font)
@@ -196,7 +219,7 @@ class Ui_Form(object):
         self.radioButton_2 = QtWidgets.QRadioButton(self.groupbox)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_2.setFont(font)
@@ -226,7 +249,7 @@ class Ui_Form(object):
         self.radioButton_6 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_6.setFont(font)
@@ -235,7 +258,7 @@ class Ui_Form(object):
         self.radioButton_7 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_7.setFont(font)
@@ -244,7 +267,7 @@ class Ui_Form(object):
         self.radioButton_8 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_8.setFont(font)
@@ -253,7 +276,7 @@ class Ui_Form(object):
         self.radioButton_9 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_9.setFont(font)
@@ -262,7 +285,7 @@ class Ui_Form(object):
         self.radioButton_10 = QtWidgets.QRadioButton(self.question2_answers_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_10.setFont(font)
@@ -292,7 +315,7 @@ class Ui_Form(object):
         self.radioButton_11 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_11.setFont(font)
@@ -301,7 +324,7 @@ class Ui_Form(object):
         self.radioButton_12 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_12.setFont(font)
@@ -310,7 +333,7 @@ class Ui_Form(object):
         self.radioButton_13 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_13.setFont(font)
@@ -319,7 +342,7 @@ class Ui_Form(object):
         self.radioButton_14 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_14.setFont(font)
@@ -328,7 +351,7 @@ class Ui_Form(object):
         self.radioButton_15 = QtWidgets.QRadioButton(self.groupbox1)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
-        font.setPointSize(9)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.radioButton_15.setFont(font)
@@ -353,13 +376,19 @@ class Ui_Form(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setContentsMargins(-1, -1, -1, 10)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.horizontalLayout_4.addItem(spacerItem2)
         self.plainText_answer = QtWidgets.QPlainTextEdit(self.questions_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.plainText_answer.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.plainText_answer.sizePolicy().hasHeightForWidth()
+        )
         self.plainText_answer.setSizePolicy(sizePolicy)
         self.plainText_answer.setMinimumSize(QtCore.QSize(450, 100))
         self.plainText_answer.setMaximumSize(QtCore.QSize(500, 80))
@@ -369,28 +398,39 @@ class Ui_Form(object):
         self.plainText_answer.setFont(font)
         self.plainText_answer.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.plainText_answer.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.plainText_answer.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font-size: 20px;")
+        self.plainText_answer.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "font-size: 20px;"
+        )
         self.plainText_answer.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.plainText_answer.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.plainText_answer.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.plainText_answer.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.plainText_answer.setSizeAdjustPolicy(
+            QtWidgets.QAbstractScrollArea.AdjustToContents
+        )
         self.plainText_answer.setObjectName("plainText_answer")
         self.horizontalLayout_4.addWidget(self.plainText_answer)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.horizontalLayout_4.addItem(spacerItem3)
         self.question4_layout.addLayout(self.horizontalLayout_4)
         self.gridLayout.addLayout(self.question4_layout, 3, 0, 1, 1)
         self.bottom_layout.addWidget(self.questions_layout)
         self.button_layout = QtWidgets.QHBoxLayout()
         self.button_layout.setObjectName("button_layout")
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.button_layout.addItem(spacerItem4)
         self.submit_button = QtWidgets.QPushButton(self.main_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.submit_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.submit_button.sizePolicy().hasHeightForWidth()
+        )
         self.submit_button.setSizePolicy(sizePolicy)
         self.submit_button.setMinimumSize(QtCore.QSize(300, 0))
         self.submit_button.setMaximumSize(QtCore.QSize(200, 45))
@@ -402,23 +442,27 @@ class Ui_Form(object):
         font.setWeight(75)
         font.setStrikeOut(False)
         self.submit_button.setFont(font)
-        self.submit_button.setStyleSheet("QPushButton{\n"
-"background-color:  rgb(255, 203, 99);\n"
-"border: none;\n"
-"border-radius: 5px;\n"
-"color: white;\n"
-"padding:32px;\n"
-"text-align: center;\n"
-"text-decoration: none;\n"
-"display: inline-block;\n"
-"font-size: 18px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:  rgb(255, 220, 99);\n"
-"}")
+        self.submit_button.setStyleSheet(
+            "QPushButton{\n"
+            "background-color:  rgb(255, 203, 99);\n"
+            "border: none;\n"
+            "border-radius: 5px;\n"
+            "color: white;\n"
+            "padding:32px;\n"
+            "text-align: center;\n"
+            "text-decoration: none;\n"
+            "display: inline-block;\n"
+            "font-size: 18px;\n"
+            "}\n"
+            "QPushButton:hover{\n"
+            "background-color:  rgb(255, 220, 99);\n"
+            "}"
+        )
         self.submit_button.setObjectName("submit_button")
         self.button_layout.addWidget(self.submit_button)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.button_layout.addItem(spacerItem5)
         self.bottom_layout.addLayout(self.button_layout)
         self.gridLayout_3.addLayout(self.bottom_layout, 1, 0, 1, 1)
@@ -431,15 +475,27 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.text1.setText(_translate("Form", "On this page you will be asked 4 daily questions about your mental state."))
-        self.text2.setText(_translate("Form", "Your answers will be saved and protected. No one is able to see them."))
+        self.text1.setText(
+            _translate(
+                "Form",
+                "On this page you will be asked 4 daily questions about your mental state.",
+            )
+        )
+        self.text2.setText(
+            _translate(
+                "Form",
+                "Your answers will be saved and protected. No one is able to see them.",
+            )
+        )
         self.question1_text.setText(_translate("Form", "Do you feel happy today?"))
         self.radioButton_3.setText(_translate("Form", "Very unhappy"))
         self.radioButton_4.setText(_translate("Form", "Unhappy"))
         self.radioButton.setText(_translate("Form", "Not clear"))
         self.radioButton_5.setText(_translate("Form", "Happy"))
         self.radioButton_2.setText(_translate("Form", "Very happy"))
-        self.question2_text.setText(_translate("Form", "How satisfied are you with yourself today?"))
+        self.question2_text.setText(
+            _translate("Form", "How satisfied are you with yourself today?")
+        )
         self.radioButton_6.setText(_translate("Form", "Not at all satisfied"))
         self.radioButton_7.setText(_translate("Form", "Not satisfied"))
         self.radioButton_8.setText(_translate("Form", "Not clear"))
@@ -451,12 +507,15 @@ class Ui_Form(object):
         self.radioButton_13.setText(_translate("Form", "Not clear"))
         self.radioButton_14.setText(_translate("Form", "Calm"))
         self.radioButton_15.setText(_translate("Form", "Very calm"))
-        self.question4_text.setText(_translate("Form", "Do you want to add anything? (Optional)"))
+        self.question4_text.setText(
+            _translate("Form", "Do you want to add anything? (Optional)")
+        )
         self.submit_button.setText(_translate("Form", "Submit"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()
