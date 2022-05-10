@@ -1,3 +1,7 @@
+DROP DATABASE goldapp;
+CREATE DATABASE goldapp;
+USE goldapp;
+
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: goldapp
@@ -23,7 +27,7 @@ DROP TABLE IF EXISTS `daily_survey`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `daily_survey` (
-  `daily_survey_id` int NOT NULL,
+  `daily_survey_id` int NOT NULL AUTO_INCREMENT,
   `user_email` varchar(90) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
   `date` date NOT NULL,
   `answer_1` tinyint(1) NOT NULL,

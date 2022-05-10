@@ -16,6 +16,7 @@ sys.path.insert(0, "../src")
 
 from EventScreen.EventScreen import Ui_Form
 from HelpPage.HelpPage import Ui_HelpPage
+from DailySurvey.DailySurvey import Ui_Form_Survey
 
 
 class Ui_MainScreen(object):
@@ -28,6 +29,12 @@ class Ui_MainScreen(object):
     def open_events(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def open_daily_survey(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = Ui_Form_Survey()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -100,7 +107,9 @@ class Ui_MainScreen(object):
         self.widget_2.setMinimumSize(QtCore.QSize(100, 100))
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout.addWidget(self.widget_2)
-        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_2 = QtWidgets.QPushButton(
+            self.widget, clicked=lambda: self.open_daily_survey()
+        )
         self.pushButton_2.setStyleSheet(
             "QPushButton{\n"
             "background-color:  rgb(246, 77, 39);\n"
@@ -171,7 +180,7 @@ class Ui_MainScreen(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.RoundButton.setText(_translate("MainWindow", "Meetings"))
-        self.pushButton_2.setText(_translate("MainWindow", "Attributes"))
+        self.pushButton_2.setText(_translate("MainWindow", "Daily Survey"))
         self.pushButton_3.setText(_translate("MainWindow", "Assistance"))
 
 
