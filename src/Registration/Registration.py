@@ -19,8 +19,8 @@ from NewAccount.NewAccount import Ui_Form
 import login
 
 
-class Ui_MainWindow(object):
-    def open_login(self):
+class Ui_MainWindow(QtWidgets.QWidget):
+    def open_login(self, MainWindow):
         if login.check_email(self.email_box.text()) and login.check_password(
             self.email_box.text(), self.password_box.text()
         ):
@@ -28,6 +28,7 @@ class Ui_MainWindow(object):
             self.ui = Ui_MainScreen()
             self.ui.setupUi(self.window)
             self.window.show()
+            MainWindow.close()
 
     def open_create_account(self):
         self.window = QtWidgets.QWidget()
@@ -59,7 +60,7 @@ class Ui_MainWindow(object):
 
         # Login button
         self.login_button = QtWidgets.QPushButton(
-            self.groupBox, clicked=lambda: self.open_login()
+            self.groupBox, clicked=lambda: self.open_login(MainWindow)
         )
         font = QtGui.QFont()
         font.setPointSize(-1)

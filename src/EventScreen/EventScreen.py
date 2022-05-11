@@ -161,28 +161,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description.setObjectName("description")
+        self.description.setReadOnly(True)
         self.verticalLayout_4.addWidget(self.description)
-        # self.read_more = QtWidgets.QPushButton(self.widget)
-        # self.read_more.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  white;\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  white;\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more.setObjectName("read_more")
-        # self.verticalLayout_4.addWidget(self.read_more)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
         self.gridLayout.addWidget(self.box1, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
@@ -249,28 +229,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_2.setObjectName("description_2")
+        self.description_2.setReadOnly(True)
         self.verticalLayout_5.addWidget(self.description_2)
-        # self.read_more_2 = QtWidgets.QPushButton(self.widget1)
-        # self.read_more_2.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_2.setObjectName("read_more_2")
-        # self.verticalLayout_5.addWidget(self.read_more_2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
         self.gridLayout.addWidget(self.box2, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # # box 3
@@ -337,28 +297,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_3.setObjectName("description_3")
+        self.description_3.setReadOnly(True)
         self.verticalLayout_box3.addWidget(self.description_3)
-        # self.read_more_3 = QtWidgets.QPushButton(self.box3)
-        # self.read_more_3.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_3.setObjectName("read_more_3")
-        # self.verticalLayout_box3.addWidget(self.read_more_3)
         self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
         self.gridLayout.addWidget(self.box3, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 4
@@ -425,28 +365,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_4.setObjectName("description_4")
+        self.description_4.setReadOnly(True)
         self.verticalLayout_box4.addWidget(self.description_4)
-        # self.read_more_4 = QtWidgets.QPushButton(self.box4)
-        # self.read_more_4.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_4.setObjectName("read_more_4")
-        # self.verticalLayout_box4.addWidget(self.read_more_4)
         self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
         self.gridLayout.addWidget(self.box4, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 5
@@ -513,28 +433,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_5.setObjectName("description_5")
+        self.description_5.setReadOnly(True)
         self.verticalLayout_box5.addWidget(self.description_5)
-        # self.read_more_5 = QtWidgets.QPushButton(self.box5)
-        # self.read_more_5.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_5.setObjectName("read_more_4")
-        # self.verticalLayout_box5.addWidget(self.read_more_5)
         self.horizontalLayout_box5.addLayout(self.verticalLayout_box5)
         self.gridLayout.addWidget(self.box5, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 6
@@ -602,28 +502,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_6.setObjectName("description_6")
+        self.description_6.setReadOnly(True)
         self.verticalLayout_box6.addWidget(self.description_6)
-        # self.read_more_6 = QtWidgets.QPushButton(self.box6)
-        # self.read_more_6.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_6.setObjectName("read_more_6")
-        # self.verticalLayout_box6.addWidget(self.read_more_6)
         self.horizontalLayout_box6.addLayout(self.verticalLayout_box6)
         self.gridLayout.addWidget(self.box6, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 7
@@ -690,28 +570,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_7.setObjectName("description_7")
+        self.description_7.setReadOnly(True)
         self.verticalLayout_box7.addWidget(self.description_7)
-        # self.read_more_7 = QtWidgets.QPushButton(self.box7)
-        # self.read_more_7.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_7.setObjectName("read_more_7")
-        # self.verticalLayout_box7.addWidget(self.read_more_7)
         self.horizontalLayout_box7.addLayout(self.verticalLayout_box7)
         self.gridLayout.addWidget(self.box7, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 8
@@ -777,28 +637,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_8.setObjectName("description_8")
+        self.description_8.setReadOnly(True)
         self.verticalLayout_box8.addWidget(self.description_8)
-        # self.read_more_8 = QtWidgets.QPushButton(self.box8)
-        # self.read_more_8.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_8.setObjectName("read_more_8")
-        # self.verticalLayout_box8.addWidget(self.read_more_8)
         self.horizontalLayout_box8.addLayout(self.verticalLayout_box8)
         self.gridLayout.addWidget(self.box8, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
@@ -866,28 +706,8 @@ class Ui_Form(object):
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
         )
         self.description_9.setObjectName("description_9")
+        self.description_9.setReadOnly(True)
         self.verticalLayout_box9.addWidget(self.description_9)
-        # self.read_more_9 = QtWidgets.QPushButton(self.box9)
-        # self.read_more_9.setStyleSheet(
-        #     "QPushButton{\n"
-        #     "background-color:  rgb(255, 203, 99);\n"
-        #     "border: none;\n"
-        #     "border-radius: 10px;\n"
-        #     "color: white;\n"
-        #     "padding: 10px 23px;\n"
-        #     "margin: 10px 60px 10px 60px;\n"
-        #     "text-align: center;\n"
-        #     "text-decoration: none;\n"
-        #     "display: inline-block;\n"
-        #     "font-size: 13px;\n"
-        #     "}\n"
-        #     "QPushButton:hover{\n"
-        #     "background-color:  rgb(255, 220, 99);\n"
-        #     "}\n"
-        #     ""
-        # )
-        # self.read_more_9.setObjectName("read_more_9")
-        # self.verticalLayout_box9.addWidget(self.read_more_9)
         self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
         self.gridLayout.addWidget(self.box9, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # THIS IS THE MAIN LAYOUT
@@ -1004,18 +824,6 @@ class Ui_Form(object):
             self.photo_9,
         ]
 
-        # read_more_set = [
-        #     self.read_more,
-        #     self.read_more_2,
-        #     self.read_more_3,
-        #     self.read_more_4,
-        #     self.read_more_5,
-        #     self.read_more_6,
-        #     self.read_more_7,
-        #     self.read_more_8,
-        #     self.read_more_9,
-        # ]
-
         for field, info in zip(photo_set, event_details):
             data = json.loads(info[0])
             print(os.path.join(path, "image", data.get("image_path")))
@@ -1078,8 +886,6 @@ class Ui_Form(object):
                     + "</span>",
                 )
             )
-        # for i in read_more_set:
-        #     i.setText(_translate("Form", "Read More"))
 
 
 if __name__ == "__main__":
