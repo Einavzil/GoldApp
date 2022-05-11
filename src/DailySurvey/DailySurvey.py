@@ -14,9 +14,10 @@ import sys
 
 sys.path.insert(0, "..\src")
 import daily_survey_db
+from MentalPage.MentalPage import Ui_Form
 
 
-class Ui_Form_Survey(object):
+class Ui_Form_Survey(QtWidgets.QWidget):
     def check_question1(self):
         question1_list = [
             self.radioButton1_q1,
@@ -59,7 +60,7 @@ class Ui_Form_Survey(object):
         else:
             return 0
 
-    def collect_data(self):
+    def collect_data(self, Form):
         answer1, answer2, answer3 = (
             self.check_question1(),
             self.check_question2(),
@@ -73,9 +74,24 @@ class Ui_Form_Survey(object):
         print(answer2)
         print(answer3)
         print(answer4)
-        daily_survey_db.insert_data(answer1, answer2, answer3, answer4)
+        rowcount = daily_survey_db.insert_data(answer1, answer2, answer3, answer4)
+
+        if rowcount == 1:
+            self.show_popup_submitted()
+            if ((answer1 + answer2 + answer3) / 3) <= 2:
+                self.open_mental_page()
+            Form.close()
+
+    def open_mental_page(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def setupUi(self, Form):
+        if not daily_survey_db.check_last_survey():
+            self.show_popup_already_filled()
+            return
         Form.setObjectName("Form")
         Form.resize(950, 1000)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -441,7 +457,7 @@ class Ui_Form_Survey(object):
         )
         self.button_layout.addItem(spacerItem2)
         self.submit_button = QtWidgets.QPushButton(
-            self.main_layout, clicked=lambda: self.collect_data()
+            self.main_layout, clicked=lambda: self.collect_data(Form)
         )
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum
@@ -583,6 +599,20 @@ class Ui_Form_Survey(object):
         msg = QMessageBox()
         msg.setWindowTitle("empty answers")
         msg.setText("One of the first 3 questions is empty.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_submitted(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("sumbitted succesfully")
+        msg.setText("Your answers submitted succesfully. See you again tomorrow!")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_already_filled(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("already filled today")
+        msg.setText("You already filled the daily survey today. Come back tomorrow!")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
 

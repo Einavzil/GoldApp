@@ -35,8 +35,8 @@ class Ui_MainScreen(object):
     def open_daily_survey(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Form_Survey()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        if self.ui.setupUi(self.window):
+            self.window.show()
 
     def setupUi(self, MainWindow):
         adapt_size = 150
