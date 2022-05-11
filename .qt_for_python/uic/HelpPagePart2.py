@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Dzenis Madzovic\OneDrive - Högskolan Kristianstad\Skrivbordet\Projects\GoldApp\src\HelpPage\HelpPage.ui'
+# Form implementation generated from reading ui file 'c:\Users\Dzenis Madzovic\OneDrive - Högskolan Kristianstad\Skrivbordet\Projects\GoldApp\src\examples\HelpPagePart2.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #

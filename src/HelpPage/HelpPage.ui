@@ -34,24 +34,11 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1186</width>
-         <height>550</height>
+         <width>1173</width>
+         <height>725</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="2">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>135</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="1" column="0">
          <spacer name="horizontalSpacer">
           <property name="orientation">
@@ -64,6 +51,25 @@
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="4" column="1" alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: rgb(255, 203, 99);
+border-width: 0px;
+border-radius:75px;
+min-height: 150px;
+min-width: 150px;
+max-height: 150px;
+max-width: 150px;
+margin-top: 50px;
+}</string>
+          </property>
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="1">
          <spacer name="verticalSpacer">
@@ -78,11 +84,24 @@
           </property>
          </spacer>
         </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>135</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="0" column="1" rowspan="2">
-         <widget class="QWidget" name="" native="true">
+         <widget class="QWidget" name="widget" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QWidget" name="" native="true">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QWidget" name="widget" native="true">
              <property name="minimumSize">
               <size>
                <width>520</width>
@@ -90,9 +109,12 @@
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: white;
+              <string notr="true">QWidget{
+background-color: white;
 border-radius: 5px;
-padding-left: 15px;</string>
+padding-left: 15px;
+
+}</string>
              </property>
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="1">
@@ -129,7 +151,7 @@ text-align: center;</string>
                  <widget class="QWidget" name="widget_3" native="true"/>
                 </item>
                 <item>
-                 <widget class="QWidget" name="" native="true">
+                 <widget class="QWidget" name="widget" native="true">
                   <layout class="QVBoxLayout" name="verticalLayout">
                    <item>
                     <widget class="QLineEdit" name="lineEdit_2">
@@ -179,11 +201,11 @@ text-align: center;</string>
                 </item>
                </layout>
               </item>
-              <item row="0" column="0">
-               <widget class="QWidget" name="widget" native="true"/>
-              </item>
               <item row="0" column="2">
                <widget class="QWidget" name="widget_2" native="true"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget" native="true"/>
               </item>
              </layout>
             </widget>
@@ -240,6 +262,328 @@ max-width: 150px;
              <property name="text">
               <string>Press Here</string>
              </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="2">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="1">
+         <widget class="QWidget" name="widget_7" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-radius: 5px;</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QWidget" name="labels_layout" native="true">
+             <property name="styleSheet">
+              <string notr="true">margin-left: 7px;</string>
+             </property>
+             <layout class="QVBoxLayout" name="labels">
+              <item>
+               <widget class="QLabel" name="email_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 130px;</string>
+                </property>
+                <property name="text">
+                 <string>Email:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="first_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 74px;</string>
+                </property>
+                <property name="text">
+                 <string>First name:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="last_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 76px;</string>
+                </property>
+                <property name="text">
+                 <string>Last name:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="phone_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 26px;</string>
+                </property>
+                <property name="text">
+                 <string>Phone number:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="passwor_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 120px;</string>
+                </property>
+                <property name="text">
+                 <string>Problem type:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="rep_pass_label">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-bottom: 40px;</string>
+                </property>
+                <property name="text">
+                 <string>Problem description:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="passwor_label_2">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">margin-right: 90px;</string>
+                </property>
+                <property name="text">
+                 <string>Location:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QWidget" name="inputs_layout" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">margin-top: 4px;
+margin-right: 7px;</string>
+             </property>
+             <layout class="QVBoxLayout" name="inputs">
+              <item>
+               <widget class="QLineEdit" name="email_input">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Light</family>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="first_input">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Light</family>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="last_input">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Light</family>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="phone_input">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Light</family>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="pass_input">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Light</family>
+                  <pointsize>16</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:  rgb(255, 255, 255);</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextEdit" name="textEdit"/>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Historic</family>
+                  <pointsize>16</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+padding-left: 0px;</string>
+                </property>
+                <property name="frame">
+                 <bool>true</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Skåne</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Stockholm</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
