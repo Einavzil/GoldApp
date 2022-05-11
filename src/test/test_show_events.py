@@ -1,6 +1,5 @@
 import unittest
-import sys
-import os
+import sys, os
 import mysql.connector
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import show_events
@@ -72,10 +71,13 @@ class test_show_events(unittest.TestCase):
         
 
     def test_show_events(self):
-        """Show events.Nr of events/event-ids."""
+        """Show events. Nr of events/event-ids."""
         number_list, event_deets = show_events.show_events()
-        self.assertEqual(len(number_list), len(event_deets))
-        
+        print(number_list)
+        print(event_deets)
+        if event_deets != None:
+            self.assertEqual(len(number_list), len(event_deets))
+
         res = number_list
         exp = show_events.event_ids_list()
         self.assertEqual(res, exp)

@@ -1,11 +1,9 @@
 import unittest
-import os.path
-import sys
+import os.path, sys
 import mysql.connector
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
-import signup
+import signup, login
 import time
-import login
 
 
 class test_signup(unittest.TestCase):

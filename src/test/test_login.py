@@ -1,6 +1,5 @@
 import unittest
-import sys
-import os
+import sys, os
 import mysql.connector
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import login
@@ -61,12 +60,22 @@ class test_login(unittest.TestCase):
         
     def test_store_current_email(self):
         """Testing login functions."""
+        with open("src\current_email.txt", "r") as login_file:
+            original_email = login_file.readline()
         email = "hello@world.com"
         login.store_current_email(email)
         with open("src\current_email.txt", "r") as login_file:
             res = login_file.readline()
         exp = email
         self.assertEqual(res, exp)
+        self.assertNotEqual(exp, original_email)
+        login.store_current_email(original_email)
+        with open("src\current_email.txt", "r") as login_file:
+            old_email = login_file.readline()
+        self.assertEqual(original_email, old_email)
+        
+        
+        
    
 
 if __name__ == "__main__":

@@ -1,6 +1,5 @@
 import unittest
-import sys
-import os
+import sys, os
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 from Registration.Registration import Ui_MainWindow
 
