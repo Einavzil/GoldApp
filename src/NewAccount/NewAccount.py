@@ -86,6 +86,7 @@ class Ui_Form(QtWidgets.QWidget):
         Form.setMaximumSize(QtCore.QSize(1800, 1200))
         Form.setMinimumSize(QtCore.QSize(1200, 600))
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.showFullScreen()
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.scrollArea = QtWidgets.QScrollArea(Form)

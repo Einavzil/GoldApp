@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
+import sys, keyboard
 
 sys.path.insert(0, "../src")
 
@@ -48,6 +48,10 @@ class Ui_MainWindow(QtWidgets.QWidget):
             "margin-left: 30px;\n"
             "margin-right: 30px;"
         )
+        MainWindow.showFullScreen()
+
+        if keyboard.is_pressed("esc"):
+            MainWindow.close()
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
@@ -245,6 +249,9 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.pw_label.setText(_translate("MainWindow", "Password:"))
         self.app_logo.setText(_translate("MainWindow", "GoldApp"))
 
+    def keyPressEvent(self, e):
+        print(e.key())
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
@@ -252,4 +259,5 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setFocus()
     sys.exit(app.exec_())

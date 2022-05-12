@@ -21,8 +21,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         event_id_list = show_events()[0]
         Form.setObjectName("Form")
-        Form.resize(800, 881)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.showFullScreen()
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.widget_3 = QtWidgets.QWidget(Form)

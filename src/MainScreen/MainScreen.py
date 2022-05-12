@@ -53,6 +53,7 @@ class Ui_MainScreen(object):
             "margin-left: 30px;\n"
             "margin-right: 30px;"
         )
+        MainWindow.showFullScreen()
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
