@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 import sys
 
 sys.path.insert(0, "../src")
@@ -21,9 +22,11 @@ import login
 
 class Ui_MainWindow(QtWidgets.QWidget):
     def open_login(self, MainWindow):
-        if login.check_email(self.email_box.text()) and login.check_password(
+        if not login.check_email(self.email_box.text()) and not login.check_password(
             self.email_box.text(), self.password_box.text()
         ):
+            self.show_popup()
+        else:
             self.window = QtWidgets.QMainWindow()
             self.ui = Ui_MainScreen()
             self.ui.setupUi(self.window)
@@ -249,6 +252,13 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
     def keyPressEvent(self, e):
         print(e.key())
+
+    def show_popup(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("wrong email or password")
+        msg.setText("You entered wrong email address or password. Try again")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
 
 
 if __name__ == "__main__":
