@@ -34,8 +34,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.ui.setupUi(self.window)
             self.window.show()
             MainWindow.close()
-
-        self.show_popup_error()
+        else:
+            self.show_popup_error()
 
     def open_create_account(self):
         self.window = QtWidgets.QWidget()
