@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys, keyboard
+import sys
 
 sys.path.insert(0, "../src")
 
@@ -50,8 +50,6 @@ class Ui_MainWindow(QtWidgets.QWidget):
         )
         MainWindow.showFullScreen()
 
-        if keyboard.is_pressed("esc"):
-            MainWindow.close()
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
