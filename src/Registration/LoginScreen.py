@@ -25,13 +25,17 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if not login.check_email(self.email_box.text()) and not login.check_password(
             self.email_box.text(), self.password_box.text()
         ):
-            self.show_popup()
-        else:
+            self.show_popup_wrong()
+        elif login.check_email(self.email_box.text()) and login.check_password(
+            self.email_box.text(), self.password_box.text()
+        ):
             self.window = QtWidgets.QMainWindow()
             self.ui = Ui_MainScreen()
             self.ui.setupUi(self.window)
             self.window.show()
             MainWindow.close()
+
+        self.show_popup_error()
 
     def open_create_account(self):
         self.window = QtWidgets.QWidget()
@@ -253,10 +257,17 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def keyPressEvent(self, e):
         print(e.key())
 
-    def show_popup(self):
+    def show_popup_wrong(self):
         msg = QMessageBox()
         msg.setWindowTitle("wrong email or password")
         msg.setText("You entered wrong email address or password. Try again")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_error(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Other error")
+        msg.setText("Error! something went wrong.")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
 
