@@ -44,3 +44,10 @@ coverage:
 	coverage run -m unittest src/test/test_*.py
 	coverage html
 	coverage report -m
+
+
+# ---------------------------------------------------------
+# Behave: https://behave.readthedocs.io/en/stable/tutorial.html
+
+behave:
+	behave src/features/*

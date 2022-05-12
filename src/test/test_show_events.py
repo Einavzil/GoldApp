@@ -32,14 +32,12 @@ class test_show_events(unittest.TestCase):
         with open("src\current_email.txt", "r") as current_email:
             email = current_email.readline()
             email2 = email
-        if email == 'example@gmail.com':
-            res = show_events.user_location()
-            exp = "Stockholm"
-            self.assertEqual(res, exp)
-        elif email == 'liis@gmail.com':
-            res = show_events.user_location()
-            exp = "Stockholm"
-            self.assertEqual(res, exp)
+            if email == 'example@gmail.com':
+                res = show_events.user_location()
+                self.assertEqual(res, "Stockholm")
+            elif email == 'liis@gmail.com':
+                res = show_events.user_location()
+                self.assertEqual(res, "Stockholm")
 
 
     def test_is_file_current_email(self):
@@ -73,8 +71,6 @@ class test_show_events(unittest.TestCase):
     def test_show_events(self):
         """Show events. Nr of events/event-ids."""
         number_list, event_deets = show_events.show_events()
-        print(number_list)
-        print(event_deets)
         if event_deets != None:
             self.assertEqual(len(number_list), len(event_deets))
 

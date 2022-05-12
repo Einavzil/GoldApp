@@ -32,7 +32,7 @@ def insert_data(answer1, answer2, answer3, answer4):
         ;
         """
         try:
-            with open("current_email.txt", "r") as current_email:
+            with open("src\current_email.txt", "r") as current_email:
                 email = current_email.readline()
         except:
             with open("src\current_email.txt", "r") as current_email:
@@ -52,7 +52,7 @@ def insert_data(answer1, answer2, answer3, answer4):
 def check_last_survey():
     try:
         try:
-            with open("current_email.txt", "r") as email_file:
+            with open("src/current_email.txt", "r") as email_file:
                 email = email_file.readline()
         except:
             with open("src/current_email.txt", "r") as email_file:
@@ -77,4 +77,3 @@ def check_last_survey():
         return True
     except Exception as err:
         print(err)
-        

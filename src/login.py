@@ -78,7 +78,7 @@ def check_password(email, password):
 
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
-    print(sys.path)
+    # print(sys.path)
     try:
         with open("src\enc_key.bin", "rb") as key_file:
             key = key_file.readline()

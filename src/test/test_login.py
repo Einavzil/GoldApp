@@ -4,7 +4,6 @@ import mysql.connector
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import login
 
-
 class test_login(unittest.TestCase):
     """Unit tests for login.py file."""
     
@@ -37,7 +36,10 @@ class test_login(unittest.TestCase):
         email = "some@email.com"
         res = login.check_email(email)
         self.assertIsNone(res)
-
+        
+        res = login.check_email("kalle@gmail.com")
+        self.assertEqual(res, None)
+    
 
     def test_check_password(self):
         """Lets check the pass."""
