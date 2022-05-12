@@ -1,0 +1,9 @@
+[run]
+omit = 
+    src\Registration\Registration.py
+    src\NewAccount\NewAccount.py 
+    src\MentalPage\MentalPage.py
+    src\MainScreen\MainScreen.py
+    src\EventScreen\EventScreen.py
+    src\DailySurvey\DailySurvey.py
+    src\HelpPage\HelpPage.py

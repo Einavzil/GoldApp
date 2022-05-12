@@ -3,3 +3,4 @@ black
 mysql-connector-python
 cryptography
 coverage
+behave

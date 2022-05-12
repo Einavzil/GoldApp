@@ -37,10 +37,10 @@ installed:
 
 unittest:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m unittest discover
+	 $(PYTHON) -m unittest src/test/test_*.py
 
 coverage:
 	@$(call MESSAGE,$@)
-	coverage run -m unittest discover
+	coverage run -m unittest src/test/test_*.py
 	coverage html
 	coverage report -m
