@@ -62,9 +62,6 @@ def check_password(email, password):
         args = (email,)
         cursor.execute(sql, args)
         result = cursor.fetchone()
-        # cursor.close()
-        # conn.close()
-
         decrepted_pass = decrypt_pass(result[0])
         if decrepted_pass == password:
             store_current_email(email)
@@ -78,7 +75,6 @@ def check_password(email, password):
 
 def decrypt_pass(password):
     """Key is opened from 'enc_key.bin' file."""
-    # print(sys.path)
     try:
         with open("src\enc_key.bin", "rb") as key_file:
             key = key_file.readline()
@@ -102,9 +98,8 @@ def store_current_email(email):
             login_file.write(email)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     print(check_email("example@gmail.com"))
     if check_email("example@gmail.com"):
         print(check_password("example@gmail.com", "abc123"))
-
     store_current_email("example@gmail.com")

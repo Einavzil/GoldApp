@@ -1,6 +1,6 @@
 import unittest
 import sys, os
-import mysql.connector
+import mysql.connector, datetime
 sys.path.append(os.path.abspath(os.getcwd()) + "/src/")
 import daily_survey_db
 
@@ -25,7 +25,7 @@ class test_daily_survey_db(unittest.TestCase):
         res = cursor
         exp = mysql.connector.cursor_cext.CMySQLCursorPrepared
         self.assertIsInstance(res, exp)
-
+        
 
     def test_insert_data(self):
         """Test the insert data function with entering answers."""
@@ -59,10 +59,10 @@ class test_daily_survey_db(unittest.TestCase):
         cursor.execute(sql, args)
         result = cursor.fetchone()
         if result[0] == None:
-            exp = True
+            self.assertIsNone(result[0])
         else:
             exp = False
-        self.assertEqual(res, exp)
+            self.assertEqual(res, exp)            
 
 
 if __name__ == "__main__":

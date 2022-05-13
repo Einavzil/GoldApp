@@ -38,12 +38,6 @@ class test_signup(unittest.TestCase):
         phone = int(milliseconds/9+milliseconds/9)
         loc = "Stockholm"
         
-        """This test section below will generate real data to database."""
-        # email = "Test"+str(milliseconds)+"@testing.com"
-        # res = signup.insert_account("test", "case", email, pwd, phone, loc)
-        # exp = email
-        # self.assertEqual(res, exp)
-        
         """Can't sign up with existing email."""
         email = "liis@gmail.com"
         checking_email = login.check_email(email)

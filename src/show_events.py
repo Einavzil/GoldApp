@@ -41,7 +41,7 @@ def user_location():
             """
         # fetching logged in user from the text file
         try:
-            with open("current_email.txt", "r") as current_email:
+            with open("src\current_email.txt", "r") as current_email:
                 email = current_email.readline()
         except:
             with open("src\current_email.txt", "r") as current_email:
@@ -107,7 +107,7 @@ def event_ids_list():
             """
         # fetching logged in user from the text file
         try:
-            with open("current_email.txt", "r") as current_email:
+            with open("src\current_email.txt", "r") as current_email:
                 email = current_email.readline()
         except:
             with open("src\current_email.txt", "r") as current_email:
@@ -135,5 +135,4 @@ def show_events():
 
 
 if __name__ == "__main__":
-    # print(show_events())
     show_events()

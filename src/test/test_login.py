@@ -75,9 +75,6 @@ class test_login(unittest.TestCase):
         with open("src\current_email.txt", "r") as login_file:
             old_email = login_file.readline()
         self.assertEqual(original_email, old_email)
-        
-        
-        
    
 
 if __name__ == "__main__":
