@@ -59,12 +59,10 @@ class test_daily_survey_db(unittest.TestCase):
         cursor.execute(sql, args)
         result = cursor.fetchone()
         if result[0] == None:
-            exp = bool
+            exp = True
         else:
             exp = False
         self.assertEqual(res, exp)
-        exp = bool
-        self.assertIsInstance(res, exp)
 
 
 if __name__ == "__main__":
