@@ -103,6 +103,7 @@ class Ui_Form_Survey(QtWidgets.QWidget):
         Form.setSizePolicy(sizePolicy)
         Form.setMinimumSize(QtCore.QSize(1200, 950))
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.showFullScreen()
         self.gridLayout_2 = QtWidgets.QGridLayout(Form)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.gridLayout_2.setObjectName("gridLayout_2")
