@@ -22,6 +22,7 @@ class Ui_Form(object):
         event_id_list = show_events()[0]
         Form.setObjectName("Form")
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.showMaximized()
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.widget_3 = QtWidgets.QWidget(Form)
