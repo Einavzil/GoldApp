@@ -211,7 +211,6 @@ CREATE TABLE `user` (
   PRIMARY KEY (`email`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `phone_UNIQUE` (`phone`),
   UNIQUE KEY `facebook_connect_UNIQUE` (`facebook_connect`),
   KEY `fk_user_location1_idx` (`location_location_id`),
   CONSTRAINT `fk_user_location1` FOREIGN KEY (`location_location_id`) REFERENCES `location` (`location_id`)

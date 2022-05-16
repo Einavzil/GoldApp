@@ -39,7 +39,7 @@ class Ui_MainScreen(object):
             self.window.show()
 
     def setupUi(self, MainWindow):
-        adapt_size = 150
+        adapt_size = 200
         __global_size = str(adapt_size) + ";\n"
         __global_radius = str(adapt_size / 2) + ";\n"
 

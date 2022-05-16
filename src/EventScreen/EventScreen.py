@@ -164,7 +164,7 @@ class Ui_Form(object):
         self.description.setReadOnly(True)
         self.verticalLayout_4.addWidget(self.description)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
-        self.gridLayout.addWidget(self.box1, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box1, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         # box 2
         self.box2 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -232,7 +232,7 @@ class Ui_Form(object):
         self.description_2.setReadOnly(True)
         self.verticalLayout_5.addWidget(self.description_2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_5)
-        self.gridLayout.addWidget(self.box2, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box2, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # # box 3
         self.box3 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box3.setStyleSheet(
@@ -300,7 +300,7 @@ class Ui_Form(object):
         self.description_3.setReadOnly(True)
         self.verticalLayout_box3.addWidget(self.description_3)
         self.horizontalLayout_box3.addLayout(self.verticalLayout_box3)
-        self.gridLayout.addWidget(self.box3, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box3, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 4
         self.box4 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box4.setStyleSheet(
@@ -368,7 +368,7 @@ class Ui_Form(object):
         self.description_4.setReadOnly(True)
         self.verticalLayout_box4.addWidget(self.description_4)
         self.horizontalLayout_box4.addLayout(self.verticalLayout_box4)
-        self.gridLayout.addWidget(self.box4, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box4, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 5
         self.box5 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box5.setStyleSheet(
@@ -436,7 +436,7 @@ class Ui_Form(object):
         self.description_5.setReadOnly(True)
         self.verticalLayout_box5.addWidget(self.description_5)
         self.horizontalLayout_box5.addLayout(self.verticalLayout_box5)
-        self.gridLayout.addWidget(self.box5, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box5, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 6
 
         self.box6 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -505,7 +505,7 @@ class Ui_Form(object):
         self.description_6.setReadOnly(True)
         self.verticalLayout_box6.addWidget(self.description_6)
         self.horizontalLayout_box6.addLayout(self.verticalLayout_box6)
-        self.gridLayout.addWidget(self.box6, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box6, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 7
 
         self.box7 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -573,7 +573,7 @@ class Ui_Form(object):
         self.description_7.setReadOnly(True)
         self.verticalLayout_box7.addWidget(self.description_7)
         self.horizontalLayout_box7.addLayout(self.verticalLayout_box7)
-        self.gridLayout.addWidget(self.box7, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box7, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # box 8
         self.box8 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.box8.setStyleSheet(
@@ -640,7 +640,7 @@ class Ui_Form(object):
         self.description_8.setReadOnly(True)
         self.verticalLayout_box8.addWidget(self.description_8)
         self.horizontalLayout_box8.addLayout(self.verticalLayout_box8)
-        self.gridLayout.addWidget(self.box8, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box8, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         # box 9
         self.box9 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
@@ -709,11 +709,79 @@ class Ui_Form(object):
         self.description_9.setReadOnly(True)
         self.verticalLayout_box9.addWidget(self.description_9)
         self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
-        self.gridLayout.addWidget(self.box9, 8, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        self.gridLayout.addWidget(self.box9, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
+
+        # box 10 (extra)
+        self.box10 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        self.box10.setStyleSheet(
+            "margin-bottom: 8px;\n"
+            "max-height: 500px;\n"
+            "background: white;\n"
+            "border-radius: 5px;"
+        )
+        self.box10.setObjectName("box1")
+        self.box10.setMinimumSize(0, 0)
+        self.horizontalLayout_box10 = QtWidgets.QHBoxLayout(self.box10)
+        self.horizontalLayout_box10.setContentsMargins(0, 9, -1, -1)
+        self.horizontalLayout_box10.setObjectName("horizontalLayout_2")
+        self.photo10 = QtWidgets.QLabel(self.box10)
+        self.photo10.setMinimumSize(QtCore.QSize(109, 108))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Semibold")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.photo10.setFont(font)
+        self.photo10.setStyleSheet(
+            "display: inline-block;\n"
+            "min-width: 100px;\n"
+            "min-height: 100px;\n"
+            "max-width: 280px;\n"
+            "max-height: 300px;\n"
+            "margin-left:9px;\n"
+            "border-radius: 3px;\n"
+            ""
+        )
+        self.photo10.setText("")
+        self.photo10.setScaledContents(True)
+        self.photo10.setAlignment(QtCore.Qt.AlignLeft)
+        self.photo10.setObjectName("photo")
+        self.horizontalLayout_box10.addWidget(self.photo10)
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_10.setObjectName("verticalLayout_4")
+        self.verticalLayout_10.setAlignment(QtCore.Qt.AlignLeft)
+        self.event10 = QtWidgets.QLabel(self.box10)
+        self.event10.setStyleSheet("font-size: 18px;")
+        self.event10.setObjectName("event")
+        self.verticalLayout_10.addWidget(self.event10)
+        self.date10 = QtWidgets.QLabel(self.box10)
+        self.date10.setStyleSheet("font-size: 15px;")
+        self.date10.setObjectName("date")
+        self.verticalLayout_10.addWidget(self.date10)
+        self.location10 = QtWidgets.QLabel(self.box10)
+        self.location10.setStyleSheet("font-size: 15px;")
+        self.location10.setObjectName("location")
+        self.verticalLayout_10.addWidget(self.location10)
+        self.interest10 = QtWidgets.QLabel(self.box10)
+        self.interest10.setStyleSheet("font-size: 15px;")
+        self.interest10.setObjectName("interest")
+        self.verticalLayout_10.addWidget(self.interest10)
+        self.description10 = QtWidgets.QTextEdit(self.box10)
+        self.description10.setStyleSheet(
+            "font-size: 15px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        )
+        self.description10.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        )
+        self.description10.setObjectName("description")
+        self.description10.setReadOnly(True)
+        self.verticalLayout_10.addWidget(self.description10)
+        self.horizontalLayout_box10.addLayout(self.verticalLayout_10)
+        self.gridLayout.addWidget(self.box10, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
         # THIS IS THE MAIN LAYOUT
 
         box_set = [
-            self.box1,
+            self.box10,
             self.box2,
             self.box3,
             self.box4,
@@ -726,6 +794,8 @@ class Ui_Form(object):
 
         # For LOOP for EINAV <3
         for i, j in zip(box_set, range(len(event_id_list))):
+            print(j)
+            print(i)
             self.gridLayout.addWidget(i, j, 0, 1, 1, QtCore.Qt.AlignVCenter)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -753,7 +823,7 @@ class Ui_Form(object):
             )
         )
         event_set = [
-            self.event,
+            self.event10,
             self.event_2,
             self.event_3,
             self.event_4,
@@ -765,7 +835,7 @@ class Ui_Form(object):
         ]
 
         date_set = [
-            self.date,
+            self.date10,
             self.date_2,
             self.date_3,
             self.date_4,
@@ -777,7 +847,7 @@ class Ui_Form(object):
         ]
 
         location_set = [
-            self.location,
+            self.location10,
             self.location_2,
             self.location_3,
             self.location_4,
@@ -789,7 +859,7 @@ class Ui_Form(object):
         ]
 
         interest_set = [
-            self.interest,
+            self.interest10,
             self.interest_2,
             self.interest_3,
             self.interest_4,
@@ -801,7 +871,7 @@ class Ui_Form(object):
         ]
 
         description_set = [
-            self.description,
+            self.description10,
             self.description_2,
             self.description_3,
             self.description_4,
@@ -813,7 +883,7 @@ class Ui_Form(object):
         ]
 
         photo_set = [
-            self.photo,
+            self.photo10,
             self.photo_2,
             self.photo_3,
             self.photo_4,
@@ -826,14 +896,11 @@ class Ui_Form(object):
 
         for field, info in zip(photo_set, event_details):
             data = json.loads(info[0])
-            print(os.path.join(path, "image", data.get("image_path")))
             field.setPixmap(
                 QtGui.QPixmap(os.path.join(path, f"image/" + data.get("image_path")))
             )
 
         for field, info in zip(event_set, event_details):
-            print(field)
-            print(info, field)
             data = json.loads(info[0])
             field.setText(
                 _translate(
@@ -866,7 +933,6 @@ class Ui_Form(object):
 
         for field, info in zip(interest_set, event_details):
             data = json.loads(info[0])
-            print(data.get("interest"))
             field.setText(
                 _translate(
                     "Form",
@@ -877,7 +943,6 @@ class Ui_Form(object):
             )
         for field, info in zip(description_set, event_details):
             data = json.loads(info[0])
-            print(data.get("information"))
             field.setText(
                 _translate(
                     "Form",
