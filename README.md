@@ -1,13 +1,34 @@
 # GoldApp
 A repository for a group project - GoldApp
 
-# Setting up
-We use Makefile, so it's really easy to set everything up
+## Description
+The GoldApp is an online platform aimed at middle-aged and elderly people who are afflicted by loneliness and other mental health issues. It is an online community that provides its users with the opportunity to meet like-minded people to talk to and socialize with. Unlike other similar services, the Goldapp aims to be a one-stop connection hub aimed primarily at facilitating in-person meetups between seniors who are looking to get the most out of life. The platform aims to have a very easy-to-use layout because of the targeted demographic.
+* The 3rd  UN Sustainable Development Goal (SDG) addresses health and well-being. It has been shown that loneliness and social isolation are linked to serious health conditions. The aim is to improve and sustain good mental health amongst senior citizens, who are generally more affected by this than other groups in society.
 
-Basic setup in order:
-1) make venv
-2) make install
-3) follow instructions on screen
+## Getting started
 
-TODO: Update this trash readme :)
+### Depedencies
+* Firstly, create a virtual enviroument by running "make venv".
+```
+$ make venv
+```
+* Activate the venv by running the commands given in the command line.
+* 
+* To install all of the dependencies, run "make install"
+```
+$ make install
+```
 
+### Running the GoldApp
+
+* Make sure that all of the dependencies are installed and the virtual enviroment is activated.
+* To run the app, go to the src directory and run main.py
+
+## Authors
+{Fill this}
+
+## Version
+{Fill this}
+
+## Licence 
+{Fill this}
