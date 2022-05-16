@@ -59,7 +59,7 @@ class test_daily_survey_db(unittest.TestCase):
         cursor.execute(sql, args)
         result = cursor.fetchone()
         if result[0] == None:
-            self.assertIsNone(result[0])
+            self.assertTrue(res)
         else:
             exp = False
             self.assertEqual(res, exp)            
