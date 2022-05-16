@@ -30,10 +30,10 @@ def user_location():
         conn, cursor = connect()
         sql = """
             SELECT
-                goldapp.location.place
+                location.place
             FROM
-	            goldapp.user,
-	            goldapp.location
+	            user,
+	            location
             WHERE
 	            location.location_id = user.location_location_id
                 and email = ?
@@ -62,7 +62,11 @@ def events_details(events_id):
     """This function will fetch all events from the database
     based on the id's received.
     """
-    id_tuple = tuple(events_id)
+    if len(events_id) > 1:
+        id_tuple = tuple(events_id)
+    else:
+        id_tuple = (events_id[0], 0)
+    print(id_tuple)
     try:
         conn, cursor = connect()
         sql = f"""
@@ -84,6 +88,7 @@ def events_details(events_id):
         result = cursor.fetchall()
         cursor.close()
         conn.close()
+        print(result)
         return result
 
     except Exception as err:
@@ -119,7 +124,7 @@ def event_ids_list():
         events = []
         for i in event_id:
             events.append(i[0])
-        # print(events)
+        print(events)
         cursor.close()
         conn.close()
         return events
