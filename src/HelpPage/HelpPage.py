@@ -17,7 +17,7 @@ class Ui_HelpPage(object):
         MainWindow.resize(1200, 600)
         MainWindow.setMinimumSize(QtCore.QSize(1200, 600))
         MainWindow.setStyleSheet("background-color: rgb(220, 221, 255);")
-        MainWindow.showFullScreen()
+        MainWindow.showMaximized()
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)

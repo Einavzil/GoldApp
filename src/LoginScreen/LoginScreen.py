@@ -47,7 +47,6 @@ class Ui_MainWindow(QtWidgets.QWidget):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(474, 395)
         MainWindow.setMinimumSize(QtCore.QSize(1200, 600))
-        MainWindow.setMaximumSize(QtCore.QSize(1800, 1200))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(
             "background-color: rgb(220, 221, 255);\n"
@@ -55,7 +54,6 @@ class Ui_MainWindow(QtWidgets.QWidget):
             "margin-left: 30px;\n"
             "margin-right: 30px;"
         )
-        MainWindow.showFullScreen()
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -66,7 +64,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.groupBox.setObjectName("groupBox")
         self.gridLayout = QtWidgets.QGridLayout(self.groupBox)
         self.gridLayout.setObjectName("gridLayout")
-
+        MainWindow.showMaximized()
         # Login button
         self.login_button = QtWidgets.QPushButton(
             self.groupBox, clicked=lambda: self.open_login(MainWindow)

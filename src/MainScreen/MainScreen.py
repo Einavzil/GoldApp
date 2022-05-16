@@ -46,14 +46,13 @@ class Ui_MainScreen(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(280, 389)
         MainWindow.setMinimumSize(QtCore.QSize(1200, 600))
-        MainWindow.setMaximumSize(QtCore.QSize(1800, 1200))
         MainWindow.setStyleSheet(
             "background-color: rgb(220, 221, 255);\n"
             "border-top-color: rgb(255, 255, 255);\n"
             "margin-left: 30px;\n"
             "margin-right: 30px;"
         )
-        MainWindow.showFullScreen()
+        MainWindow.showMaximized()
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
