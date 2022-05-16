@@ -427,6 +427,11 @@ class Ui_Form(QtWidgets.QWidget):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.inputs.addWidget(self.comboBox)
         self.gridLayout_2.addWidget(self.inputs_layout, 0, 1, 1, 1)
         self.gridLayout_5.addLayout(self.gridLayout_2, 1, 0, 1, 1)
@@ -506,8 +511,15 @@ class Ui_Form(QtWidgets.QWidget):
         self.passwor_label.setText(_translate("Form", "Password:"))
         self.rep_pass_label.setText(_translate("Form", "Repeat password:"))
         self.passwor_label_2.setText(_translate("Form", "Location:"))
-        self.comboBox.setItemText(0, _translate("Form", "Skåne"))
+        
+        self.comboBox.setItemText(0, _translate("Form", "Malmö"))
         self.comboBox.setItemText(1, _translate("Form", "Stockholm"))
+        self.comboBox.setItemText(2, _translate("Form", "Kristianstad"))
+        self.comboBox.setItemText(3, _translate("Form", "Lund"))
+        self.comboBox.setItemText(4, _translate("Form", "Göteborg"))
+        self.comboBox.setItemText(5, _translate("Form", "Uppsala"))
+        self.comboBox.setItemText(6, _translate("Form", "Karlstad"))
+        
         self.create_button.setText(_translate("Form", "Create"))
 
     def show_popup_pass(self):
