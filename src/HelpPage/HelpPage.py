@@ -325,7 +325,7 @@ class Ui_HelpPage(QWidget):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton_2.setText(_translate("MainWindow", "Submit"))
         self.lineEdit.setText(
-            _translate("MainWindow", "Want to talk with proffesionals?")
+            _translate("MainWindow", "Want to talk with professionals?")
         )
         self.lineEdit_2.setText(
             _translate("MainWindow", "The button to the right will")
