@@ -25,7 +25,9 @@ $ make install
 
 ## Authors
 Einav Zilka
+
 Liis Usin
+
 Dzenis Madzovic
 
 ## Version
