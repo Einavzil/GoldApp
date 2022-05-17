@@ -6,12 +6,6 @@ USE `goldapp`;
 -- ------------------------------------------------------
 -- Server version	8.0.27
 
-DROP DATABASE goldapp;
-CREATE DATABASE goldapp;
-USE goldapp;
-
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -41,7 +35,7 @@ CREATE TABLE `daily_survey` (
   PRIMARY KEY (`daily_survey_id`),
   KEY `fk_user_email_idx` (`user_email`),
   CONSTRAINT `fk_user_email` FOREIGN KEY (`user_email`) REFERENCES `user` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +44,7 @@ CREATE TABLE `daily_survey` (
 
 LOCK TABLES `daily_survey` WRITE;
 /*!40000 ALTER TABLE `daily_survey` DISABLE KEYS */;
-INSERT INTO `daily_survey` VALUES (3,'liis@gmail.com','2022-05-16',1,2,3,'testing testing');
+INSERT INTO `daily_survey` VALUES (3,'liis@gmail.com','2022-05-16',1,2,3,'testing testing'),(4,'liis@gmail.com','2022-05-17',4,4,3,'');
 /*!40000 ALTER TABLE `daily_survey` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,14 +94,11 @@ DROP TABLE IF EXISTS `info`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `info` (
   `info_id` int NOT NULL AUTO_INCREMENT,
-  `heading` varchar(70) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL COMMENT 'Name or a heading',
-  `phone` int NOT NULL,
-  `type` varchar(45) CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
-  `category` enum('general','mentalHelp') CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL COMMENT 'Only 2 types (mental health or just helpful such as volunteers information etc.)',
-  `description` mediumtext CHARACTER SET utf8 COLLATE utf8_esperanto_ci NOT NULL,
+  `heading` varchar(100) COLLATE utf8_esperanto_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8_esperanto_ci DEFAULT NULL,
   PRIMARY KEY (`info_id`),
   UNIQUE KEY `info_id_UNIQUE` (`info_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_esperanto_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,6 +107,7 @@ CREATE TABLE `info` (
 
 LOCK TABLES `info` WRITE;
 /*!40000 ALTER TABLE `info` DISABLE KEYS */;
+INSERT INTO `info` VALUES (4,'Medical Assistance','099-100'),(5,'Victim of senior scam?','1-800-222-444'),(6,'General Assistance','099-100');
 /*!40000 ALTER TABLE `info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,6 +186,7 @@ CREATE TABLE `location_has_info` (
 
 LOCK TABLES `location_has_info` WRITE;
 /*!40000 ALTER TABLE `location_has_info` DISABLE KEYS */;
+INSERT INTO `location_has_info` VALUES (1,4),(2,4),(3,4),(4,4),(5,4),(6,4),(7,4),(1,5),(2,5),(3,5),(4,5),(5,5),(6,5),(7,5),(1,6),(2,6),(3,6),(4,6),(5,6),(6,6),(7,6);
 /*!40000 ALTER TABLE `location_has_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-16 18:52:27
+-- Dump completed on 2022-05-17 12:45:49
