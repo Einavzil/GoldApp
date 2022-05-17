@@ -24,10 +24,13 @@ class Ui_Form(object):
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
         Form.showMaximized()
         self.gridLayout_4 = QtWidgets.QGridLayout(Form)
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.widget_3 = QtWidgets.QWidget(Form)
         self.widget_3.setMaximumSize(QtCore.QSize(1800, 900))
-        self.widget_3.setStyleSheet("padding-left: 5cm;")
+        self.widget_3.setStyleSheet("padding-left: 5cm;\n")
         self.widget_3.setObjectName("widget_3")
         self.gridLayout_4.addWidget(self.widget_3, 0, 0, 1, 1)
         self.frame = QtWidgets.QFrame(Form)
@@ -710,78 +713,86 @@ class Ui_Form(object):
         self.verticalLayout_box9.addWidget(self.description_9)
         self.horizontalLayout_box9.addLayout(self.verticalLayout_box9)
         self.gridLayout.addWidget(self.box9, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
-
-        # box 10 (extra)
-        self.box10 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
-        self.box10.setStyleSheet(
-            "margin-bottom: 8px;\n"
-            "max-height: 500px;\n"
-            "background: white;\n"
-            "border-radius: 5px;"
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
         )
-        self.box10.setObjectName("box1")
-        self.box10.setMinimumSize(0, 0)
-        self.horizontalLayout_box10 = QtWidgets.QHBoxLayout(self.box10)
-        self.horizontalLayout_box10.setContentsMargins(0, 9, -1, -1)
-        self.horizontalLayout_box10.setObjectName("horizontalLayout_2")
-        self.photo10 = QtWidgets.QLabel(self.box10)
-        self.photo10.setMinimumSize(QtCore.QSize(109, 108))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI Semibold")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.photo10.setFont(font)
-        self.photo10.setStyleSheet(
-            "display: inline-block;\n"
-            "min-width: 100px;\n"
-            "min-height: 100px;\n"
-            "max-width: 280px;\n"
-            "max-height: 300px;\n"
-            "margin-left:9px;\n"
-            "border-radius: 3px;\n"
-            ""
+        self.gridLayout_4.addItem(spacerItem, 0, 0, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
         )
-        self.photo10.setText("")
-        self.photo10.setScaledContents(True)
-        self.photo10.setAlignment(QtCore.Qt.AlignLeft)
-        self.photo10.setObjectName("photo")
-        self.horizontalLayout_box10.addWidget(self.photo10)
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_10.setObjectName("verticalLayout_4")
-        self.verticalLayout_10.setAlignment(QtCore.Qt.AlignLeft)
-        self.event10 = QtWidgets.QLabel(self.box10)
-        self.event10.setStyleSheet("font-size: 18px;")
-        self.event10.setObjectName("event")
-        self.verticalLayout_10.addWidget(self.event10)
-        self.date10 = QtWidgets.QLabel(self.box10)
-        self.date10.setStyleSheet("font-size: 15px;")
-        self.date10.setObjectName("date")
-        self.verticalLayout_10.addWidget(self.date10)
-        self.location10 = QtWidgets.QLabel(self.box10)
-        self.location10.setStyleSheet("font-size: 15px;")
-        self.location10.setObjectName("location")
-        self.verticalLayout_10.addWidget(self.location10)
-        self.interest10 = QtWidgets.QLabel(self.box10)
-        self.interest10.setStyleSheet("font-size: 15px;")
-        self.interest10.setObjectName("interest")
-        self.verticalLayout_10.addWidget(self.interest10)
-        self.description10 = QtWidgets.QTextEdit(self.box10)
-        self.description10.setStyleSheet(
-            "font-size: 15px;\n" "min-height: 100px;\n" "max-width: 300px;"
-        )
-        self.description10.setAlignment(
-            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
-        )
-        self.description10.setObjectName("description")
-        self.description10.setReadOnly(True)
-        self.verticalLayout_10.addWidget(self.description10)
-        self.horizontalLayout_box10.addLayout(self.verticalLayout_10)
-        self.gridLayout.addWidget(self.box10, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
-        # THIS IS THE MAIN LAYOUT
-
+        self.gridLayout_4.addItem(spacerItem1, 0, 3, 1, 1)
+        #
+        #        # box 10 (extra)
+        #        self.box10 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
+        #        self.box10.setStyleSheet(
+        #            "margin-bottom: 8px;\n"
+        #            "max-height: 500px;\n"
+        #            "background-color: rgb(220, 221, 255);\n"
+        #            "border-radius: 5px;"
+        #        )
+        #        self.box10.setObjectName("box1")
+        #        self.box10.setMinimumSize(0, 0)
+        #        self.horizontalLayout_box10 = QtWidgets.QHBoxLayout(self.box10)
+        #        self.horizontalLayout_box10.setContentsMargins(0, 9, -1, -1)
+        #        self.horizontalLayout_box10.setObjectName("horizontalLayout_2")
+        #        self.photo10 = QtWidgets.QLabel(self.box10)
+        #        self.photo10.setMinimumSize(QtCore.QSize(109, 108))
+        #        font = QtGui.QFont()
+        #        font.setFamily("Segoe UI Semibold")
+        #        font.setPointSize(18)
+        #        font.setBold(True)
+        #        font.setWeight(75)
+        #        self.photo10.setFont(font)
+        #        self.photo10.setStyleSheet(
+        #            "display: inline-block;\n"
+        #            "min-width: 100px;\n"
+        #            "min-height: 100px;\n"
+        #            "max-width: 280px;\n"
+        #            "max-height: 300px;\n"
+        #            "margin-left:9px;\n"
+        #            "border-radius: 3px;\n"
+        #            ""
+        #        )
+        #        self.photo10.setText("")
+        #        self.photo10.setScaledContents(True)
+        #        self.photo10.setAlignment(QtCore.Qt.AlignLeft)
+        #        self.photo10.setObjectName("photo")
+        #        self.horizontalLayout_box10.addWidget(self.photo10)
+        #        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        #        self.verticalLayout_10.setObjectName("verticalLayout_4")
+        #        self.verticalLayout_10.setAlignment(QtCore.Qt.AlignLeft)
+        #        self.event10 = QtWidgets.QLabel(self.box10)
+        #        self.event10.setStyleSheet("font-size: 18px;")
+        #        self.event10.setObjectName("event")
+        #        self.verticalLayout_10.addWidget(self.event10)
+        #        self.date10 = QtWidgets.QLabel(self.box10)
+        #        self.date10.setStyleSheet("font-size: 15px;")
+        #        self.date10.setObjectName("date")
+        #        self.verticalLayout_10.addWidget(self.date10)
+        #        self.location10 = QtWidgets.QLabel(self.box10)
+        #        self.location10.setStyleSheet("font-size: 15px;")
+        #        self.location10.setObjectName("location")
+        #        self.verticalLayout_10.addWidget(self.location10)
+        #        self.interest10 = QtWidgets.QLabel(self.box10)
+        #        self.interest10.setStyleSheet("font-size: 15px;")
+        #        self.interest10.setObjectName("interest")
+        #        self.verticalLayout_10.addWidget(self.interest10)
+        #        self.description10 = QtWidgets.QTextEdit(self.box10)
+        #        self.description10.setStyleSheet(
+        #            "font-size: 15px;\n" "min-height: 100px;\n" "max-width: 300px;"
+        #        )
+        #        self.description10.setAlignment(
+        #            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop
+        #        )
+        #        self.description10.setObjectName("description")
+        #        self.description10.setReadOnly(True)
+        #        self.verticalLayout_10.addWidget(self.description10)
+        #        self.horizontalLayout_box10.addLayout(self.verticalLayout_10)
+        #        self.gridLayout.addWidget(self.box10, 9, 0, 1, 1, QtCore.Qt.AlignVCenter)
+        #        # THIS IS THE MAIN LAYOUT
+        #
         box_set = [
-            self.box10,
+            self.box1,
             self.box2,
             self.box3,
             self.box4,
@@ -790,6 +801,7 @@ class Ui_Form(object):
             self.box7,
             self.box8,
             self.box9,
+            #    self.box10,
         ]
 
         # For LOOP for EINAV <3
@@ -823,7 +835,7 @@ class Ui_Form(object):
             )
         )
         event_set = [
-            self.event10,
+            self.event,
             self.event_2,
             self.event_3,
             self.event_4,
@@ -832,10 +844,11 @@ class Ui_Form(object):
             self.event_7,
             self.event_8,
             self.event_9,
+            #            self.event10,
         ]
 
         date_set = [
-            self.date10,
+            self.date,
             self.date_2,
             self.date_3,
             self.date_4,
@@ -844,10 +857,11 @@ class Ui_Form(object):
             self.date_7,
             self.date_8,
             self.date_9,
+            #            self.date10,
         ]
 
         location_set = [
-            self.location10,
+            self.location,
             self.location_2,
             self.location_3,
             self.location_4,
@@ -856,10 +870,11 @@ class Ui_Form(object):
             self.location_7,
             self.location_8,
             self.location_9,
+            #            self.location10,
         ]
 
         interest_set = [
-            self.interest10,
+            self.interest,
             self.interest_2,
             self.interest_3,
             self.interest_4,
@@ -868,10 +883,11 @@ class Ui_Form(object):
             self.interest_7,
             self.interest_8,
             self.interest_9,
+            #            self.interest10,
         ]
 
         description_set = [
-            self.description10,
+            self.description,
             self.description_2,
             self.description_3,
             self.description_4,
@@ -880,10 +896,11 @@ class Ui_Form(object):
             self.description_7,
             self.description_8,
             self.description_9,
+            #            self.description10,
         ]
 
         photo_set = [
-            self.photo10,
+            self.photo,
             self.photo_2,
             self.photo_3,
             self.photo_4,
@@ -892,6 +909,7 @@ class Ui_Form(object):
             self.photo_7,
             self.photo_8,
             self.photo_9,
+            #            self.photo10,
         ]
 
         for field, info in zip(photo_set, event_details):
