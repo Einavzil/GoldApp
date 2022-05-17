@@ -24,7 +24,9 @@ $ make install
 2. To run the app, go to the src directory and run main.py
 
 ## Authors
-{Fill this}
+Einav Zilka
+Liis Usin
+Dzenis Madzovic
 
 ## Version
 {Fill this}
