@@ -11,6 +11,10 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+import os
+path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
+import display_user_info as user_info
+
 
 
 class Ui_HelpPage(QWidget):
@@ -103,7 +107,7 @@ class Ui_HelpPage(QWidget):
         font.setPointSize(-1)
         self.lineEdit.setFont(font)
         self.lineEdit.setStyleSheet(
-            "font-size: 30px;\n"
+            "font-size: 20px;\n"
             "color: white;\n"
             "padding: 5px;\n"
             "background-color: orange;\n"
@@ -186,7 +190,7 @@ class Ui_HelpPage(QWidget):
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.labels_layout = QWidget(self.widget_7)
         self.labels_layout.setStyleSheet(
-            "margin-left: 7px;\n" "font-size: 30px;\n" "border-color: black;"
+            "margin-left: 7px;\n" "font-size: 25px;\n" "border-color: black;"
         )
         self.labels_layout.setObjectName("labels_layout")
         self.labels = QVBoxLayout(self.labels_layout)
@@ -230,6 +234,13 @@ class Ui_HelpPage(QWidget):
         self.problem_type_label.setStyleSheet("margin-right: 120px;")
         self.problem_type_label.setObjectName("passwor_label")
         self.labels.addWidget(self.problem_type_label)
+        
+        self.problem_desc_label = QLabel(self.labels_layout)
+        self.problem_desc_label.setFont(font)
+        self.problem_desc_label.setStyleSheet("margin-right: 120px;")
+        self.problem_desc_label.setObjectName("passwor_label_3")
+        self.labels.addWidget(self.problem_desc_label)
+        
         self.location_label = QLabel(self.labels_layout)
         self.location_label.setFont(font)
         self.location_label.setStyleSheet("margin-bottom: 0px;")
@@ -252,30 +263,32 @@ class Ui_HelpPage(QWidget):
             self.inputs_layout.sizePolicy().hasHeightForWidth()
         )
         self.inputs_layout.setSizePolicy(sizePolicy)
-        self.inputs_layout.setStyleSheet("margin-top: 4px;\n" "margin-right: 7px;")
+        self.inputs_layout.setStyleSheet("margin-top: 8px;\n" "margin-right: 7px;")
         self.inputs_layout.setObjectName("inputs_layout")
         self.inputs = QVBoxLayout(self.inputs_layout)
         self.inputs.setObjectName("inputs")
         self.email_input = QLineEdit(self.inputs_layout)
         self.email_input.setFont(font)
         self.email_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.email_input.setText("")
+        self.email_input.setText(f"{user_info.user_email()}")
         self.email_input.setObjectName("email_input")
         self.inputs.addWidget(self.email_input)
         self.first_input = QLineEdit(self.inputs_layout)
         self.first_input.setFont(font)
         self.first_input.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.first_input.setText(f"{user_info.user_first_name()}")
         self.first_input.setObjectName("first_input")
         self.inputs.addWidget(self.first_input)
         self.last_input = QLineEdit(self.inputs_layout)
         self.last_input.setFont(font)
         self.last_input.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.last_input.setText(f"{user_info.user_last_name()}")
         self.last_input.setObjectName("last_input")
         self.inputs.addWidget(self.last_input)
         self.phone_input = QLineEdit(self.inputs_layout)
         self.phone_input.setFont(font)
         self.phone_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.phone_input.setText("")
+        self.phone_input.setText(f"{user_info.user_phone()}")
         self.phone_input.setObjectName("phone_input")
         self.inputs.addWidget(self.phone_input)
         self.pass_input = QLineEdit(self.inputs_layout)
@@ -302,7 +315,7 @@ class Ui_HelpPage(QWidget):
         self.comboBox.setFrame(True)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
-        self.comboBox.addItem("")
+        # self.comboBox.addItem("")
         self.inputs.addWidget(self.comboBox)
         self.gridLayout_4.addWidget(self.inputs_layout, 0, 1, 1, 1)
         self.gridLayout_3.addWidget(self.widget_7, 3, 1, 1, 1)
@@ -344,11 +357,11 @@ class Ui_HelpPage(QWidget):
         self.first_label.setText(_translate("MainWindow", "First name:"))
         self.last_label.setText(_translate("MainWindow", "Last name:"))
         self.phone_label.setText(_translate("MainWindow", "Phone number:"))
-        self.problem_type_label.setText(_translate("MainWindow", "Problem type:"))
-        self.location_label.setText(_translate("MainWindow", "Problem description:"))
+        self.problem_type_label.setText(_translate("MainWindow", "Problem type: "))
+        self.problem_desc_label.setText(_translate("MainWindow", "Problem description: "))
         self.location_label.setText(_translate("MainWindow", "Location:"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "Skåne"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "Stockholm"))
+        self.comboBox.setItemText(0, _translate("MainWindow", f"{user_info.user_location()}"))
+        # self.comboBox.setItemText(1, _translate("MainWindow", "Stockholm"))
 
 
 if __name__ == "__main__":

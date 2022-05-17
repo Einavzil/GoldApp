@@ -2,4 +2,3 @@
 .gitconfig
 __pycache__
 *.pyc
-src/features/steps/login.py
