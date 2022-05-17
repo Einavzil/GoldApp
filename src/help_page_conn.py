@@ -1,6 +1,7 @@
 import mysql.connector
 import sys
 import show_events
+
 sys.path.insert(0, "../src")
 
 
@@ -49,8 +50,8 @@ def user_first_name():
     if first_name == None:
         return ""
     return first_name[0]
-    
-    
+
+
 def user_last_name():
     """Last name on the user."""
     conn, cursor = connect()
@@ -85,7 +86,29 @@ def user_phone():
     cursor.execute(sql, args)
     phone = cursor.fetchone()
     return phone[0]
-    
+
+
+def insert_form(user_email, issue_type, issue_desc):
+    try:
+        conn, cursor = connect()
+
+        sql = """
+        INSERT INTO help_form (user_email, issue_type, issue_description)
+        VALUES (?, ?, ?)
+        ;
+        """
+
+        args = (user_email, issue_type, issue_desc)
+        cursor.execute(sql, args)
+        conn.commit()
+        row_count = cursor.rowcount
+        cursor.close()
+        conn.close()
+        print("row_count: ", row_count)
+        return row_count
+    except Exception as err:
+        print(err)
+
 
 def user_location():
     """logged in user location."""

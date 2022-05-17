@@ -1,3 +1,4 @@
+DROP DATABASE goldapp;
 CREATE DATABASE  IF NOT EXISTS `goldapp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `goldapp`;
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
@@ -261,5 +262,22 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+CREATE TABLE `goldapp`.`help_form` (
+  `help_form_id` INT NOT NULL AUTO_INCREMENT,
+  `user_email` VARCHAR(90) CHARACTER SET 'utf8' COLLATE 'utf8_esperanto_ci' NOT NULL,
+  `issue_type` VARCHAR(45) NOT NULL,
+  `issue_description` VARCHAR(300) NULL,
+  PRIMARY KEY (`help_form_id`),
+  UNIQUE INDEX `help_form_id_UNIQUE` (`help_form_id` ASC) VISIBLE,
+  INDEX `user_email_FK_idx` (`user_email` ASC) VISIBLE,
+  CONSTRAINT `user_email_FK`
+    FOREIGN KEY (`user_email`)
+    REFERENCES `goldapp`.`user` (`email`)
+    ON DELETE CASCADE
+    ON UPDATE RESTRICT)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
 
 -- Dump completed on 2022-05-17 12:45:49

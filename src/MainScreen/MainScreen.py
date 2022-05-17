@@ -39,7 +39,7 @@ class Ui_MainScreen(object):
             self.window.show()
 
     def setupUi(self, MainWindow):
-        adapt_size = 200
+        adapt_size = 250
         __global_size = str(adapt_size) + ";\n"
         __global_radius = str(adapt_size / 2) + ";\n"
 
@@ -76,6 +76,8 @@ class Ui_MainScreen(object):
         )
         self.RoundButton.setStyleSheet(
             "QPushButton{\n"
+            "font-size: 15px;\n"
+            "font-family: Segoe UI Semibold;\n"
             "background-color:  rgb(255, 203, 99);\n"
             " color: white;\n"
             " border-width: 0px;\n"
@@ -112,6 +114,8 @@ class Ui_MainScreen(object):
         )
         self.pushButton_2.setStyleSheet(
             "QPushButton{\n"
+            "font-size: 15px;\n"
+            "font-family: Segoe UI Semibold;\n"
             "background-color:  rgb(246, 77, 39);\n"
             " color: white;\n"
             " border-width: 0px;\n"
@@ -140,6 +144,8 @@ class Ui_MainScreen(object):
         )
         self.pushButton_3.setStyleSheet(
             "QPushButton{\n"
+            "font-size: 15px;\n"
+            "font-family: Segoe UI Semibold;\n"
             "background-color:  rgb(124, 198, 99);\n"
             " color: white;\n"
             " border-width: 0px;\n"
@@ -181,7 +187,7 @@ class Ui_MainScreen(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.RoundButton.setText(_translate("MainWindow", "Meetings"))
         self.pushButton_2.setText(_translate("MainWindow", "Daily Survey"))
-        self.pushButton_3.setText(_translate("MainWindow", "Assistance"))
+        self.pushButton_3.setText(_translate("MainWindow", "Personalized Help"))
 
 
 if __name__ == "__main__":

@@ -12,9 +12,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import os
-path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
-import display_user_info as user_info
 
+path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
+import help_page_conn
+from ContactPage.ContactPage import Ui_Form
 
 
 class Ui_HelpPage(QWidget):
@@ -62,10 +63,15 @@ class Ui_HelpPage(QWidget):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout_3 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.pushButton_2 = QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton_2.setStyleSheet(
+        self.submit_button = QPushButton(
+            self.scrollAreaWidgetContents,
+            clicked=lambda: self.collect_form_details(MainWindow),
+        )
+        self.submit_button.setStyleSheet(
             "QPushButton{\n"
             "color: white;\n"
+            "font-size: 15px;\n"
+            "font-family: Segoe UI Symbol;\n"
             "background-color: rgb(255, 203, 99);\n"
             "border-width: 0px;\n"
             "border-radius:75px;\n"
@@ -79,8 +85,8 @@ class Ui_HelpPage(QWidget):
             "background-color: rgb(255, 220, 99);\n"
             "}"
         )
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout_3.addWidget(self.pushButton_2, 4, 1, 1, 1, Qt.AlignHCenter)
+        self.submit_button.setObjectName("pushButton_2")
+        self.gridLayout_3.addWidget(self.submit_button, 4, 1, 1, 1, Qt.AlignHCenter)
         spacerItem = QSpacerItem(135, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.gridLayout_3.addItem(spacerItem, 0, 2, 1, 1)
         spacerItem1 = QSpacerItem(135, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -162,9 +168,13 @@ class Ui_HelpPage(QWidget):
         self.horizontalLayout.addItem(spacerItem3)
         spacerItem4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem4)
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setStyleSheet(
+        self.press_here_button = QPushButton(
+            self.widget, clicked=lambda: self.open_contact_page()
+        )
+        self.press_here_button.setStyleSheet(
             "QPushButton{\n"
+            "font-size: 15px;\n"
+            "font-family: Segoe UI Symbol;\n"
             "color: white;\n"
             "background-color: rgb(255, 203, 99);\n"
             "border-width: 0px;\n"
@@ -178,12 +188,12 @@ class Ui_HelpPage(QWidget):
             "background-color: rgb(255, 220, 99);\n"
             "}"
         )
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.press_here_button.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.press_here_button)
         self.gridLayout_3.addWidget(self.widget, 0, 1, 2, 1)
         self.widget_7 = QWidget(self.scrollAreaWidgetContents)
         self.widget_7.setStyleSheet(
-            " background-color: white;\n" "border-radius: 10px;\n "
+            " background-color: rgb(234, 234, 255);\n" "border-radius: 3px;\n "
         )
         self.widget_7.setObjectName("widget_7")
         self.gridLayout_4 = QGridLayout(self.widget_7)
@@ -229,18 +239,18 @@ class Ui_HelpPage(QWidget):
         self.phone_label.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
         self.phone_label.setObjectName("phone_label")
         self.labels.addWidget(self.phone_label)
-        self.problem_type_label = QLabel(self.labels_layout)
-        self.problem_type_label.setFont(font)
-        self.problem_type_label.setStyleSheet("margin-right: 120px;")
-        self.problem_type_label.setObjectName("passwor_label")
-        self.labels.addWidget(self.problem_type_label)
-        
-        self.problem_desc_label = QLabel(self.labels_layout)
-        self.problem_desc_label.setFont(font)
-        self.problem_desc_label.setStyleSheet("margin-right: 120px;")
-        self.problem_desc_label.setObjectName("passwor_label_3")
-        self.labels.addWidget(self.problem_desc_label)
-        
+        self.issue_type_label = QLabel(self.labels_layout)
+        self.issue_type_label.setFont(font)
+        self.issue_type_label.setStyleSheet("margin-right: 120px;")
+        self.issue_type_label.setObjectName("passwor_label")
+        self.labels.addWidget(self.issue_type_label)
+
+        self.issue_desc_label = QLabel(self.labels_layout)
+        self.issue_desc_label.setFont(font)
+        self.issue_desc_label.setStyleSheet("margin-right: 120px;")
+        self.issue_desc_label.setObjectName("passwor_label_3")
+        self.labels.addWidget(self.issue_desc_label)
+
         self.location_label = QLabel(self.labels_layout)
         self.location_label.setFont(font)
         self.location_label.setStyleSheet("margin-bottom: 0px;")
@@ -269,54 +279,79 @@ class Ui_HelpPage(QWidget):
         self.inputs.setObjectName("inputs")
         self.email_input = QLineEdit(self.inputs_layout)
         self.email_input.setFont(font)
-        self.email_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.email_input.setText(f"{user_info.user_email()}")
+        self.email_input.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "color: grey;"
+        )
+        self.email_input.setText(f"{help_page_conn.user_email()}")
         self.email_input.setObjectName("email_input")
+        self.email_input.setReadOnly(True)
         self.inputs.addWidget(self.email_input)
         self.first_input = QLineEdit(self.inputs_layout)
         self.first_input.setFont(font)
-        self.first_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.first_input.setText(f"{user_info.user_first_name()}")
+        self.first_input.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "color: grey;"
+        )
+        self.first_input.setText(f"{help_page_conn.user_first_name()}")
         self.first_input.setObjectName("first_input")
+        self.first_input.setReadOnly(True)
         self.inputs.addWidget(self.first_input)
         self.last_input = QLineEdit(self.inputs_layout)
         self.last_input.setFont(font)
-        self.last_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.last_input.setText(f"{user_info.user_last_name()}")
+        self.last_input.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "color: grey;"
+        )
+        self.last_input.setText(f"{help_page_conn.user_last_name()}")
         self.last_input.setObjectName("last_input")
+        self.last_input.setReadOnly(True)
         self.inputs.addWidget(self.last_input)
         self.phone_input = QLineEdit(self.inputs_layout)
         self.phone_input.setFont(font)
-        self.phone_input.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.phone_input.setText(f"{user_info.user_phone()}")
+        self.phone_input.setStyleSheet(
+            "background-color: rgb(255, 255, 255);\n" "color: grey;"
+        )
+        self.phone_input.setText(f"{help_page_conn.user_phone()}")
         self.phone_input.setObjectName("phone_input")
+        self.phone_input.setReadOnly(True)
         self.inputs.addWidget(self.phone_input)
-        self.pass_input = QLineEdit(self.inputs_layout)
-        self.pass_input.setFont(font)
-        self.pass_input.setStyleSheet("background-color:  rgb(255, 255, 255);")
-        self.pass_input.setObjectName("pass_input")
-        self.inputs.addWidget(self.pass_input)
-        self.textEdit = QTextEdit(self.inputs_layout)
-        self.textEdit.setObjectName("textEdit")
-        self.inputs.addWidget(self.textEdit)
-        self.comboBox = QComboBox(self.inputs_layout)
-        self.comboBox.setEnabled(False)
+        self.issue_type_comboBox = QComboBox(self.inputs_layout)
+        self.issue_type_comboBox.setEnabled(True)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.comboBox.sizePolicy().hasHeightForWidth())
-        self.comboBox.setSizePolicy(sizePolicy)
-        self.comboBox.setMinimumSize(QSize(0, 0))
+        sizePolicy.setHeightForWidth(
+            self.issue_type_comboBox.sizePolicy().hasHeightForWidth()
+        )
+        self.issue_type_comboBox.setSizePolicy(sizePolicy)
+        self.issue_type_comboBox.setMinimumSize(QSize(0, 0))
+        self.issue_type_comboBox.setFont(font)
+        self.issue_type_comboBox.setStyleSheet("background-color:  rgb(255, 255, 255);")
+        self.issue_type_comboBox.setObjectName("pass_input")
+        self.issue_type_comboBox.setFrame(True)
+        self.inputs.addWidget(self.issue_type_comboBox)
+        self.textEdit = QTextEdit(self.inputs_layout)
+        self.textEdit.setObjectName("textEdit")
+        self.textEdit.setStyleSheet("background-color: white;\n" "font-size: 17px;")
+        self.inputs.addWidget(self.textEdit)
+        self.location_comboBox = QComboBox(self.inputs_layout)
+        self.location_comboBox.setEnabled(False)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.location_comboBox.sizePolicy().hasHeightForWidth()
+        )
+        self.location_comboBox.setSizePolicy(sizePolicy)
+        self.location_comboBox.setMinimumSize(QSize(0, 0))
 
-        self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet(
+        self.location_comboBox.setFont(font)
+        self.location_comboBox.setStyleSheet(
             "background-color: rgb(255, 255, 255);\n" "padding-left: 0px;"
         )
-        self.comboBox.setFrame(True)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
+        self.location_comboBox.setFrame(True)
+        self.location_comboBox.setObjectName("comboBox")
+        self.location_comboBox.addItem("")
         # self.comboBox.addItem("")
-        self.inputs.addWidget(self.comboBox)
+        self.inputs.addWidget(self.location_comboBox)
         self.gridLayout_4.addWidget(self.inputs_layout, 0, 1, 1, 1)
         self.gridLayout_3.addWidget(self.widget_7, 3, 1, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -336,7 +371,7 @@ class Ui_HelpPage(QWidget):
     def retranslateUi(self, MainWindow):
         _translate = QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton_2.setText(_translate("MainWindow", "Submit"))
+        self.submit_button.setText(_translate("MainWindow", "Submit"))
         self.lineEdit.setText(
             _translate("MainWindow", "Want to talk with professionals?")
         )
@@ -352,16 +387,72 @@ class Ui_HelpPage(QWidget):
         self.lineEdit_5.setText(
             _translate("MainWindow", "please fill up the form below.")
         )
-        self.pushButton.setText(_translate("MainWindow", "Press Here"))
+        self.press_here_button.setText(_translate("MainWindow", "Press Here"))
         self.email_label.setText(_translate("MainWindow", "Email:"))
         self.first_label.setText(_translate("MainWindow", "First name:"))
         self.last_label.setText(_translate("MainWindow", "Last name:"))
         self.phone_label.setText(_translate("MainWindow", "Phone number:"))
-        self.problem_type_label.setText(_translate("MainWindow", "Problem type: "))
-        self.problem_desc_label.setText(_translate("MainWindow", "Problem description: "))
+        self.issue_type_label.setText(_translate("MainWindow", "Issue type: "))
+        issue_list = [
+            "Choose..",
+            "Health",
+            "Transportation",
+            "Mental Health",
+            "Bored",
+            "Other",
+        ]
+        self.issue_type_comboBox.addItems(issue_list)
+        self.issue_desc_label.setText(_translate("MainWindow", "Issue description: "))
         self.location_label.setText(_translate("MainWindow", "Location:"))
-        self.comboBox.setItemText(0, _translate("MainWindow", f"{user_info.user_location()}"))
+        self.location_comboBox.setItemText(
+            0, _translate("MainWindow", f"{help_page_conn.user_location()}")
+        )
         # self.comboBox.setItemText(1, _translate("MainWindow", "Stockholm"))
+
+    def show_popup_submitted(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("sumbitted succesfully")
+        msg.setText(
+            "Your form submitted succesfully. We will try to contact you back as soon as possible."
+        )
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def open_contact_page(self):
+        self.window = QWidget()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def collect_form_details(self, MainWindow):
+        max_chars_desc = 300
+        email = help_page_conn.user_email()
+        if self.issue_type_comboBox.currentIndex() == 0:
+            self.show_popup_choose_type()
+            return False
+        issue_type = self.issue_type_comboBox.currentText()
+        if len(self.textEdit.toPlainText()) > max_chars_desc:
+            self.show_popup_too_long()
+            return False
+        issue_description = self.textEdit.toPlainText()
+        row_count = help_page_conn.insert_form(email, issue_type, issue_description)
+        if row_count == 1:
+            self.show_popup_submitted()
+            MainWindow.close()
+
+    def show_popup_choose_type(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("issue type not chosen")
+        msg.setText("An issue type was not selected. Please select and try again")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_too_long(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("issue desc is too long")
+        msg.setText("Issue description is too long. Try again")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
 
 
 if __name__ == "__main__":
