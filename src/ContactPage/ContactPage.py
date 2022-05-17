@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import os
+
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 import display_numbers
 
@@ -20,6 +21,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(875, 838)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
+        Form.showMaximized()
         self.gridLayout_3 = QtWidgets.QGridLayout(Form)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.frame = QtWidgets.QFrame(Form)
@@ -29,7 +31,6 @@ class Ui_Form(object):
         self.logo_layout = QtWidgets.QHBoxLayout()
         self.logo_layout.setObjectName("logo_layout")
         self.app_logo = QtWidgets.QLabel(self.frame)
-        self.app_logo.setMaximumSize(QtCore.QSize(645, 200))
         font = QtGui.QFont()
         font.setFamily("Sitka Small")
         font.setPointSize(72)
@@ -147,7 +148,9 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.heading.setText(_translate("Form", f"Contact details: {display_numbers.user_location()}"))
+        self.heading.setText(
+            _translate("Form", f"Contact details: {display_numbers.user_location()}")
+        )
         self.name.setText(_translate("Form", "Medical Assistance"))
         self.number.setText(_translate("Form", f"Call {contacts[0][0]}"))
         self.name2.setText(_translate("Form", "Victim of senior scam?"))

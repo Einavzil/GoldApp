@@ -35,7 +35,7 @@ def insert_data(answer1, answer2, answer3, answer4):
             with open("src\current_email.txt", "r") as current_email:
                 email = current_email.readline()
         except:
-            with open("src\current_email.txt", "r") as current_email:
+            with open("current_email.txt", "r") as current_email:
                 email = current_email.readline()
 
         args = (email, answer1, answer2, answer3, answer4)

@@ -94,11 +94,11 @@ def store_current_email(email):
         with open("src\current_email.txt", "w") as login_file:
             login_file.write(email)
     except:
-        with open("src\current_email.txt", "w") as login_file:
+        with open("current_email.txt", "w") as login_file:
             login_file.write(email)
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     print(check_email("example@gmail.com"))
     if check_email("example@gmail.com"):
         print(check_password("example@gmail.com", "abc123"))
