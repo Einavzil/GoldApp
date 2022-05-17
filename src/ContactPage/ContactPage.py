@@ -11,8 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import os
-
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
+import display_numbers
 
 
 class Ui_Form(object):
@@ -143,16 +143,17 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
+        contacts = display_numbers.helpline_phone_numbers_headings()
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.app_logo.setText(_translate("Form", "GoldApp"))
-        self.heading.setText(_translate("Form", "Contact details: {location}"))
+        self.heading.setText(_translate("Form", f"Contact details: {display_numbers.user_location()}"))
         self.name.setText(_translate("Form", "Medical Assistance"))
-        self.number.setText(_translate("Form", "Call {number}"))
+        self.number.setText(_translate("Form", f"Call {contacts[0][0]}"))
         self.name2.setText(_translate("Form", "Victim of senior scam?"))
-        self.phone2.setText(_translate("Form", "Call {number}"))
+        self.phone2.setText(_translate("Form", f"Call {contacts[1][0]}"))
         self.name3.setText(_translate("Form", "General assistance"))
-        self.phone3.setText(_translate("Form", "Call {number}"))
+        self.phone3.setText(_translate("Form", f"Call {contacts[2][0]}"))
 
 
 if __name__ == "__main__":
