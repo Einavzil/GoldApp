@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>875</width>
+    <height>838</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(220, 221, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="logo_layout">
+        <item>
+         <widget class="QLabel" name="app_logo">
+          <property name="maximumSize">
+           <size>
+            <width>645</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Sitka Small</family>
+            <pointsize>72</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+color: rgb(255, 203, 99);
+background-color: white;
+border-color: black;
+border-radius: 10px;
+border-style: none;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+margin-left: 0px;
+margin-right: 0px;
+}</string>
+          </property>
+          <property name="text">
+           <string>GoldApp</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="page_content" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>600</height>
+         </size>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="heading">
+             <property name="font">
+              <font>
+               <family>Segoe UI Semibold</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font-size: 32px;</string>
+             </property>
+             <property name="text">
+              <string>Contact details: {location}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>270</height>
+              </size>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QWidget" name="" native="true">
+                <layout class="QHBoxLayout" name="medical_box">
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="name">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 24px;
+margin-left: 10px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Medical Assistance</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="number">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 20px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Call {number}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="" native="true">
+                <layout class="QHBoxLayout" name="scam_box">
+                 <item>
+                  <widget class="QLabel" name="name2">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 24px;
+margin-left: 10px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Victim of senior scam?</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="phone2">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 20px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Call {number}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="" native="true">
+                <layout class="QHBoxLayout" name="general_box">
+                 <item>
+                  <widget class="QLabel" name="name3">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 24px;
+margin-left: 10px;</string>
+                   </property>
+                   <property name="text">
+                    <string>General assistance</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="phone3">
+                   <property name="styleSheet">
+                    <string notr="true">font-size: 20px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Call {number}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="photo">
+             <property name="maximumSize">
+              <size>
+               <width>411</width>
+               <height>221</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../image/callcenter.jpg</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
