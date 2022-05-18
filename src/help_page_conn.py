@@ -47,9 +47,8 @@ def user_first_name():
     args = (email,)
     cursor.execute(sql, args)
     first_name = cursor.fetchone()
-    if first_name == None:
-        return ""
-    return first_name[0]
+    if first_name != None:
+        return first_name[0]
 
 
 def user_last_name():
@@ -66,9 +65,8 @@ def user_last_name():
     args = (email,)
     cursor.execute(sql, args)
     last_name = cursor.fetchone()
-    if last_name == None:
-        return ""
-    return last_name[0]
+    if last_name != None:
+        return last_name[0]
 
 
 def user_phone():

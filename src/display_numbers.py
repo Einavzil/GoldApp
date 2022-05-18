@@ -45,10 +45,5 @@ def helpline_phone_numbers_headings():
     args = (location,)
     cursor.execute(sql, args)
     helpline_info = cursor.fetchall()
-    if helpline_info == None:
-        return ""
-    return helpline_info
-    
-    
-print(user_location())
-print(helpline_phone_numbers_headings())
+    if helpline_info != None:
+        return helpline_info
