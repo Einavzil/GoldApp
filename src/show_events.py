@@ -66,7 +66,7 @@ def events_details(events_id):
         id_tuple = tuple(events_id)
     else:
         id_tuple = (events_id[0], 0)
-    print(id_tuple)
+    # print(id_tuple)
     try:
         conn, cursor = connect()
         sql = f"""
@@ -88,7 +88,7 @@ def events_details(events_id):
         result = cursor.fetchall()
         cursor.close()
         conn.close()
-        print(result)
+        # print(result)
         return result
 
     except Exception as err:
@@ -124,7 +124,7 @@ def event_ids_list():
         events = []
         for i in event_id:
             events.append(i[0])
-        print(events)
+        # print(events)
         cursor.close()
         conn.close()
         return events
