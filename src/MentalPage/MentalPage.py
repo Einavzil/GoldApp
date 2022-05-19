@@ -30,7 +30,6 @@ class Ui_Form(QtWidgets.QWidget):
         Form.setObjectName("Form")
         Form.resize(658, 756)
         Form.setStyleSheet("background-color: rgb(220, 221, 255);")
-        Form.showMaximized()
         self.gridLayout_3 = QtWidgets.QGridLayout(Form)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.frame = QtWidgets.QFrame(Form)
