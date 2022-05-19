@@ -1,4 +1,4 @@
-from LoginScreen.LoginScreen import Ui_MainWindow
+from LoginScreen.LoginScreen import LoginScreen
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
@@ -8,7 +8,7 @@ sys.path.insert(0, "../src")
 def main():
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = LoginScreen()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

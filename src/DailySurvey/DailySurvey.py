@@ -14,10 +14,10 @@ import sys
 
 sys.path.insert(0, "..\src")
 import daily_survey_db
-from MentalPage.MentalPage import Ui_Form
+from MentalPage.MentalPage import MentalPage
 
 
-class Ui_Form_Survey(QtWidgets.QWidget):
+class DailySurvey(QtWidgets.QWidget):
     def check_question1(self):
         question1_list = [
             self.radioButton1_q1,
@@ -84,7 +84,7 @@ class Ui_Form_Survey(QtWidgets.QWidget):
 
     def open_mental_page(self):
         self.window = QtWidgets.QWidget()
-        self.ui = Ui_Form()
+        self.ui = MentalPage()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -623,7 +623,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form_Survey()
+    ui = DailySurvey()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())

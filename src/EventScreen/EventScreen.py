@@ -17,7 +17,7 @@ path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 from show_events import show_events
 
 
-class Ui_Form(object):
+class EventScreen(object):
     def setupUi(self, Form):
         event_id_list = show_events()[0]
         Form.setObjectName("Form")
@@ -976,7 +976,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = EventScreen()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())

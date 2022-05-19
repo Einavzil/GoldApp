@@ -16,7 +16,7 @@ path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 import display_numbers
 
 
-class Ui_Form(object):
+class ContactPage(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(875, 838)
@@ -164,7 +164,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = ContactPage()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())

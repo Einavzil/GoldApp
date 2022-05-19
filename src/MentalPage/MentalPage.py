@@ -15,13 +15,13 @@ import sys
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 sys.path.insert(0, "../src")
 print(sys.path[0])
-from HelpPage.HelpPage import Ui_HelpPage
+from HelpPage.HelpPage import HelpPage
 
 
-class Ui_Form(QtWidgets.QWidget):
+class MentalPage(QtWidgets.QWidget):
     def open_help_page(self, Form):
         self.help_window = QtWidgets.QMainWindow()
-        self.ui = Ui_HelpPage()
+        self.ui = HelpPage()
         self.ui.setupUi(self.help_window)
         self.help_window.show()
         Form.close()
@@ -207,7 +207,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = MentalPage()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())

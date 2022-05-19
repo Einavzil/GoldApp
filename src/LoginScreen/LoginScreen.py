@@ -15,12 +15,12 @@ import sys
 sys.path.insert(0, "../src")
 
 # Importing the Ui_MainScreen class from the MainScreen.py file
-from MainScreen.MainScreen import Ui_MainScreen
-from NewAccount.NewAccount import Ui_Form
+from MainScreen.MainScreen import MainScreen
+from NewAccount.NewAccount import NewAccount
 import login
 
 
-class Ui_MainWindow(QtWidgets.QWidget):
+class LoginScreen(QtWidgets.QWidget):
     def open_login(self, MainWindow):
         if not login.check_email(self.email_box.text()) and not login.check_password(
             self.email_box.text(), self.password_box.text()
@@ -30,7 +30,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.email_box.text(), self.password_box.text()
         ):
             self.window = QtWidgets.QMainWindow()
-            self.ui = Ui_MainScreen()
+            self.ui = MainScreen()
             self.ui.setupUi(self.window)
             self.window.show()
             MainWindow.close()
@@ -39,7 +39,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
     def open_create_account(self):
         self.window = QtWidgets.QWidget()
-        self.ui = Ui_Form()
+        self.ui = NewAccount()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -273,7 +273,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = LoginScreen()
     ui.setupUi(MainWindow)
     MainWindow.show()
     MainWindow.setFocus()

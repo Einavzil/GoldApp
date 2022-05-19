@@ -14,27 +14,27 @@ import sys
 
 sys.path.insert(0, "../src")
 
-from EventScreen.EventScreen import Ui_Form
-from HelpPage.HelpPage import Ui_HelpPage
-from DailySurvey.DailySurvey import Ui_Form_Survey
+from EventScreen.EventScreen import EventScreen
+from HelpPage.HelpPage import HelpPage
+from DailySurvey.DailySurvey import DailySurvey
 
 
-class Ui_MainScreen(object):
+class MainScreen(object):
     def open_help_page(self):
         self.help_window = QtWidgets.QMainWindow()
-        self.ui = Ui_HelpPage()
+        self.ui = HelpPage()
         self.ui.setupUi(self.help_window)
         self.help_window.show()
 
     def open_events(self):
         self.window = QtWidgets.QWidget()
-        self.ui = Ui_Form()
+        self.ui = EventScreen()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def open_daily_survey(self):
         self.window = QtWidgets.QWidget()
-        self.ui = Ui_Form_Survey()
+        self.ui = DailySurvey()
         if self.ui.setupUi(self.window):
             self.window.show()
 
@@ -195,7 +195,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainScreen()
+    ui = MainScreen()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

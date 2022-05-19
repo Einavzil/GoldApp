@@ -15,7 +15,8 @@ import sys
 
 sys.path.insert(0, "../src")
 
-from HelpPage.HelpPage import Ui_HelpPage
+from HelpPage.HelpPage import HelpPage
+
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 print(path)
 
@@ -23,7 +24,7 @@ print(path)
 class Ui_Form(object):
     def open_help_page(self):
         self.help_window = QtWidgets.QMainWindow()
-        self.ui = Ui_HelpPage()
+        self.ui = HelpPage()
         self.ui.setupUi(self.help_window)
         self.help_window.show()
 
@@ -118,7 +119,8 @@ class Ui_Form(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.help_page_button = QtWidgets.QPushButton(
-            self.widget, clicked= lambda: self.open_help_page())
+            self.widget, clicked=lambda: self.open_help_page()
+        )
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setUnderline(False)

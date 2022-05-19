@@ -16,9 +16,9 @@ sys.path.insert(0, "../src")
 import signup
 
 
-class Ui_Form(QtWidgets.QWidget):
+class NewAccount(QtWidgets.QWidget):
     def __init__(self):
-        super(Ui_Form, self).__init__()
+        super(NewAccount, self).__init__()
 
     def passwords_match(self):
         if self.pass_input.text() != self.rep_pass_input.text():
@@ -510,7 +510,7 @@ class Ui_Form(QtWidgets.QWidget):
         self.passwor_label.setText(_translate("Form", "Password:"))
         self.rep_pass_label.setText(_translate("Form", "Repeat password:"))
         self.passwor_label_2.setText(_translate("Form", "Location:"))
-        
+
         self.comboBox.setItemText(0, _translate("Form", "Malmö"))
         self.comboBox.setItemText(1, _translate("Form", "Stockholm"))
         self.comboBox.setItemText(2, _translate("Form", "Kristianstad"))
@@ -518,7 +518,7 @@ class Ui_Form(QtWidgets.QWidget):
         self.comboBox.setItemText(4, _translate("Form", "Göteborg"))
         self.comboBox.setItemText(5, _translate("Form", "Uppsala"))
         self.comboBox.setItemText(6, _translate("Form", "Karlstad"))
-        
+
         self.create_button.setText(_translate("Form", "Create"))
 
     def show_popup_pass(self):
@@ -549,7 +549,7 @@ class Ui_Form(QtWidgets.QWidget):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = NewAccount()
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())

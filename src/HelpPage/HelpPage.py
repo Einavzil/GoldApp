@@ -15,10 +15,10 @@ import os
 
 path = os.path.dirname(os.path.abspath(f"{__file__}\.."))
 import help_page_conn
-from ContactPage.ContactPage import Ui_Form
+from ContactPage.ContactPage import ContactPage
 
 
-class Ui_HelpPage(QWidget):
+class HelpPage(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self._heightMask = self.height()
@@ -420,7 +420,7 @@ class Ui_HelpPage(QWidget):
 
     def open_contact_page(self):
         self.window = QWidget()
-        self.ui = Ui_Form()
+        self.ui = ContactPage()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -460,7 +460,7 @@ if __name__ == "__main__":
 
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
-    ui = Ui_HelpPage()
+    ui = HelpPage()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
