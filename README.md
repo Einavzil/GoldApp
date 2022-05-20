@@ -31,7 +31,7 @@ Liis Usin
 Dzenis Madzovic
 
 ## Version
-{Fill this}
+1.0 - Initial version with main features
 
 ## Licence 
 {Fill this}
