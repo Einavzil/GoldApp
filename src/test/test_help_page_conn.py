@@ -56,9 +56,7 @@ class test_help_page_conn(unittest.TestCase):
     def test_insert_form(self):
         """Testing values."""
         res = help_page_conn.insert_form("liis@gmail.com", "health", "hehe")
-        # self.assertTrue(res)
-        self.assertIsNone(res)
-
+        self.assertTrue(res)
 
     def test_user_location(self):
         """Testing if we geet the user location."""
