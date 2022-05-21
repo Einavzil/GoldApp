@@ -21,7 +21,7 @@ $ make install
 ### Running the GoldApp
 
 1. Make sure that all of the dependencies are installed and the virtual enviroment is activated.
-2. Also, make sure you have added goldapp.sql to your database,
+2. Also, make sure you have added goldapp.sql database to MySQL Workbench,
    and have a user: maria, with password: password, in order to connect.
    You'll find the database: src/database/goldapp.sql
 3. To run the app, go to the src directory and run main.py
