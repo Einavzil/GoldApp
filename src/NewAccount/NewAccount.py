@@ -36,6 +36,10 @@ class NewAccount(QtWidgets.QWidget):
         while self.first_input.text() == "":
             self.show_popup_fname()
             return False
+        
+        while not self.phone_input.text().isnumeric():
+            self.show_popup_phone()
+            return False
 
         while not self.passwords_match():
             self.show_popup_pass()
@@ -51,6 +55,7 @@ class NewAccount(QtWidgets.QWidget):
         )
 
         self.input_interest(email)
+        self.show_popup_created()
         Form.close()
 
     def input_interest(self, email):
@@ -542,6 +547,20 @@ class NewAccount(QtWidgets.QWidget):
         msg = QMessageBox()
         msg.setWindowTitle("name is null")
         msg.setText("You have to enter a name.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_phone(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("phone not digits")
+        msg.setText("Phone number must contain only digits.")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_created(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Account created")
+        msg.setText("Your account created successfully. You can log in now")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
 
