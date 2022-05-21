@@ -27,8 +27,23 @@ class NewAccount(QtWidgets.QWidget):
             return False
         return True
 
-    def create_account(self, Form):
+    def check_interest_empty(self):
+        interest_checkbox = [
+            self.checkBox_1,
+            self.checkBox_2,
+            self.checkBox_3,
+            self.checkBox_4,
+            self.checkBox_5,
+            self.checkBox_6,
+            self.checkBox_7,
+            self.checkBox_8,
+            self.checkBox_9
+        ]
+        print(any(i.isChecked() for i in interest_checkbox))
+        return any(i.isChecked() for i in interest_checkbox)
+        
 
+    def create_account(self, Form):
         while "@" not in self.email_input.text():
             self.show_popup_email()
             return False
@@ -43,6 +58,10 @@ class NewAccount(QtWidgets.QWidget):
 
         while not self.passwords_match():
             self.show_popup_pass()
+            return False
+        
+        if not self.check_interest_empty():
+            self.show_popup_min_interest()
             return False
 
         email = signup.insert_account(
@@ -561,6 +580,13 @@ class NewAccount(QtWidgets.QWidget):
         msg = QMessageBox()
         msg.setWindowTitle("Account created")
         msg.setText("Your account created successfully. You can log in now")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
+
+    def show_popup_min_interest(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Minimum one interest")
+        msg.setText("You must check at least one interest.")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
 
