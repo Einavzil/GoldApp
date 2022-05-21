@@ -45,9 +45,3 @@ coverage:
 	coverage html
 	coverage report -m
 
-
-# ---------------------------------------------------------
-# Behave: https://behave.readthedocs.io/en/stable/tutorial.html
-
-behave:
-	behave src/features/*
